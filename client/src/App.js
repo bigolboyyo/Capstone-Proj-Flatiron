@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // PRE-SKELETON BRANCH BEGINNING...
+// TESTING AUTO DEPLOYMENT...
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,7 +16,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/testing" element={<h1>Test Route</h1>} />
+          <Route path="/testing" element={<h1>Test Route: PRE SKELETON</h1>} />
 
           <Route path="/" element={<h1>Page Count: {count}</h1>} />
         </Routes>
