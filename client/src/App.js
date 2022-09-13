@@ -23,12 +23,12 @@ function App() {
         "Content-Type": "application/json",
       },
     };
-    let r = await fetch("/login", config);
-    r = await r.json();
+    const r = await fetch("/login", config);
+    const userData = await r.json();
     if (r.ok) {
       const { token } = r;
       localStorage.setItem("token", JSON.stringify(token));
-      setUser(r);
+      setUser(userData);
       navigate("/homepage");
     } else {
       const { error } = r;
@@ -47,16 +47,17 @@ function App() {
         "Content-Type": "application/json",
       },
     };
-    let r = await fetch("/signup", config);
-    r = await r.json();
+    const r = await fetch("/signup", config);
+    debugger;
+    const userData = await r.json();
     if (r.ok) {
       const { token } = r;
       localStorage.setItem("token", JSON.stringify(token));
-      setUser(r);
+      setUser(userData);
       navigate("/homepage");
     } else {
-      const { error } = r;
-      setErrors([...error]);
+      const { errors } = r;
+      setErrors([...errors]);
       setTimeout(() => {
         setErrors([]);
       }, 5000);
