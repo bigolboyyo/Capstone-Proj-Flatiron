@@ -7,18 +7,7 @@ import Storyline from "./components/StoryLinePage/Storyline";
 import Adventure from "./components/AdventurePage/Adventure";
 import EndState from "./components/EndStatePage/EndState";
 
-// PRE-SKELETON BRANCH BEGINNING...
-// TESTING AUTO DEPLOYMENT...
-
 function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
-
   return (
     <div className="App">
       <Routes>
