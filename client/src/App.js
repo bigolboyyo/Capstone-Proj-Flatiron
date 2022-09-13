@@ -10,7 +10,7 @@ import EndState from "./components/EndStatePage/EndState";
 import Root from "./components/Root/Root";
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(false);
   const [errors, setErrors] = useState([]);
 
   const navigate = useNavigate();
@@ -26,13 +26,13 @@ function App() {
     const r = await fetch("/login", config);
     const userData = await r.json();
     if (r.ok) {
-      const { token } = r;
-      localStorage.setItem("token", JSON.stringify(token));
+      //const { token } = r;
+      localStorage.setItem("user_data", JSON.stringify(userData));
       setUser(userData);
       navigate("/homepage");
     } else {
-      const { error } = r;
-      setErrors([...error]);
+      const { errors } = r;
+      setErrors([...errors]);
       setTimeout(() => {
         setErrors([]);
       }, 5000);
@@ -51,8 +51,9 @@ function App() {
     debugger;
     const userData = await r.json();
     if (r.ok) {
-      const { token } = r;
-      localStorage.setItem("token", JSON.stringify(token));
+      debugger;
+      //const { token } = r;
+      localStorage.setItem("user_data", JSON.stringify(userData));
       setUser(userData);
       navigate("/homepage");
     } else {
@@ -63,6 +64,15 @@ function App() {
       }, 5000);
     }
   };
+
+  useEffect(() => {
+    if (!localStorage.getItem("user_data")) {
+      navigate("/login");
+    } else {
+      setUser(JSON.parse(localStorage.getItem("user_data")));
+      navigate("/homepage");
+    }
+  }, []);
 
   return (
     <div className="App">
