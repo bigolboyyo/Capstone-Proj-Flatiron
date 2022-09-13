@@ -18,7 +18,7 @@ skip_before_action :authorize, only: [:create]
     end
 
     def create 
-        @user.update!(user_params)
+        @user.create!(user_params)
         render json: @user, status: :ok
     end
 
