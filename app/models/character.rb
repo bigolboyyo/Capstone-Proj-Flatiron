@@ -1,4 +1,4 @@
 class Character < ApplicationRecord
     belongs_to :user
-    has_one :background 
+    has_one :background
 end
