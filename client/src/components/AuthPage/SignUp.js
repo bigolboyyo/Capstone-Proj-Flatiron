@@ -3,16 +3,17 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-function Login({ onLogin }) {
-  const [userCreds, setUserCreds] = useState({
+function SignUp({ onSignUp }) {
+  const [signUpCreds, setSignUpCreds] = useState({
     username: "",
     password: "",
+    password_confirmation: "",
   });
 
   const handleChange = async (e) => {
-    const stateCopy = { ...userCreds };
+    const stateCopy = { ...signUpCreds };
     stateCopy[e.target.name] = e.target.value;
-    setUserCreds(stateCopy);
+    setSignUpCreds(stateCopy);
   };
 
   return (
@@ -20,8 +21,12 @@ function Login({ onLogin }) {
       <Form
         onSubmit={(e) => {
           e.preventDefault();
-          onLogin(userCreds);
-          setUserCreds({ username: "", password: "" });
+          onSignUp(signUpCreds);
+          setSignUpCreds({
+            username: "",
+            password: "",
+            password_confirmation: "",
+          });
         }}
       >
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -30,7 +35,7 @@ function Login({ onLogin }) {
             name="username"
             type="text"
             placeholder="Enter username"
-            value={userCreds.username}
+            value={signUpCreds.username}
             onChange={handleChange}
             required={true}
           />
@@ -43,17 +48,22 @@ function Login({ onLogin }) {
             name="password"
             type="password"
             placeholder="Password"
-            value={userCreds.password}
+            value={signUpCreds.password}
             onChange={handleChange}
             required={true}
           />
         </Form.Group>
-
-        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formBasicPasswordConfirmation">
           <Form.Label>Password Confirmation</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group> */}
-
+          <Form.Control
+            name="password_confirmation"
+            type="password"
+            placeholder="Password Confirmation"
+            value={signUpCreds.password_confirmation}
+            onChange={handleChange}
+            required={true}
+          />
+        </Form.Group>
         <Button variant="primary" type="submit">
           Submit
         </Button>
@@ -61,5 +71,4 @@ function Login({ onLogin }) {
     </div>
   );
 }
-
-export default Login;
+export default SignUp;

@@ -13,13 +13,17 @@ skip_before_action :authorize, only: [:create]
         if @current_user
             render json: @current_user, status: :ok
         else 
-            render json: {error: "No active session"}, status: :unauthorized
+            render json: {errors: "No active session"}, status: :unauthorized
         end
     end
 
     def create 
-        @user.create!(user_params)
+        @user = User.create!(user_params)
+        if @user 
         render json: @user, status: :ok
+        else 
+            render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
 # Update and destroy? 

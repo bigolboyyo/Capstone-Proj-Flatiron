@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./components/AuthPage/Login";
+import SignUp from "./components/AuthPage/SignUp";
 import UserHomePage from "./components/UserHomePage/UserHomePage";
 import Background from "./components/BackgroundPage/Background";
 import Storyline from "./components/StoryLinePage/Storyline";
 import Adventure from "./components/AdventurePage/Adventure";
 import EndState from "./components/EndStatePage/EndState";
+import Root from "./components/Root/Root";
 
 function App() {
   const [user, setUser] = useState({});
@@ -37,12 +39,38 @@ function App() {
     }
   };
 
+  const handleSignUpSubmit = async (creds) => {
+    const config = {
+      method: "POST",
+      body: JSON.stringify(creds),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    let r = await fetch("/signup", config);
+    r = await r.json();
+    if (r.ok) {
+      const { token } = r;
+      localStorage.setItem("token", JSON.stringify(token));
+      setUser(r);
+      navigate("/homepage");
+    } else {
+      const { error } = r;
+      setErrors([...error]);
+      setTimeout(() => {
+        setErrors([]);
+      }, 5000);
+    }
+  };
+
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<Root />} />
+        <Route path="/login" element={<Login onLogin={handleLoginSubmit} />} />
         <Route
-          path="/"
-          element={<Login errors={errors} onLogin={handleLoginSubmit} />}
+          path="/signup"
+          element={<SignUp onSignUp={handleSignUpSubmit} />}
         />
         <Route path="/homepage" element={<UserHomePage user={user} />} />
         <Route path="/background" element={<Background />} />
