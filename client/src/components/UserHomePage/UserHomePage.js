@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./UserHomePage.css";
 
 function UserHomePage({ user, logout }) {
@@ -8,9 +8,9 @@ function UserHomePage({ user, logout }) {
       <Button className="logout-btn" onClick={logout}>
         Logout
       </Button>
-      <Container className="user-home-interface-container">
+      <div className="user-home-interface-container">
         <h1>{user.username}</h1>
-      </Container>
+      </div>
     </div>
   );
 }
