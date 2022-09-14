@@ -1,5 +1,11 @@
+//Resources
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+
+//Styling
+//import Nav from "react-bootstrap/Nav";
+
+//Components
 import Login from "./components/AuthPage/Login";
 import SignUp from "./components/AuthPage/SignUp";
 import UserHomePage from "./components/UserHomePage/UserHomePage";

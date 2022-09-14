@@ -4,5 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10rem;
+  padding-top: 20rem;
+  background-color: #a1adba;
+  height: 100rem;
+  width: 100%;
 }
