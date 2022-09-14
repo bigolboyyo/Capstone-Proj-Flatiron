@@ -3,7 +3,7 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-function SignUp({ onSignUp }) {
+function SignUp({ onSignUp, errorMessage }) {
   const [signUpCreds, setSignUpCreds] = useState({
     username: "",
     password: "",
@@ -68,6 +68,7 @@ function SignUp({ onSignUp }) {
           Submit
         </Button>
       </Form>
+      {errorMessage()}
     </div>
   );
 }

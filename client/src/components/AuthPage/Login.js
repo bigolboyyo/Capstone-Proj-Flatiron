@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Nav from "react-bootstrap/Nav";
 
-function Login({ onLogin }) {
+function Login({ onLogin, errorMessage }) {
   const [userCreds, setUserCreds] = useState({
     username: "",
     password: "",
@@ -58,6 +59,13 @@ function Login({ onLogin }) {
           Submit
         </Button>
       </Form>
+      <Nav>
+        <Nav.Item>
+          Need an account?
+          <Nav.Link href="/signup">SignUp</Nav.Link>
+        </Nav.Item>
+      </Nav>
+      {errorMessage()}
     </div>
   );
 }

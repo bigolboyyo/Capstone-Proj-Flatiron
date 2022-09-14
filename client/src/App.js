@@ -26,12 +26,11 @@ function App() {
     const r = await fetch("/login", config);
     const userData = await r.json();
     if (r.ok) {
-      //const { token } = r;
       localStorage.setItem("user_data", JSON.stringify(userData));
       setUser(userData);
       navigate("/homepage");
     } else {
-      const { errors } = r;
+      const { errors } = userData;
       setErrors([...errors]);
       setTimeout(() => {
         setErrors([]);
@@ -48,21 +47,28 @@ function App() {
       },
     };
     const r = await fetch("/signup", config);
-    debugger;
     const userData = await r.json();
     if (r.ok) {
-      debugger;
-      //const { token } = r;
       localStorage.setItem("user_data", JSON.stringify(userData));
       setUser(userData);
       navigate("/homepage");
     } else {
-      const { errors } = r;
+      const { errors } = userData;
       setErrors([...errors]);
       setTimeout(() => {
         setErrors([]);
       }, 5000);
     }
+  };
+
+  const errorMessage = () => {
+    return errors.map((e, i) => {
+      return (
+        <h1 style={{ color: "red" }} key={i}>
+          {e}
+        </h1>
+      );
+    });
   };
 
   useEffect(() => {
@@ -78,10 +84,17 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Root />} />
-        <Route path="/login" element={<Login onLogin={handleLoginSubmit} />} />
+        <Route
+          path="/login"
+          element={
+            <Login onLogin={handleLoginSubmit} errorMessage={errorMessage} />
+          }
+        />
         <Route
           path="/signup"
-          element={<SignUp onSignUp={handleSignUpSubmit} />}
+          element={
+            <SignUp onSignUp={handleSignUpSubmit} errorMessage={errorMessage} />
+          }
         />
         <Route path="/homepage" element={<UserHomePage user={user} />} />
         <Route path="/background" element={<Background />} />
