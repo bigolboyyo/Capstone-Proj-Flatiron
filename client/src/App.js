@@ -9,9 +9,12 @@ import Adventure from "./components/AdventurePage/Adventure";
 import EndState from "./components/EndStatePage/EndState";
 import Root from "./components/Root/Root";
 
+import "./App.css";
+
 function App() {
   const [user, setUser] = useState(false);
   const [errors, setErrors] = useState([]);
+  const [authSwitch, setAuthSwitch] = useState(true);
 
   const navigate = useNavigate();
 
@@ -73,7 +76,7 @@ function App() {
 
   useEffect(() => {
     if (!localStorage.getItem("user_data")) {
-      navigate("/login");
+      navigate("/auth");
     } else {
       setUser(JSON.parse(localStorage.getItem("user_data")));
       navigate("/homepage");
@@ -85,15 +88,21 @@ function App() {
       <Routes>
         <Route path="/" element={<Root />} />
         <Route
-          path="/login"
+          path="/auth"
           element={
-            <Login onLogin={handleLoginSubmit} errorMessage={errorMessage} />
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <SignUp onSignUp={handleSignUpSubmit} errorMessage={errorMessage} />
+            authSwitch ? (
+              <Login
+                onLogin={handleLoginSubmit}
+                errorMessage={errorMessage}
+                setAuth={setAuthSwitch}
+              />
+            ) : (
+              <SignUp
+                onSignUp={handleSignUpSubmit}
+                errorMessage={errorMessage}
+                setAuth={setAuthSwitch}
+              />
+            )
           }
         />
         <Route path="/homepage" element={<UserHomePage user={user} />} />

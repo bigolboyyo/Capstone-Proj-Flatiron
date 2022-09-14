@@ -3,8 +3,11 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "../AuthPage/Auth.css";
 
-function Login({ onLogin, errorMessage }) {
+function Login({ onLogin, errorMessage, setAuth }) {
   const [userCreds, setUserCreds] = useState({
     username: "",
     password: "",
@@ -17,7 +20,8 @@ function Login({ onLogin, errorMessage }) {
   };
 
   return (
-    <div>
+    <div className="form-div">
+      Login
       <Form
         onSubmit={(e) => {
           e.preventDefault();
@@ -25,45 +29,59 @@ function Login({ onLogin, errorMessage }) {
           setUserCreds({ username: "", password: "" });
         }}
       >
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            name="username"
-            type="text"
-            placeholder="Enter username"
-            value={userCreds.username}
-            onChange={handleChange}
-            required={true}
-          />
-          <Form.Text className="text-muted">Username must be unique</Form.Text>
+        <Form.Group
+          as={Row}
+          className="mb-3"
+          controlId="formHorizontalUserName"
+        >
+          <Form.Label column sm={{ span: 20 }}>
+            Username:
+          </Form.Label>
+          <Col sm={{ span: 20 }}>
+            <Form.Control
+              name="username"
+              type="text"
+              placeholder="Enter username"
+              value={userCreds.username}
+              onChange={handleChange}
+              required={true}
+            />
+          </Col>
+          {/* <Form.Text className="text-muted">Username must be unique</Form.Text> */}
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={userCreds.password}
-            onChange={handleChange}
-            required={true}
-          />
+        <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
+          <Form.Label column sm={{ span: 20 }}>
+            Password:
+          </Form.Label>
+          <Col sm={{ span: 20 }}>
+            <Form.Control
+              name="password"
+              type="password"
+              placeholder="Password"
+              value={userCreds.password}
+              onChange={handleChange}
+              required={true}
+            />
+          </Col>
         </Form.Group>
-
-        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password Confirmation</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group> */}
-
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <Col sm={{ span: 10, offset: 5 }}>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Col>
       </Form>
       <Nav>
-        <Nav.Item>
-          Need an account?
-          <Nav.Link href="/signup">SignUp</Nav.Link>
-        </Nav.Item>
+        <Row>
+          <Col sm={{ span: 20, offset: 1 }}>
+            <Nav.Item className="auth-item">
+              Need an account?
+              <Nav.Link className="auth-link" onClick={() => setAuth(false)}>
+                SignUp
+              </Nav.Link>
+            </Nav.Item>
+          </Col>
+        </Row>
       </Nav>
       {errorMessage()}
     </div>

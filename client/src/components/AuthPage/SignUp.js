@@ -2,8 +2,12 @@ import React from "react";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Nav from "react-bootstrap/Nav";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "../AuthPage/Auth.css";
 
-function SignUp({ onSignUp, errorMessage }) {
+function SignUp({ onSignUp, errorMessage, setAuth }) {
   const [signUpCreds, setSignUpCreds] = useState({
     username: "",
     password: "",
@@ -17,7 +21,8 @@ function SignUp({ onSignUp, errorMessage }) {
   };
 
   return (
-    <div>
+    <div className="form-div">
+      SignUp
       <Form
         onSubmit={(e) => {
           e.preventDefault();
@@ -29,45 +34,74 @@ function SignUp({ onSignUp, errorMessage }) {
           });
         }}
       >
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            name="username"
-            type="text"
-            placeholder="Enter username"
-            value={signUpCreds.username}
-            onChange={handleChange}
-            required={true}
-          />
-          <Form.Text className="text-muted">Username must be unique</Form.Text>
+        <Form.Group
+          as={Row}
+          className="mb-3"
+          controlId="formHorizontalUserName"
+        >
+          <Form.Label>Username:</Form.Label>
+          <Col sm={{ span: 20 }}>
+            <Form.Control
+              name="username"
+              type="text"
+              placeholder="Enter username"
+              value={signUpCreds.username}
+              onChange={handleChange}
+              required={true}
+            />
+          </Col>
+          {/* <Form.Text className="text-muted">Username must be unique</Form.Text> */}
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={signUpCreds.password}
-            onChange={handleChange}
-            required={true}
-          />
+        <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
+          <Form.Label column sm={{ span: 20 }}>
+            Password:
+          </Form.Label>
+          <Col sm={{ span: 20 }}>
+            <Form.Control
+              name="password"
+              type="password"
+              placeholder="Password"
+              value={signUpCreds.password}
+              onChange={handleChange}
+              required={true}
+            />
+          </Col>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPasswordConfirmation">
-          <Form.Label>Password Confirmation</Form.Label>
-          <Form.Control
-            name="password_confirmation"
-            type="password"
-            placeholder="Password Confirmation"
-            value={signUpCreds.password_confirmation}
-            onChange={handleChange}
-            required={true}
-          />
+
+        <Form.Group
+          as={Row}
+          className="mb-3"
+          controlId="formBasicPasswordConfirmation"
+        >
+          <Form.Label column sm={{ span: 20 }}>
+            Password Confirmation:
+          </Form.Label>
+          <Col sm={{ span: 20 }}>
+            <Form.Control
+              name="password_confirmation"
+              type="password"
+              placeholder="Password Confirmation"
+              value={signUpCreds.password_confirmation}
+              onChange={handleChange}
+              required={true}
+            />
+          </Col>
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <Col sm={{ span: 10, offset: 5 }}>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Col>
       </Form>
+      <Nav>
+        <Nav.Item className="auth-item">
+          Have an account already?
+          <Nav.Link className="auth-link" onClick={() => setAuth(true)}>
+            Login
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
       {errorMessage()}
     </div>
   );
