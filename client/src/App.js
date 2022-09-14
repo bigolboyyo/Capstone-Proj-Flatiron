@@ -70,6 +70,19 @@ function App() {
     }
   };
 
+  const handleLogout = async () => {
+    const config = {
+      method: "DELETE",
+    };
+    fetch("/logout", config)
+      .then((r) => r.text())
+      .then((res) => {
+        console.log(res);
+        localStorage.clear();
+        navigate("/auth");
+      });
+  };
+
   const errorMessage = () => {
     return errors.map((e, i) => {
       return (
@@ -111,7 +124,10 @@ function App() {
             )
           }
         />
-        <Route path="/homepage" element={<UserHomePage user={user} />} />
+        <Route
+          path="/homepage"
+          element={<UserHomePage user={user} logout={handleLogout} />}
+        />
         <Route path="/background" element={<Background />} />
         <Route path="/adventure-start" element={<Adventure />} />
         <Route path="/storyline" element={<Storyline />} />

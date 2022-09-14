@@ -9,3 +9,6 @@
 //     navigate("/homepage");
 //   }
 // }, [user, navigate]);
+
+// import testpic from "../../Images/patrick_star.png";
+/* <img src={testpic} alt=""></img> */
