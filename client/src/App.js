@@ -1,6 +1,8 @@
 //Resources
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "./features/user/userSlice";
 
 //Styling
 //import Nav from "react-bootstrap/Nav";
@@ -18,7 +20,9 @@ import Root from "./components/Root/Root";
 import "./App.css";
 
 function App() {
-  const [user, setUser] = useState(false);
+  const dispatch = useDispatch();
+
+  //const [user, setUser] = useState(false);
   const [errors, setErrors] = useState([]);
   const [authSwitch, setAuthSwitch] = useState(true);
 
@@ -35,8 +39,7 @@ function App() {
     const r = await fetch("/login", config);
     const userData = await r.json();
     if (r.ok) {
-      localStorage.setItem("user_data", JSON.stringify(userData));
-      setUser(userData);
+      dispatch(setUser(JSON.stringify(userData)));
       navigate("/homepage");
     } else {
       const { errors } = userData;
@@ -58,8 +61,7 @@ function App() {
     const r = await fetch("/signup", config);
     const userData = await r.json();
     if (r.ok) {
-      localStorage.setItem("user_data", JSON.stringify(userData));
-      setUser(userData);
+      dispatch(setUser(JSON.stringify(userData)));
       navigate("/homepage");
     } else {
       const { errors } = userData;
@@ -126,7 +128,7 @@ function App() {
         />
         <Route
           path="/homepage"
-          element={<UserHomePage user={user} logout={handleLogout} />}
+          element={<UserHomePage logout={handleLogout} />}
         />
         <Route path="/background" element={<Background />} />
         <Route path="/adventure-start" element={<Adventure />} />
