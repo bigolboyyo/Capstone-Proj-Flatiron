@@ -95,6 +95,9 @@ function App() {
     });
   };
 
+  // Issue with navigation
+  // Always return to homepage after refresh, not current page
+  // No dependency is needed
   useEffect(() => {
     if (!localStorage.getItem("user_data")) {
       navigate("/auth");
@@ -102,7 +105,7 @@ function App() {
       dispatch(setUser(localStorage.getItem("user_data")));
       navigate("/homepage");
     }
-  }, [dispatch, navigate]);
+  }, []);
 
   return (
     <div className="App">
