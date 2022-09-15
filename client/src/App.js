@@ -99,10 +99,10 @@ function App() {
     if (!localStorage.getItem("user_data")) {
       navigate("/auth");
     } else {
-      setUser(JSON.parse(localStorage.getItem("user_data")));
+      dispatch(setUser(localStorage.getItem("user_data")));
       navigate("/homepage");
     }
-  }, []);
+  }, [dispatch, navigate]);
 
   return (
     <div className="App">

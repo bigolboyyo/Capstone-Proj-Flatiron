@@ -9,6 +9,14 @@ class SessionsController < ApplicationController
     end
   end
 
+  def show 
+    if @current_user 
+       render json: @current_user, status: :ok 
+    else 
+      render json: {errors: "No Active User"}, status: :unprocessable_entity
+    end
+  end
+
   def login
     @user = User.find_by(username: params[:username])
     if @user&.authenticate(params[:password])

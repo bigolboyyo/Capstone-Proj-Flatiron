@@ -1,22 +1,26 @@
 class BackgroundsController < ApplicationController
+    before_action :find_background, only: :show
+
     def index 
-
-    end
-
-    def show 
-
+        render json: Background.all, adapter: nil,
+        except: creation_ref, status: :ok
     end
 
     def create 
-
+        @background = Background.create!(background_params)
     end
 
-    def update 
-
+    def show 
+        render json: @background, status: :ok
     end
 
-    def destroy 
+    private 
 
+    def background_params
+        params.permit(:lawyer, :vagrant, :otaku)
     end
-    
+
+    def find_background 
+        @background = Background.find(params[:id])
+    end
 end

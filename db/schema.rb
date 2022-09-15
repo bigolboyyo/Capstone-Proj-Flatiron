@@ -18,8 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_025056) do
     t.boolean "lawyer"
     t.boolean "vagrant"
     t.boolean "otaku"
+    t.bigint "character_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_backgrounds_on_character_id"
   end
 
   create_table "characters", force: :cascade do |t|
@@ -37,5 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_025056) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "backgrounds", "characters"
   add_foreign_key "characters", "users"
 end
