@@ -13,8 +13,8 @@
 // import testpic from "../../Images/patrick_star.png";
 /* <img src={testpic} alt=""></img> */
 
-// const whoAmI = async () => {
-//   const req = await fetch("/me");
-//   const res = await req.json();
-//   console.log(res);
-// };
+const whoAmI = async () => {
+  const req = await fetch("/me");
+  const res = await req.json();
+  console.log(res);
+};

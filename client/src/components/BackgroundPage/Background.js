@@ -10,10 +10,39 @@ function Background() {
   const [vagrantDetails, setVagrantDetails] = useState(false);
   const [otakuDetails, setOtakuDetails] = useState(false);
   const [charName, setCharName] = useState("");
+  //const [userID, setUserID] = useState(null);
 
   const handleCharNameChange = (e) => {
     setCharName(e.target.value);
-    console.log(charName);
+  };
+
+  // const whoAmI = async () => {
+  //   const req = await fetch("/me");
+  //   const res = await req.json();
+  //   console.log(res);
+  //   return res.id;
+  // };
+
+  const submitCharacter = async () => {
+    debugger;
+    const character = {
+      character_name: charName,
+      user_id: JSON.parse(localStorage.getItem("user_data")).id,
+    };
+    const config = {
+      method: "POST",
+      body: JSON.stringify(character),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const r = await fetch("/characters", config);
+    const charRef = await r.json();
+    // Let's add this to my redux store
+    // Set the character's under user
+    // Do I need a background model here?
+    // Or just make it a char attribute?
+    console.log(charRef);
   };
 
   return (
@@ -72,6 +101,9 @@ function Background() {
           <p className="bkg-info">Info about the otaku background goes here!</p>
         ) : null}
       </div>
+      <button onClick={submitCharacter} className="start-adv-btn">
+        Start Adventure!
+      </button>
     </div>
   );
 }

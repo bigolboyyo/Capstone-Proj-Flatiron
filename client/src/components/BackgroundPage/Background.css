@@ -6,6 +6,7 @@
   justify-content: center;
   gap: 1rem;
   position: relative;
+  transform: translate(0px, -12.5rem);
 }
 
 .bkg-img-container {
@@ -49,4 +50,17 @@
 .char-name-container {
   width: 25rem;
   align-self: center;
+}
+
+.start-adv-btn {
+  width: 20rem;
+  align-self: center;
+  transform: translateY(1.5rem);
+  opacity: 0.7;
+}
+
+.start-adv-btn:hover {
+  border: solid;
+  opacity: 1;
+  scale: 1.2;
 }
