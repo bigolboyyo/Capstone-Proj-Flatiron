@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   # Character Creation
   resources :characters
-  resources :backgrounds, only: [:index, :show]
+  # resources :backgrounds, only: [:index, :show]
   
 
 

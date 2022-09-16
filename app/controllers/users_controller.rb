@@ -17,9 +17,12 @@ skip_before_action :authorize, only: [:create]
         end
     end
 
+    
     def create 
         @user = User.create!(user_params)
         if @user 
+            #Should create a session after signup??
+        session[:user_id] = @user.id
         render json: @user, status: :ok
         else 
             render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity

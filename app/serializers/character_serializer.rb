@@ -1,4 +1,4 @@
 class CharacterSerializer < ActiveModel::Serializer
-  attributes :id, :character_name
-  has_one :background
+  attributes :id, :character_name, :background
+  
 end

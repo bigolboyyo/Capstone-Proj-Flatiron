@@ -28,7 +28,7 @@ class CharactersController < ApplicationController
     private 
 
     def char_params 
-        params.permit(:character_name, :user_id)
+        params.permit(:character_name, :background, :user_id)
     end
 
     def find_char 

@@ -24,7 +24,6 @@ function Background() {
   // };
 
   const submitCharacter = async () => {
-    debugger;
     const character = {
       character_name: charName,
       user_id: JSON.parse(localStorage.getItem("user_data")).id,

@@ -10,22 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_13_025056) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_13_023048) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "backgrounds", force: :cascade do |t|
-    t.boolean "lawyer"
-    t.boolean "vagrant"
-    t.boolean "otaku"
-    t.bigint "character_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_backgrounds_on_character_id"
-  end
-
   create_table "characters", force: :cascade do |t|
     t.string "character_name"
+    t.string "background"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,6 +30,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_025056) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "backgrounds", "characters"
   add_foreign_key "characters", "users"
 end
