@@ -9,6 +9,12 @@ function Background() {
   const [lawyerDetails, setLawyerDetails] = useState(false);
   const [vagrantDetails, setVagrantDetails] = useState(false);
   const [otakuDetails, setOtakuDetails] = useState(false);
+  const [charName, setCharName] = useState("");
+
+  const handleCharNameChange = (e) => {
+    setCharName(e.target.value);
+    console.log(charName);
+  };
 
   return (
     <div className="background-page">
@@ -17,7 +23,13 @@ function Background() {
       </h1>
       <div className="char-name-container">
         <label>Character Name: </label>{" "}
-        <input name="character_name" type="text"></input>
+        <input
+          onChange={handleCharNameChange}
+          name="character_name"
+          type="text"
+          value={charName}
+          required={true}
+        ></input>
       </div>
       <div className="bkg-img-container">
         <img
