@@ -1,0 +1,18 @@
+.background-page {
+  width: auto;
+  height: 100rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bkg-img-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.imported-image {
+  width: 20rem;
+}

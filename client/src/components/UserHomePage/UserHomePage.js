@@ -2,17 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 import "./UserHomePage.css";
-import { useNavigate } from "react-router-dom";
+import CharacterSlot from "./CharacterSlot";
 
 function UserHomePage({ logout }) {
   const user = {
     id: useSelector((state) => state.user.id),
     username: useSelector((state) => state.user.username),
-  };
-  const navigate = useNavigate();
-
-  const navigateToCreation = () => {
-    navigate("/background");
   };
 
   return (
@@ -25,18 +20,9 @@ function UserHomePage({ logout }) {
           <h1>{user.id}</h1>
           <h1>{user.username}</h1>
           <div className="character-creation">
-            <h1>
-              [Empty Character Slot] ------{" "}
-              <button onClick={navigateToCreation}>Create Character</button>
-            </h1>
-            <h1>
-              [Empty Character Slot] ------{" "}
-              <button onClick={navigateToCreation}>Create Character</button>
-            </h1>
-            <h1>
-              [Empty Character Slot] ------{" "}
-              <button onClick={navigateToCreation}>Create Character</button>
-            </h1>
+            <CharacterSlot />
+            <CharacterSlot />
+            <CharacterSlot />
           </div>
         </div>
       </div>
