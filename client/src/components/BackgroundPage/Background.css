@@ -5,14 +5,45 @@
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  position: relative;
 }
 
 .bkg-img-container {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  padding-bottom: 5rem;
+  position: relative;
 }
 
 .imported-image {
   width: 20rem;
+  position: relative;
+}
+
+#lawyer-img:hover,
+#vagrant-img:hover,
+#otaku-img:hover {
+  border: solid black;
+}
+
+.bkg-details {
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: flex-start; */
+  /* gap: 2rem;
+  justify-content: center; */
+  position: absolute;
+  transform: translate(22.1rem, 22.5rem);
+}
+
+.bkg-info {
+  width: 20rem;
+  border: solid;
+  padding: 1rem;
+}
+
+.char-name-container {
+  width: 25rem;
+  align-self: center;
 }
