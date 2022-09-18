@@ -5,7 +5,7 @@ export const userSlice = createSlice({
   initialState: {
     id: false,
     username: false,
-    characters: [],
+    active_character: false,
   },
   reducers: {
     setUser: (state, userData) => {
@@ -14,7 +14,18 @@ export const userSlice = createSlice({
       state.id = data.id;
       state.username = data.username;
     },
-    setUserCharacters: () => {},
+    setUserCharacters: (state, character) => {
+      localStorage.clear();
+      state.active_character = character.payload;
+      localStorage.setItem(
+        "user_data",
+        JSON.stringify({
+          id: state.id,
+          username: state.username,
+          active_character: state.active_character,
+        })
+      );
+    },
   },
 });
 

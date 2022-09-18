@@ -38,7 +38,7 @@
   /* gap: 2rem;
   justify-content: center; */
   position: absolute;
-  transform: translate(22.1rem, 25.5rem);
+  transform: translate(22.1rem, 30rem);
 }
 
 .bkg-info {
@@ -63,4 +63,11 @@
   border: solid;
   opacity: 1;
   scale: 1.2;
+}
+
+.bkg-choice {
+  text-align-last: center;
+  padding-top: 1rem;
+  font-family: fantasy;
+  font-size: larger;
 }
