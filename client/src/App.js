@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "./features/user/userSlice";
+// import { useSelector } from "react-redux";
 
 //Styling
 //import Nav from "react-bootstrap/Nav";
@@ -21,8 +22,6 @@ import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
-
-  //const [user, setUser] = useState(false);
   const [errors, setErrors] = useState([]);
   const [authSwitch, setAuthSwitch] = useState(true);
 
@@ -86,13 +85,17 @@ function App() {
   };
 
   const errorMessage = () => {
-    return errors.map((e, i) => {
-      return (
-        <h1 style={{ color: "red" }} key={i}>
-          {e}
-        </h1>
-      );
-    });
+    if (errors) {
+      return errors.map((e, i) => {
+        return (
+          <h1 style={{ color: "red" }} key={i}>
+            {e}
+          </h1>
+        );
+      });
+    } else {
+      return null;
+    }
   };
 
   // Issue with navigation

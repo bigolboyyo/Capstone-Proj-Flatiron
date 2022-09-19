@@ -15,7 +15,7 @@ export const userSlice = createSlice({
       state.username = data.username;
     },
     setUserCharacters: (state, character) => {
-      localStorage.clear();
+      //localStorage.clear();
       state.active_character = character.payload;
       localStorage.setItem(
         "user_data",

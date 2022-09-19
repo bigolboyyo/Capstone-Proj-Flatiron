@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorize, only: :login
+  skip_before_action :authorize, only: :login
 
   def index
     if session[:user_id]
@@ -9,11 +9,11 @@ class SessionsController < ApplicationController
     end
   end
 
-  def show 
-    if @current_user 
-       render json: @current_user, status: :ok 
-    else 
-      render json: {errors: "No Active User"}, status: :unprocessable_entity
+  def show
+    if @current_user
+      render json: @current_user, status: :ok
+    else
+      render json: { errors: "No Active User" }, status: :unprocessable_entity
     end
   end
 
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
-      render json: @user , status: :ok
+      render json: @user, status: :ok
     else
       render json: { errors: ["Invalid Username or Password"] }, status: :unauthorized
     end
