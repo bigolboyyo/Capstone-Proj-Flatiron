@@ -1,39 +1,42 @@
 class CharactersController < ApplicationController
-    before_action :find_character, only: [:show, :destroy, :update]
+  before_action :find_character, only: [:show, :destroy, :update]
 
-    def index 
-        render json: Character.all, adapter: nil,
-        except: creation_ref, status: :ok
+  def index
+    render json: Character.all, adapter: nil,
+           except: creation_ref, status: :ok
+  end
+
+  def show
+    render json: @character, status: :ok
+  end
+
+  def create
+    if @current_user.characters.size >= 3
+      render json: { errors: "Maximum number of characters created" }, status: :unprocessable_entity
+    else
+      @character = Character.create!(char_params)
+      render json: @character, status: :created
     end
+  end
 
-    def show 
-        render json: @character, status: :ok
-    end
+  def update
+    @character.update!(char_params)
+    render json: @character, status: :ok
+  end
 
-    def create 
-        @character = Character.create!(char_params)
-        render json: @character, status: :created
-    end
+  def destroy
+    @character.destroy
+    head :no_content
+  end
 
-    def update 
-        @character.update!(char_params)
-        render json: @character, status: :ok
-    end
+  private
 
-    def destroy 
-        @character.destroy 
-        head :no_content
-    end
+  def char_params
+    params.permit(:character_name, :background, :user_id)
+  end
 
-    private 
-
-    def char_params 
-        params.permit(:character_name, :background, :user_id)
-    end
-
-    def find_char 
-        @character = Character.find(params[:id])
-        !@character ? record_not_found(@character) : @character
-    end
-    
+  def find_char
+    @character = Character.find(params[:id])
+    !@character ? record_not_found(@character) : @character
+  end
 end

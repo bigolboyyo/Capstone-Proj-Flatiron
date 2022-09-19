@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 import "./UserHomePage.css";
@@ -9,6 +9,21 @@ function UserHomePage({ logout }) {
     id: useSelector((state) => state.user.id),
     username: useSelector((state) => state.user.username),
   };
+
+  const fetchUserCharacters = async () => {
+    const r = await fetch("/usr-chars");
+    const chars = await r.json();
+    if (r.ok) {
+      console.log(chars);
+    } else {
+      const { errors } = chars;
+      console.log(errors);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserCharacters();
+  }, []);
 
   return (
     <>
