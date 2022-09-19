@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function CharacterSlot() {
+function CharacterSlot({ char, idx }) {
   const navigate = useNavigate();
 
   const navigateToCreation = () => {
