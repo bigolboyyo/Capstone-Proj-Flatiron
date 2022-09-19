@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_13_023048) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_19_210029) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "character_items", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_character_items_on_character_id"
+    t.index ["item_id"], name: "index_character_items_on_item_id"
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "character_name"
@@ -23,6 +32,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_023048) do
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "item_name"
+    t.string "inventory_type"
+    t.bigint "inventory_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["inventory_type", "inventory_id"], name: "index_items_on_inventory"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -30,5 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_023048) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "character_items", "characters"
+  add_foreign_key "character_items", "items"
   add_foreign_key "characters", "users"
 end

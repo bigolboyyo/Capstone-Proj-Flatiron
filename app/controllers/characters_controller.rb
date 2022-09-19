@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :find_character, only: [:show, :destroy, :update]
+  before_action :find_char, only: [:show, :destroy, :update]
 
   def index
     render json: Character.all, adapter: nil,
@@ -10,6 +10,7 @@ class CharactersController < ApplicationController
     render json: @character, status: :ok
   end
 
+  # ON CREATION WE MUST ALSO CREATE AN INVENTORY TO ASSOCIATE TO THIS NEWLY CREATED CHARACTER
   def create
     if @current_user.characters.size >= 3
       render json: { errors: "Maximum number of characters created" }, status: :unprocessable_entity

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Adventure.css";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 // This will be the adventure start page. The route after creating a character
 // Will give info and starting details based around the background picked
@@ -14,6 +15,7 @@ import { useSelector } from "react-redux";
 // // // Present Options to navigate(render) the new storyline dialogue and associated options
 
 function Adventure() {
+  const navigate = useNavigate();
   // Need access to the current character that was created
   // Add all this to redux store from the background page
   // Additionally the userHomepage will need access and conditionally render after redux user has characters
@@ -24,12 +26,20 @@ function Adventure() {
   const activeChar = useSelector((state) => state.user.active_character);
   console.log(activeChar);
 
+  const startAdventure = () => {
+    navigate("/storyline");
+  };
+
+  // Can set redux store to have the active characters current storyline they are
+  // This way when you hit continue from userhomepage, you return back to that storyline
+
   return (
     <div className="adv-start-page">
       <h1>Hello World</h1>
       <p>This is the adventure start page</p>
       <p>Character Name: {activeChar.character_name}</p>
       <p>Character's Background: {activeChar.background}</p>
+      <button onClick={startAdventure}>Start</button>
     </div>
   );
 }

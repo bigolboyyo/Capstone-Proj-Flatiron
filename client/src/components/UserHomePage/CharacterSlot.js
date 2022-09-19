@@ -1,14 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function CharacterSlot({ char, idx }) {
+function CharacterSlot({ idx }) {
   const navigate = useNavigate();
 
   const navigateToCreation = () => {
     navigate("/background");
   };
   return (
-    <h1>
+    <h1 key={idx}>
       [Empty Character Slot] ------{" "}
       <button onClick={navigateToCreation}>Create Character</button>
     </h1>

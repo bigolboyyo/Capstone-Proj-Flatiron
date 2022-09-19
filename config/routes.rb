@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :character_items
+  resources :items
+  resources :inventories
   # User Creation
   resources :users, only: [:index, :show, :create]
 

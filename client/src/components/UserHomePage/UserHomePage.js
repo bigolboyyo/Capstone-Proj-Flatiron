@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import "./UserHomePage.css";
 import CharacterSlot from "./CharacterSlot";
 import CharacterFilled from "./CharacterFilled";
+import { v4 as uuidv4 } from "uuid";
 
 function UserHomePage({ logout }) {
   const user = {
@@ -28,18 +29,23 @@ function UserHomePage({ logout }) {
     fetchUserCharacters();
   }, []);
 
-  const charFilled = characters.map((c, i) => {
-    return <CharacterFilled char={c} idx={i} />;
-  });
-
   const maxThree = (chars, maxLength) => {
+    let result = [];
+    let diff = maxLength - chars.length;
     for (let i = 0; i < chars.length; i++) {
-      if (chars.length <= maxLength) {
-        return <CharacterFilled char={chars[i]} idx={i} />;
-      } else {
-        return <CharacterSlot />;
-      }
+      result.push(<CharacterFilled char={chars[i]} idx={i} key={i} />);
     }
+
+    const createCharSlots = () => {
+      let arr = [];
+      for (let i = 0; i < diff; i++) {
+        arr.push(<CharacterSlot key={uuidv4()} />);
+      }
+      return arr;
+    };
+
+    result = result.concat(createCharSlots());
+    return result;
   };
 
   return (
@@ -51,7 +57,17 @@ function UserHomePage({ logout }) {
           </Button>
           <h1>{user.id}</h1>
           <h1>{user.username}</h1>
-          <div className="character-creation">{}</div>
+          <div className="character-creation">
+            {characters.length === 0 ? (
+              <>
+                <CharacterSlot />
+                <CharacterSlot />
+                <CharacterSlot />
+              </>
+            ) : (
+              maxThree(characters, 3)
+            )}
+          </div>
         </div>
       </div>
     </>
