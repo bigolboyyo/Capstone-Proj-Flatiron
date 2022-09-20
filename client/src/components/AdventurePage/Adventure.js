@@ -2,6 +2,9 @@ import React from "react";
 import "./Adventure.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import LawyerIntro from "./LawyerIntro";
+import OtakuIntro from "./OtakuIntro";
+import VagrantIntro from "./VagrantIntro";
 
 // This will be the adventure start page. The route after creating a character
 // Will give info and starting details based around the background picked
@@ -30,15 +33,28 @@ function Adventure() {
     navigate("/storyline");
   };
 
+  const advIntro = (activeChar) => {
+    const background = activeChar.background;
+
+    if (background === "lawyer") {
+      return <LawyerIntro char={activeChar} />;
+    }
+
+    if (background === "vagrant") {
+      return <VagrantIntro char={activeChar} />;
+    }
+
+    if (background === "otaku") {
+      return <OtakuIntro char={activeChar} />;
+    }
+  };
+
   // Can set redux store to have the active characters current storyline they are
   // This way when you hit continue from userhomepage, you return back to that storyline
 
   return (
     <div className="adv-start-page">
-      <h1>Hello World</h1>
-      <p>This is the adventure start page</p>
-      <p>Character Name: {activeChar.character_name}</p>
-      <p>Character's Background: {activeChar.background}</p>
+      {advIntro(activeChar)}
       <button onClick={startAdventure}>Start</button>
     </div>
   );

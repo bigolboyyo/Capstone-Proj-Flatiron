@@ -8,6 +8,14 @@ function CharacterFilled({ char, idx }) {
     fetch(`/characters/${char.id}`, config)
       .then((r) => r.text())
       .then((res) => {
+        const localCopy = JSON.parse(localStorage.getItem("user_data"));
+        localCopy.active_character = {
+          id: null,
+          character_name: "",
+          background: "",
+        };
+        const copyString = JSON.stringify(localCopy);
+        localStorage.setItem("user_data", copyString);
         window.location.reload();
       });
   };

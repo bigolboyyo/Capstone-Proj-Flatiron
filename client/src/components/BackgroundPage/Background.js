@@ -127,8 +127,6 @@ function Background() {
       {otakuDetails ? (
         <p className="bkg-info">Info about the otaku background goes here!</p>
       ) : null}
-      {/* </div> */}
-      {/* <p className="bkg-info">Info about the otaku background goes here!</p> */}
     </div>
   );
 }
