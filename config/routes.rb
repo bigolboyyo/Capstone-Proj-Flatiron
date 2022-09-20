@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :character_items
-  resources :items
-  resources :inventories
+
   # User Creation
   resources :users, only: [:index, :show, :create]
 
@@ -15,9 +13,17 @@ Rails.application.routes.draw do
 
   # Character Creation
   resources :characters
-  # resources :backgrounds, only: [:index, :show]
+  resources :character_items
+  resources :items
+  resources :inventories
 
   get "usr-chars", to: "users#characters"
+
+  # Story Creation
+  resources :stories
+  resources :choices
+  resources :options
+  resources :story_lines
 
   get "*path",
       to: "fallback#index",
