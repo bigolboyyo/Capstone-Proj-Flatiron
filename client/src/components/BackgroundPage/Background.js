@@ -114,24 +114,21 @@ function Background() {
           }}
         ></img>
       </div>
-      <div className="bkg-details">
-        {lawyerDetails ? (
-          <p className="bkg-info">
-            Info about the lawyer background goes here!
-          </p>
-        ) : null}
-        {vagrantDetails ? (
-          <p className="bkg-info">
-            Info about the vagrant background goes here!
-          </p>
-        ) : null}
-        {otakuDetails ? (
-          <p className="bkg-info">Info about the otaku background goes here!</p>
-        ) : null}
-      </div>
       <button onClick={submitCharacter} className="start-adv-btn">
         Start Adventure!
       </button>
+      {/* <div className="bkg-details"> */}
+      {lawyerDetails ? (
+        <p className="bkg-info">Info about the lawyer background goes here!</p>
+      ) : null}
+      {vagrantDetails ? (
+        <p className="bkg-info">Info about the vagrant background goes here!</p>
+      ) : null}
+      {otakuDetails ? (
+        <p className="bkg-info">Info about the otaku background goes here!</p>
+      ) : null}
+      {/* </div> */}
+      {/* <p className="bkg-info">Info about the otaku background goes here!</p> */}
     </div>
   );
 }

@@ -55,8 +55,9 @@ function UserHomePage({ logout }) {
           <Button className="logout-btn" onClick={logout}>
             Logout
           </Button>
-          <h1>{user.id}</h1>
-          <h1>{user.username}</h1>
+          <div className="home-title">
+            <h1>{user.username}</h1>
+          </div>
           <div className="character-creation">
             {characters.length === 0 ? (
               <>
