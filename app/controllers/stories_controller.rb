@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   before_action :find_story, only: [:show, :destroy, :update]
 
   def index
-    render json: Story.all, adapter: nil,
+    render json: Story.all,
            except: creation_ref, status: :ok
   end
 

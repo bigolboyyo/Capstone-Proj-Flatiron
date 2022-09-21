@@ -19,4 +19,4 @@ starting_choice_one = Choice.create!(option_id: starting_option.id, choice_text:
 starting_choice_two = Choice.create!(option_id: starting_option.id, choice_text: "SLEEP")
 starting_choice_three = Choice.create!(option_id: starting_option.id, choice_text: "CODE")
 
-puts "Seeding completed!!!"
+puts "Seeding Completed!!!"

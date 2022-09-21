@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :items
   resources :inventories
 
+  # List a User's Created Characters
   get "usr-chars", to: "users#characters"
 
   # Story Creation

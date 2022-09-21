@@ -2,7 +2,7 @@ class OptionsController < ApplicationController
   before_action :find_option, only: [:show, :destroy, :update]
 
   def index
-    render json: Option.all, adapter: nil,
+    render json: Option.all,
            except: creation_ref, status: :ok
   end
 
