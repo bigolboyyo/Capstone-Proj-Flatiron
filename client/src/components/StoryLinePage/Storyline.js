@@ -4,35 +4,30 @@ import Option from "../Option/Option";
 import "../StoryLinePage/Storyline.css";
 
 function Storyline() {
-  const [storyLines, setStoryLines] = useState([]);
+  const [story, setStory] = useState([]);
+  const [storyLine, setStoryLine] = useState([]);
   const [choices, setChoices] = useState([]);
 
-  const fetchStoryLines = async () => {
+  const fetchStory = async () => {
     const r = await fetch("/story_lines");
     const story = await r.json();
-    setStoryLines(story);
-    debugger;
-    setChoices(story[1].choices);
+    setStory(story);
+    setStoryLine(story[0]);
+    setChoices(story[0].choices);
   };
 
-  console.log(choices);
-  console.log(storyLines);
+  useEffect(() => {
+    fetchStory();
+  }, []);
 
-  // const condGrabChoices = () => {
-  //   return storyLines.length === 0 ? null : setChoices(storyLines[0].choices);
-  // };
-
-  //console.log(storyLines);
-
-  // useEffect(() => {
-  //   condGrabChoices();
-  // }, [storyLines]);
-
-  //console.log(choices);
+  const navStoryLine = (id) => {
+    setStoryLine(story[id]);
+    setChoices(story[id].choices);
+  };
 
   const mappedChoices = () => {
     return choices.map((c) => {
-      return <Option key={c.id} choice={c} />;
+      return <Option key={c.id} choice={c} navStoryLine={navStoryLine} />;
     });
   };
 
@@ -41,9 +36,8 @@ function Storyline() {
   // OPTION COMPONENT
   return (
     <div className="storyline-container">
-      <button onClick={fetchStoryLines}>Fetch</button>
       <div className="story-dialogue-container">
-        {storyLines.length === 0 ? null : <Dialogue story={storyLines} />}
+        {story.length === 0 ? null : <Dialogue storyLine={storyLine} />}
       </div>
 
       <div className="options-container">{mappedChoices()}</div>
