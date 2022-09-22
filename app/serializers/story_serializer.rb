@@ -1,4 +1,3 @@
 class StorySerializer < ActiveModel::Serializer
-  attributes :id
-  has_many :options
+  attributes :id, :character_id, :starting_point
 end

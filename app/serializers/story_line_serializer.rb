@@ -1,3 +1,5 @@
 class StoryLineSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :dialogue, :storyline_img
+
+  has_many :choices
 end
