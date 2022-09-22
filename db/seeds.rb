@@ -24,19 +24,12 @@ second_choice_one = Choice.create!(option_id: second_option.id, choice_text: "CR
 second_choice_two = Choice.create!(option_id: second_option.id, choice_text: "CRY AGAIN")
 second_choice_three = Choice.create!(option_id: second_option.id, choice_text: "SUCCEED")
 second_choice_four = Choice.create!(option_id: second_option.id, choice_text: "KEEP CRYING")
-
 third_testing_line = StoryLine.create!(dialogue: "This is the third dialogue", storyline_img: "A THIRD IMAGE WOOOO")
-
 fourth_testing_line = StoryLine.create!(dialogue: "FOURTH DIALOGUE", storyline_img: "IMAGE NOT HURRR")
-
 fifth_testing_line = StoryLine.create!(dialogue: "fifth DIALOGUE", storyline_img: "IMAGE NOT HURRR")
-
 sixth_testing_line = StoryLine.create!(dialogue: "sixth DIALOGUE", storyline_img: "IMAGE NOT HURRRRRR")
-
 seventh_testing_line = StoryLine.create!(dialogue: "seventh DIALOGUE", storyline_img: "IMAGE NOT HURRRRRRRRRRRRR")
-
 eigth_testing_line = StoryLine.create!(dialogue: "8888888 DIALOGUE", storyline_img: "IMAGE NOT HURRRRRRRRRRRRRRRRRRR")
-
 ninth_testing_line = StoryLine.create!(dialogue: "9 tho", storyline_img: "nintthhhh")
 
 # break_everything = Choice.create!(option_id: second_option.id, choice_text: "B R E A K ")

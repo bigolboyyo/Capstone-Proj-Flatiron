@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   resources :options
   resources :story_lines
 
+  # Looking to create a custom method to grab the specific storylines for the char background
+  get "char-story", to: "story_lines#associated_story_lines"
+
   get "*path",
       to: "fallback#index",
       constraints: ->(req) { !req.xhr? && req.format.html? }

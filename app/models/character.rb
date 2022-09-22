@@ -3,6 +3,6 @@ class Character < ApplicationRecord
   has_many :character_items
   has_many :items, through: :character_items
   alias_attribute :inventory, :items
-  has_many :stories
+  has_many :stories, dependent: :destroy
   validates :character_name, :background, :user_id, presence: true
 end

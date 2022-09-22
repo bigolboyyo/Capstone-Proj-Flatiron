@@ -22,12 +22,23 @@ function Background() {
     setCharName(e.target.value);
   };
 
-  // const whoAmI = async () => {
-  //   const req = await fetch("/me");
-  //   const res = await req.json();
-  //   console.log(res);
-  //   return res.id;
-  // };
+  const postStoryRef = async (story) => {
+    const config = {
+      method: "POST",
+      body: JSON.stringify(story),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const r = await fetch("/stories", config);
+    if (r.ok) {
+      const storyCreation = await r.json();
+      console.log(storyCreation);
+    } else {
+      const errors = await r.json();
+      console.log(errors);
+    }
+  };
 
   const submitCharacter = async () => {
     // Add background state?
@@ -36,6 +47,7 @@ function Background() {
       user_id: JSON.parse(localStorage.getItem("user_data")).id,
       background: background,
     };
+
     const config = {
       method: "POST",
       body: JSON.stringify(character),
@@ -46,10 +58,11 @@ function Background() {
     const r = await fetch("/characters", config);
     if (r.ok) {
       const charRef = await r.json();
-      // Let's add this to my redux store
-      // Set the character's under user
-      // Do I need a background model here?
-      // Or just make it a char attribute?
+      const story = {
+        starting_point: `${charRef.background} story line`,
+        character_id: charRef.id,
+      };
+      postStoryRef(story);
       dispatch(setUserCharacters(charRef));
       navigate("/adventure-start");
     } else {

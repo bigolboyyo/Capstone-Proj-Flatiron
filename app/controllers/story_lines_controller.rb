@@ -10,6 +10,17 @@ class StoryLinesController < ApplicationController
     render json: @story_line, status: :ok
   end
 
+  # A custom method here to only show the storylines associated with the character's background?
+
+  def associated_story_lines
+    # A before_action that finds the relative character???
+    # can use the @current_user from authorize?
+    # Route HAS been created!!!
+
+    # @active_character = @current_user.characters.find{????}
+    debugger
+  end
+
   def create
     @story_line = Story.create!(story_line_params)
     render json: @story_line, status: :created
