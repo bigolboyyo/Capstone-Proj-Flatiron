@@ -42,7 +42,14 @@ function Storyline() {
     });
   };
 
-  const saveData = async () => {};
+  //TODO: Take storyLine.id and send it on save button click
+  // Update localStorage
+  // Update Redux
+  // Update database
+
+  // Could probably either make a custom redux method,
+  // or even just call the setActiveStory and update with the new id?
+  const saveData = async (id) => {};
 
   const goHome = () => {
     navigate("/homepage");
