@@ -43,13 +43,13 @@ function Background() {
 
     const start = startingStoryLine();
     // result.push(start);
-    dispatch(setActiveStoryLine(start));
 
     const story = {
       starting_point: `${background} story line`,
       character_id: char.id,
       current_story_line: start,
     };
+
     const config = {
       method: "POST",
       body: JSON.stringify(story),
@@ -61,6 +61,7 @@ function Background() {
     const activeStory = await r.json();
     // result.push(activeStory);
     dispatch(setActiveStory(activeStory));
+    dispatch(setActiveStoryLine(start));
     // console.log(result);
   };
 

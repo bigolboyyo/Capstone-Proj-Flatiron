@@ -13,7 +13,7 @@ class StoriesController < ApplicationController
   def active_story
     @cur_story = Story.all.find { |s| s.character_id == params[:character_id] }
     @active_story_line = @cur_story.current_story_line
-    render json: @active_story_line, status: :ok
+    render json: { cur_story: @cur_story, active_story_line: @active_story_line }, status: :ok
   end
 
   def create
@@ -34,7 +34,7 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.permit(:starting_point, :character_id)
+    params.permit(:starting_point, :character_id, :current_story_line)
   end
 
   def find_story

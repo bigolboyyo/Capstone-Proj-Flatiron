@@ -1,15 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import {
+  setActiveCharacter,
+  setActiveStory,
+  setActiveStoryLine,
+} from "../../features/user/userSlice";
+import { useDispatch } from "react-redux";
 
 function CharacterFilled({ char, idx }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const grabStorage = () => {
-    return JSON.parse(localStorage.getItem("user_data"));
-  };
+  // const grabStorage = () => {
+  //   return JSON.parse(localStorage.getItem("user_data"));
+  // };
 
-  const storage = grabStorage();
+  // const storage = grabStorage();
 
   const fetchUsrChars = async () => {
     const r = await fetch("/usr-chars");
@@ -30,8 +36,10 @@ function CharacterFilled({ char, idx }) {
     };
 
     const r = await fetch("/cur-story", config);
-    const curStoryLine = await r.json();
-
+    const storyData = await r.json();
+    dispatch(setActiveCharacter(char));
+    dispatch(setActiveStory(storyData.cur_story));
+    dispatch(setActiveStoryLine(storyData.active_story_line));
     navigate("/storyline");
   };
 

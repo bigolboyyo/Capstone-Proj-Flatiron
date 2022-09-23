@@ -6,10 +6,11 @@ import "../StoryLinePage/Storyline.css";
 import { useSelector } from "react-redux";
 import { setActiveStoryLine } from "../../features/user/userSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Storyline() {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   // const [story, setStory] = useState([]);
   // const [storyLine, setStoryLine] = useState([]);
   // const [choices, setChoices] = useState([]);
@@ -41,6 +42,12 @@ function Storyline() {
     });
   };
 
+  const saveData = async () => {};
+
+  const goHome = () => {
+    navigate("/homepage");
+  };
+
   // I have my active character set in REDUX
   // So here instead of grabbing all the story_lines I could do either one of two things
 
@@ -57,6 +64,10 @@ function Storyline() {
   return (
     <div className="storyline-container">
       <div className="story-dialogue-container">
+        <div className="game-nav">
+          <button onClick={goHome}>HOME</button>
+          <button>SAVE</button>
+        </div>
         <Dialogue storyLine={storyLine} />
       </div>
 
