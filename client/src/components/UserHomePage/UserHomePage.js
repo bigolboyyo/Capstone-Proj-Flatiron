@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { grabAllStories } from "../../features/user/userSlice";
 import { Button } from "react-bootstrap";
 import "./UserHomePage.css";
 import CharacterSlot from "./CharacterSlot";
@@ -7,9 +8,24 @@ import CharacterFilled from "./CharacterFilled";
 import { v4 as uuidv4 } from "uuid";
 
 function UserHomePage({ logout }) {
+  const grabStorage = () => {
+    return JSON.parse(localStorage.getItem("user_data"));
+  };
+  const storage = grabStorage();
+
+  const dispatch = useDispatch();
   const user = {
     id: useSelector((state) => state.user.id),
     username: useSelector((state) => state.user.username),
+    active_character: storage.active_character,
+    active_story: storage.active_story,
+    current_storyline: storage.current_storyline,
+  };
+
+  const fetchStories = async () => {
+    const r = await fetch("/story_lines");
+    const stories = await r.json();
+    dispatch(grabAllStories(stories));
   };
 
   const [characters, setCharacters] = useState([]);
@@ -27,6 +43,7 @@ function UserHomePage({ logout }) {
 
   useEffect(() => {
     fetchUserCharacters();
+    fetchStories();
   }, []);
 
   const maxThree = (chars, maxLength) => {
@@ -57,6 +74,8 @@ function UserHomePage({ logout }) {
           </Button>
           <div className="home-title">
             <h1>{user.username}</h1>
+            <p>{user.active_character.character_name}</p>
+            {/* <p>{user.current_storyline}</p> */}
           </div>
           <div className="character-creation">
             {characters.length === 0 ? (

@@ -6,6 +6,9 @@ export const userSlice = createSlice({
     id: false,
     username: false,
     active_character: false,
+    active_story: false,
+    current_storyline: false,
+    all_stories: false,
   },
   reducers: {
     setUser: (state, userData) => {
@@ -14,7 +17,11 @@ export const userSlice = createSlice({
       state.id = data.id;
       state.username = data.username;
     },
-    setUserCharacters: (state, character) => {
+    grabAllStories: (state, stories) => {
+      state.all_stories = stories.payload;
+      localStorage.setItem("stories", JSON.stringify(state.all_stories));
+    },
+    setActiveCharacter: (state, character) => {
       //localStorage.clear();
       state.active_character = character.payload;
       localStorage.setItem(
@@ -26,8 +33,37 @@ export const userSlice = createSlice({
         })
       );
     },
+    setActiveStory: (state, story) => {
+      const data = JSON.parse(localStorage.getItem("user_data"));
+      state.active_story = story.payload;
+      localStorage.setItem(
+        "user_data",
+        JSON.stringify({
+          ...data,
+          active_story: state.active_story,
+        })
+      );
+    },
+    setActiveStoryLine: (state, activeStory) => {
+      const current = parseInt(activeStory.payload);
+      const data = JSON.parse(localStorage.getItem("user_data"));
+      state.current_storyline = current;
+      localStorage.setItem(
+        "user_data",
+        JSON.stringify({
+          ...data,
+          current_storyline: state.current_storyline,
+        })
+      );
+    },
   },
 });
 
-export const { setUser, setUserCharacters } = userSlice.actions;
+export const {
+  setUser,
+  grabAllStories,
+  setActiveCharacter,
+  setActiveStory,
+  setActiveStoryLine,
+} = userSlice.actions;
 export default userSlice.reducer;

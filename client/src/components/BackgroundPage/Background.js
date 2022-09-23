@@ -6,7 +6,11 @@ import vagrantImg from "../../Images/vagrant.png";
 import otakuImg from "../../Images/otaku.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setUserCharacters } from "../../features/user/userSlice";
+import {
+  setActiveCharacter,
+  setActiveStory,
+  setActiveStoryLine,
+} from "../../features/user/userSlice";
 
 function Background() {
   const [lawyerDetails, setLawyerDetails] = useState(false);
@@ -14,7 +18,7 @@ function Background() {
   const [otakuDetails, setOtakuDetails] = useState(false);
   const [charName, setCharName] = useState("");
   const [background, setBackground] = useState("");
-  //const [userID, setUserID] = useState(null);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -22,7 +26,31 @@ function Background() {
     setCharName(e.target.value);
   };
 
-  const postStoryRef = async (story) => {
+  let result = [];
+  const postStoryCreation = async (char) => {
+    const startingStoryLine = () => {
+      let start;
+      if (background === "lawyer") {
+        start = 1;
+      }
+      if (background === "vagrant") {
+        start = 2;
+      }
+      if (background === "otaku") {
+        start = 3;
+      }
+      return start;
+    };
+
+    const start = startingStoryLine();
+    result.push(start);
+    // dispatch(setActiveStoryLine(start));
+
+    const story = {
+      starting_point: `${background} story line`,
+      character_id: char.id,
+      current_story_line: start,
+    };
     const config = {
       method: "POST",
       body: JSON.stringify(story),
@@ -31,13 +59,10 @@ function Background() {
       },
     };
     const r = await fetch("/stories", config);
-    if (r.ok) {
-      const storyCreation = await r.json();
-      console.log(storyCreation);
-    } else {
-      const errors = await r.json();
-      console.log(errors);
-    }
+    const activeStory = await r.json();
+    result.push(activeStory);
+    // dispatch(setActiveStory(activeStory));
+    console.log(result);
   };
 
   const submitCharacter = async () => {
@@ -58,12 +83,11 @@ function Background() {
     const r = await fetch("/characters", config);
     if (r.ok) {
       const charRef = await r.json();
-      const story = {
-        starting_point: `${charRef.background} story line`,
-        character_id: charRef.id,
-      };
-      postStoryRef(story);
-      dispatch(setUserCharacters(charRef));
+      await postStoryCreation(charRef);
+
+      dispatch(setActiveStoryLine(result[0]));
+      dispatch(setActiveStory(result[1]));
+      dispatch(setActiveCharacter(charRef));
       navigate("/adventure-start");
     } else {
       const errors = await r.json();
@@ -130,7 +154,7 @@ function Background() {
       <button onClick={submitCharacter} className="start-adv-btn">
         Start Adventure!
       </button>
-      {/* <div className="bkg-details"> */}
+
       {lawyerDetails ? (
         <p className="bkg-info">Info about the lawyer background goes here!</p>
       ) : null}

@@ -9,3 +9,10 @@
 
 # Maybe create 3 objects that hold all the individual storylines?
 # That way if starting point == "whatever" then map out the storylines with the associated objects storylines
+
+# After character creation, that start button will set the FIRST STORYLINE based on the story.starting_point
+# - This needs to be updated in Redux and the inital backend POST request
+
+# Continue button will GET(maybe post?) the story.current_story_line.
+# The backend will be updated only on a SAVE button (don't mess up!)
+# Otherwise if never save, you would return to that original starting storyline

@@ -12,7 +12,7 @@ class StoryLinesController < ApplicationController
 
   # A custom method here to only show the storylines associated with the character's background?
 
-  def associated_story_lines
+  def associated_story_lines(activeChar)
     # A before_action that finds the relative character???
     # can use the @current_user from authorize?
     # Route HAS been created!!!

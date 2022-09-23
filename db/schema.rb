@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_212550) do
   create_table "choices", force: :cascade do |t|
     t.bigint "option_id", null: false
     t.string "choice_text"
+    t.string "next_choice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["option_id"], name: "index_choices_on_option_id"
@@ -57,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_20_212550) do
 
   create_table "stories", force: :cascade do |t|
     t.string "starting_point"
+    t.integer "current_story_line"
     t.bigint "character_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

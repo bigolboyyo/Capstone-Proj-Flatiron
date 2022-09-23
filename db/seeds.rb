@@ -9,7 +9,7 @@ phone = Item.create!(item_name: "Phone")
 CharacterItem.create!(character_id: robot.id, item_id: tablet.id)
 CharacterItem.create!(character_id: robot.id, item_id: phone.id)
 
-robo_story = Story.create!(starting_point: "Lawyer Starting Point", character_id: robot.id)
+robo_story = Story.create!(starting_point: "lawyer starting point", character_id: robot.id)
 
 starting_story_line = StoryLine.create!(dialogue: "You are starting the Robot Text Adventure!!!", storyline_img: "INSERT IMAGE HERE")
 starting_option = Option.create!(story_id: robo_story.id, story_line_id: starting_story_line.id)

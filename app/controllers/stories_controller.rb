@@ -10,6 +10,9 @@ class StoriesController < ApplicationController
     render json: @story, status: :ok
   end
 
+  def active_story
+  end
+
   def create
     @story = Story.create!(story_params)
     render json: @story, status: :created

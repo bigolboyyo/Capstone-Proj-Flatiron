@@ -22,12 +22,14 @@ Rails.application.routes.draw do
 
   # Story Creation
   resources :stories
+  post "cur-story", to: "stories#active_story"
+
   resources :choices
   resources :options
   resources :story_lines
 
   # Looking to create a custom method to grab the specific storylines for the char background
-  get "char-story", to: "story_lines#associated_story_lines"
+  post "char-story", to: "story_lines#associated_story_lines"
 
   get "*path",
       to: "fallback#index",
