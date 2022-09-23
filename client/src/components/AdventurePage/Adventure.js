@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Adventure.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LawyerIntro from "./LawyerIntro";
 import OtakuIntro from "./OtakuIntro";
 import VagrantIntro from "./VagrantIntro";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 // This will be the adventure start page. The route after creating a character
 // Will give info and starting details based around the background picked
@@ -20,7 +20,7 @@ import { useDispatch } from "react-redux";
 
 function Adventure() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // Need access to the current character that was created
   // Add all this to redux store from the background page
   // Additionally the userHomepage will need access and conditionally render after redux user has characters
@@ -31,54 +31,14 @@ function Adventure() {
   const activeChar = useSelector((state) => state.user.active_character);
   const background = activeChar.background;
 
-  const actStory = useSelector((state) => state.user.active_story);
-  const actStoryLine = useSelector((state) => state.user.current_storyline);
+  // const actStory = useSelector((state) => state.user.active_story);
+  // const actStoryLine = useSelector((state) => state.user.current_storyline);
 
   // const [activeStory, setActiveStory] = useState([]);
 
   const startAdventure = () => {
     navigate("/storyline");
   };
-
-  // const postStoryCreation = async () => {
-  //   const startingStoryLine = () => {
-  //     let start;
-  //     if (background === "lawyer") {
-  //       start = 0;
-  //     }
-  //     if (background === "vagrant") {
-  //       start = 1;
-  //     }
-  //     if (background === "otaku") {
-  //       start = 2;
-  //     }
-  //     return start;
-  //   };
-
-  //   const start = startingStoryLine();
-  //   dispatch(setActiveStoryLine(start));
-
-  //   const story = {
-  //     starting_point: `${background} story line`,
-  //     character_id: activeChar.id,
-  //     current_story_line: start,
-  //   };
-  //   const config = {
-  //     method: "POST",
-  //     body: JSON.stringify(story),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   };
-  //   debugger;
-  //   const r = await fetch("/stories", config);
-  //   const activeStory = await r.json();
-  //   dispatch(setActiveStory(activeStory));
-  // };
-
-  // useEffect(() => {
-  //   postStoryCreation();
-  // }, []);
 
   // Make a post request, onClick or useEffect???
   // Can grab the character's starting point with this post, and set the current_story_line based on that

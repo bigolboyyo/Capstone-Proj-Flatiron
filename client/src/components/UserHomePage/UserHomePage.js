@@ -8,6 +8,8 @@ import CharacterFilled from "./CharacterFilled";
 import { v4 as uuidv4 } from "uuid";
 
 function UserHomePage({ logout }) {
+  const [characters, setCharacters] = useState([]);
+
   const grabStorage = () => {
     return JSON.parse(localStorage.getItem("user_data"));
   };
@@ -28,8 +30,6 @@ function UserHomePage({ logout }) {
     dispatch(grabAllStories(stories));
   };
 
-  const [characters, setCharacters] = useState([]);
-
   const fetchUserCharacters = async () => {
     const r = await fetch("/usr-chars");
     const chars = await r.json();
@@ -42,8 +42,11 @@ function UserHomePage({ logout }) {
   };
 
   useEffect(() => {
-    fetchUserCharacters();
     fetchStories();
+  }, []);
+
+  useEffect(() => {
+    fetchUserCharacters();
   }, []);
 
   const maxThree = (chars, maxLength) => {
@@ -74,7 +77,7 @@ function UserHomePage({ logout }) {
           </Button>
           <div className="home-title">
             <h1>{user.username}</h1>
-            <p>{user.active_character.character_name}</p>
+            {/* <p>{user.active_character.character_name}</p> */}
             {/* <p>{user.current_storyline}</p> */}
           </div>
           <div className="character-creation">

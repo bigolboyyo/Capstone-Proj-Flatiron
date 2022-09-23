@@ -26,7 +26,6 @@ function Background() {
     setCharName(e.target.value);
   };
 
-  let result = [];
   const postStoryCreation = async (char) => {
     const startingStoryLine = () => {
       let start;
@@ -43,8 +42,8 @@ function Background() {
     };
 
     const start = startingStoryLine();
-    result.push(start);
-    // dispatch(setActiveStoryLine(start));
+    // result.push(start);
+    dispatch(setActiveStoryLine(start));
 
     const story = {
       starting_point: `${background} story line`,
@@ -60,9 +59,9 @@ function Background() {
     };
     const r = await fetch("/stories", config);
     const activeStory = await r.json();
-    result.push(activeStory);
-    // dispatch(setActiveStory(activeStory));
-    console.log(result);
+    // result.push(activeStory);
+    dispatch(setActiveStory(activeStory));
+    // console.log(result);
   };
 
   const submitCharacter = async () => {
@@ -83,11 +82,11 @@ function Background() {
     const r = await fetch("/characters", config);
     if (r.ok) {
       const charRef = await r.json();
-      await postStoryCreation(charRef);
-
-      dispatch(setActiveStoryLine(result[0]));
-      dispatch(setActiveStory(result[1]));
+      // DON"T REVERSE THIS EVER
       dispatch(setActiveCharacter(charRef));
+      await postStoryCreation(charRef);
+      // SERIOUSLY STOP
+      // REMEMBER THIS PAIN
       navigate("/adventure-start");
     } else {
       const errors = await r.json();

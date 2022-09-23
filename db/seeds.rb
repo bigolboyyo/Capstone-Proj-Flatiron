@@ -9,9 +9,10 @@ phone = Item.create!(item_name: "Phone")
 CharacterItem.create!(character_id: robot.id, item_id: tablet.id)
 CharacterItem.create!(character_id: robot.id, item_id: phone.id)
 
-robo_story = Story.create!(starting_point: "lawyer starting point", character_id: robot.id)
+robo_story = Story.create!(starting_point: "lawyer starting point", character_id: robot.id, current_story_line: 1)
 
 starting_story_line = StoryLine.create!(dialogue: "You are starting the Robot Text Adventure!!!", storyline_img: "INSERT IMAGE HERE")
+
 starting_option = Option.create!(story_id: robo_story.id, story_line_id: starting_story_line.id)
 starting_choice_one = Choice.create!(option_id: starting_option.id, choice_text: "EAT")
 starting_choice_two = Choice.create!(option_id: starting_option.id, choice_text: "SLEEP")
@@ -19,6 +20,7 @@ starting_choice_three = Choice.create!(option_id: starting_option.id, choice_tex
 starting_choice_four = Choice.create!(option_id: starting_option.id, choice_text: "DRINK")
 
 second_testing_line = StoryLine.create!(dialogue: "Wow you have advanced to the second dialogue!", storyline_img: "robot img")
+
 second_option = Option.create!(story_id: robo_story.id, story_line_id: second_testing_line.id)
 second_choice_one = Choice.create!(option_id: second_option.id, choice_text: "CRY")
 second_choice_two = Choice.create!(option_id: second_option.id, choice_text: "CRY AGAIN")

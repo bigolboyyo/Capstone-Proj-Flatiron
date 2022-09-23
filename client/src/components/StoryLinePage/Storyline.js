@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+// , { useEffect, useState }
 import Dialogue from "../Dialogue/Dialogue";
 import Option from "../Option/Option";
 import "../StoryLinePage/Storyline.css";
@@ -22,12 +23,24 @@ function Storyline() {
   // const actStory = useSelector((state) => state.user.active_story);
 
   const reduxStoryLine = useSelector((state) => state.user.current_storyline);
-  debugger;
   const localStoryLine = JSON.parse(
     JSON.parse(localStorage.getItem("user_data")).current_storyline
   );
-  debugger;
+
   const actStoryLine = reduxStoryLine ? reduxStoryLine : localStoryLine;
+
+  const storyLine = stories.find((s) => s.id === actStoryLine);
+
+  const navStoryLine = (id) => {
+    dispatch(setActiveStoryLine(id));
+  };
+
+  const mappedChoices = () => {
+    return storyLine.choices.map((c) => {
+      return <Option key={c.id} choice={c} navStoryLine={navStoryLine} />;
+    });
+  };
+
   // I have my active character set in REDUX
   // So here instead of grabbing all the story_lines I could do either one of two things
 
@@ -37,33 +50,6 @@ function Storyline() {
   // // Think about how to track the active_storyline as well, could be another attribute in the REDUX USER SLICE. SO we can use our continue button
 
   // The BELOW function fetchStory could take a param of the active character perhaps? maybe an optional param of the ACTIVE STORYLINE
-
-  // const fetchStory = async () => {
-  //   const r = await fetch("/story_lines");
-  //   const story = await r.json();
-  //   setStory(story);
-  //   // setStoryLine(story[0]); //Current storyline
-  //   // setChoices(story[0].choices); //Current choices
-  //   // Count for initial state based on story.starting_point
-  // };
-
-  // useEffect(() => {
-  //   fetchStory();
-  // }, []);
-
-  const storyLine = stories.find((s) => s.id === actStoryLine);
-
-  const navStoryLine = (id) => {
-    dispatch(setActiveStoryLine(id));
-  };
-
-  const mappedChoices = () => {
-    const choices = storyLine.choices.map((c) => {
-      return <Option key={c.id} choice={c} navStoryLine={navStoryLine} />;
-    });
-
-    return choices;
-  };
 
   // MORE COMPONENTS
   // OPTION CONTAINER
