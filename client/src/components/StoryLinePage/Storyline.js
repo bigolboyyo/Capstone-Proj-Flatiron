@@ -4,19 +4,22 @@ import Dialogue from "../Dialogue/Dialogue";
 import Option from "../Option/Option";
 import "../StoryLinePage/Storyline.css";
 import { useSelector } from "react-redux";
-import { setActiveStoryLine } from "../../features/user/userSlice";
+import {
+  setActiveStory,
+  setActiveStoryLine,
+} from "../../features/user/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function Storyline() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const [story, setStory] = useState([]);
-  // const [storyLine, setStoryLine] = useState([]);
-  // const [choices, setChoices] = useState([]);
 
   const activeChar = useSelector((state) => state.user.active_character);
   console.log(activeChar);
+
+  const activeStory = useSelector((state) => state.user.active_story);
+  console.log(activeStory);
 
   const reduxStories = useSelector((state) => state.user.all_stories);
   const localStories = JSON.parse(localStorage.getItem("stories"));
@@ -49,8 +52,22 @@ function Storyline() {
 
   // Could probably either make a custom redux method,
   // or even just call the setActiveStory and update with the new id?
-  const saveData = async (id) => {};
+  const saveData = async (id) => {
+    const config = {
+      method: "PATCH",
+      body: JSON.stringify({
+        current_story_line: id,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const r = await fetch(`/stories/${activeStory.id}`, config);
+    const updatedStory = await r.json();
+    dispatch(setActiveStory(updatedStory));
+  };
 
+  // debugger;
   const goHome = () => {
     navigate("/homepage");
   };
@@ -73,7 +90,7 @@ function Storyline() {
       <div className="story-dialogue-container">
         <div className="game-nav">
           <button onClick={goHome}>HOME</button>
-          <button>SAVE</button>
+          <button onClick={() => saveData(storyLine.id)}>SAVE</button>
         </div>
         <Dialogue storyLine={storyLine} />
       </div>

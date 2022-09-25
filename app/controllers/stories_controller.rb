@@ -13,7 +13,8 @@ class StoriesController < ApplicationController
   def active_story
     @cur_story = Story.all.find { |s| s.character_id == params[:character_id] }
     @active_story_line = @cur_story.current_story_line
-    render json: { cur_story: @cur_story, active_story_line: @active_story_line }, status: :ok
+    render json: { cur_story: @cur_story, active_story_line: @active_story_line },
+           except: creation_ref, status: :ok
   end
 
   def create

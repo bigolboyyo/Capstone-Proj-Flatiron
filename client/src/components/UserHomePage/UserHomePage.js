@@ -16,6 +16,7 @@ function UserHomePage({ logout }) {
   const storage = grabStorage();
 
   const dispatch = useDispatch();
+
   const user = {
     id: useSelector((state) => state.user.id),
     username: useSelector((state) => state.user.username),
