@@ -12,6 +12,17 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function Storyline() {
+  // robo_story = Story.create!(starting_point: "lawyer starting point", character_id: robot.id)
+
+  // starting_story_line = StoryLine.create!(dialogue: "You are starting the Robot Text Adventure!!!", storyline_img: "INSERT IMAGE HERE")
+
+  // starting_option = Option.create!(story_id: robo_story.id, story_line_id: starting_story_line.id)
+
+  // starting_choice_one = Choice.create!(option_id: starting_option.id, choice_text: "EAT")
+
+  //FIXME:
+  // How can I associate hard coded storylines with newly created options/choices?
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -85,6 +96,9 @@ function Storyline() {
   // MORE COMPONENTS
   // OPTION CONTAINER
   // OPTION COMPONENT
+
+  //TODO: How do I add all the options and choices to the specific character's STORY instance and keep track of that associated data.
+  // // The storylines themselves will all be hard coded and seeded in my database
   return (
     <div className="storyline-container">
       <div className="story-dialogue-container">

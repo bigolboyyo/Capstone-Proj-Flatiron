@@ -11,8 +11,8 @@ class OptionsController < ApplicationController
   end
 
   def create
-    @option = option.create!(option_params)
-    render json: @option, status: :created
+    @option = Option.create!(option_params)
+    render json: @option, except: creation_ref, status: :created
   end
 
   def update

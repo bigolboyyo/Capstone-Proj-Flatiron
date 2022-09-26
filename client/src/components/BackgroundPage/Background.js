@@ -65,6 +65,21 @@ function Background() {
     // console.log(result);
   };
 
+  const postInitOption = async (optionObj) => {
+    const config = {
+      method: "POST",
+      body: JSON.stringify(optionObj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const r = await fetch("/options", config);
+    const postedOption = await r.json();
+    debugger;
+    console.log(postedOption);
+  };
+
   const submitCharacter = async () => {
     // Add background state?
     const character = {
@@ -86,6 +101,14 @@ function Background() {
       // DON"T REVERSE THIS EVER
       dispatch(setActiveCharacter(charRef));
       await postStoryCreation(charRef);
+
+      const optionCreation = {
+        story_id: JSON.parse(localStorage.getItem("user_data")).active_story.id,
+        story_line_id: JSON.parse(localStorage.getItem("user_data"))
+          .active_story.current_story_line,
+      };
+
+      postInitOption(optionCreation);
       // SERIOUSLY STOP
       // REMEMBER THIS PAIN
       navigate("/adventure-start");
