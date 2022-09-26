@@ -47,6 +47,9 @@ function Storyline() {
   const storyLine = stories.find((s) => s.id === actStoryLine);
 
   const navStoryLine = (id) => {
+    //Need a check to see if the story id exists
+    //If it doesn't do something!
+    debugger;
     dispatch(setActiveStoryLine(id));
   };
 

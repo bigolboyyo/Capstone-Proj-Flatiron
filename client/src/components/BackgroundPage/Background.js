@@ -10,6 +10,7 @@ import {
   setActiveCharacter,
   setActiveStory,
   setActiveStoryLine,
+  grabAllStories,
 } from "../../features/user/userSlice";
 
 function Background() {
@@ -24,6 +25,14 @@ function Background() {
 
   const handleCharNameChange = (e) => {
     setCharName(e.target.value);
+  };
+
+  //FIXME: THIS fetchStories function can be abstracted out. Will need to either call this a bunch
+  // // Or figure out how to auto call/update the stories with associated choices
+  const fetchStories = async () => {
+    const r = await fetch("/story_lines");
+    const stories = await r.json();
+    dispatch(grabAllStories(stories));
   };
 
   const postStoryCreation = async (char) => {
@@ -95,7 +104,6 @@ function Background() {
 
     const r = await fetch("/choices", config);
     const postedChoices = await r.json();
-    debugger;
     console.log(postedChoices);
   };
 
@@ -129,12 +137,24 @@ function Background() {
 
       await postInitOption(optionCreation);
 
+      // How can I abstract this code to be resued a specific number of times?
+      // When I post the associated option for the char, I will obvi have multiple choices
+
+      // rough pseudo code to follow...
+
+      // function choiceCreation(times, choiceTextObj){
+      //   // For loop for the length of times?
+      //   // return a choice text object where each choice_text is ...
+      //   // // one of the param key/value pairs?
+      // }
+
       const choiceCreation = {
         option_id: JSON.parse(localStorage.getItem("init")).id,
         choice_text: "Your Local Storage!",
       };
 
       await postInitChoices(choiceCreation);
+      fetchStories();
 
       // SERIOUSLY STOP
       // REMEMBER THIS PAIN
