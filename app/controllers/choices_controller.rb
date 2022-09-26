@@ -11,7 +11,7 @@ class ChoicesController < ApplicationController
   end
 
   def create
-    @choice = choice.create!(choice_params)
+    @choice = Choice.create!(choice_params)
     render json: @choice, status: :created
   end
 

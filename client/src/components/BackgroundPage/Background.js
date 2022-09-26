@@ -65,6 +65,11 @@ function Background() {
     // console.log(result);
   };
 
+  //TODO: Here I am creating instances of options and choices
+  // If this is the route I take I need to set the option/routes to match the storylines
+  // I have access to all the stories. Maybe grab all the storylines specifically?
+  // My choices also have a next_choice attr (could use this to determine the following navigation)
+
   const postInitOption = async (optionObj) => {
     const config = {
       method: "POST",
@@ -76,8 +81,22 @@ function Background() {
 
     const r = await fetch("/options", config);
     const postedOption = await r.json();
+    localStorage.setItem("init", JSON.stringify(postedOption));
+  };
+
+  const postInitChoices = async (choiceObj) => {
+    const config = {
+      method: "POST",
+      body: JSON.stringify(choiceObj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const r = await fetch("/choices", config);
+    const postedChoices = await r.json();
     debugger;
-    console.log(postedOption);
+    console.log(postedChoices);
   };
 
   const submitCharacter = async () => {
@@ -108,7 +127,15 @@ function Background() {
           .active_story.current_story_line,
       };
 
-      postInitOption(optionCreation);
+      await postInitOption(optionCreation);
+
+      const choiceCreation = {
+        option_id: JSON.parse(localStorage.getItem("init")).id,
+        choice_text: "Your Local Storage!",
+      };
+
+      await postInitChoices(choiceCreation);
+
       // SERIOUSLY STOP
       // REMEMBER THIS PAIN
       navigate("/adventure-start");
