@@ -4,9 +4,9 @@ import "../Option/Option.css";
 function Option({ choice, navStoryLine }) {
   return (
     <div
-      id={choice.id}
-      onClick={(e) => {
-        const id = e.target.id;
+      id={choice.choice_text}
+      onClick={() => {
+        const id = choice.next_choice;
         navStoryLine(id);
       }}
       className="options"

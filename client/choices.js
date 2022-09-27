@@ -1,66 +1,67 @@
-const CHOICES = {
-  lawyer_init: {
-    choice_one: {
-      choice_text: "EAT",
-      next_choice: 2,
+const postOption = async (optionObj) => {
+  const config = {
+    method: "POST",
+    body: JSON.stringify(optionObj),
+    headers: {
+      "Content-Type": "application/json",
     },
-    choice_two: {
-      choice_text: "SLEEP",
-      next_choice: 3,
-    },
-    choice_three: {
-      choice_text: "CODE",
-      next_choice: 4,
-    },
-    choice_four: {
-      choice_text: "REPEAT",
-      next_choice: 5,
-    },
-  },
+  };
 
-  vagrant_init: {
-    choice_one: {
-      choice_text: "EAT",
-      next_choice: 6,
-    },
-    choice_two: {
-      choice_text: "SLEEP",
-      next_choice: 7,
-    },
-    choice_three: {
-      choice_text: "CODE",
-      next_choice: 8,
-    },
-    choice_four: {
-      choice_text: "REPEAT",
-      next_choice: 9,
-    },
-  },
-
-  otaku_init: {
-    choice_one: {
-      choice_text: "EAT",
-      next_choice: 10,
-    },
-    choice_two: {
-      choice_text: "SLEEP",
-      next_choice: 11,
-    },
-    choice_three: {
-      choice_text: "CODE",
-      next_choice: 12,
-    },
-    choice_four: {
-      choice_text: "REPEAT",
-      next_choice: 13,
-    },
-  },
+  const r = await fetch("/options", config);
+  const postedOption = await r.json();
+  localStorage.setItem("options", JSON.stringify(postedOption));
 };
 
-function logOneOfEach() {
-  console.log("lawyer_choice:", CHOICES.lawyer_init.choice_three);
-  console.log("vagrant_choice:", CHOICES.vagrant_init.choice_two);
-  console.log("otaku_choice:", CHOICES.otaku_init.choice_four);
-}
+const postChoices = async (choiceObj) => {
+  const config = {
+    method: "POST",
+    body: JSON.stringify(choiceObj),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const r = await fetch("/choices", config);
+  const postedChoices = await r.json();
+  console.log(postedChoices);
+};
 
-logOneOfEach();
+const choiceCreation = async (background) => {
+  const options = JSON.parse(localStorage.getItem("options"));
+  const optID = options.id;
+
+  const lawBatchTwo = {
+    choice_one: {
+      option_id: optID,
+      choice_text: "LAWMAN",
+      next_choice: "Choice One Followup",
+    },
+    choice_two: {
+      option_id: optID,
+      choice_text: "LAWBRO",
+      next_choice: "Choice Two Followup",
+    },
+    choice_three: {
+      option_id: optID,
+      choice_text: "LAWDUDE",
+      next_choice: "Choice Three Followup",
+    },
+    choice_four: {
+      option_id: optID,
+      choice_text: "LAWGUY",
+      next_choice: "Choice Four Followup",
+    },
+  };
+
+  const laws = Object.values(Object.values(lawBatchTwo));
+
+  if (background === "lawyer") {
+    for (const choice of laws) {
+      await postChoices(choice);
+    }
+  }
+};
+
+const option = {
+  story_id: JSON.parse(localStorage.getItem("user_data")).active_story.id,
+  story_line_id: storyLine.id,
+};

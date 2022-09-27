@@ -44,10 +44,10 @@ function Background() {
         start = 1;
       }
       if (background === "vagrant") {
-        start = 2;
+        start = 11;
       }
       if (background === "otaku") {
-        start = 3;
+        start = 21;
       }
       return start;
     };
@@ -116,18 +116,22 @@ function Background() {
       choice_one: {
         option_id: optionID,
         choice_text: "Lawyer Choice one",
+        next_choice: "Choice One Followup",
       },
       choice_two: {
         option_id: optionID,
         choice_text: "Lawyer Choice two",
+        next_choice: "Choice Two Followup",
       },
       choice_three: {
         option_id: optionID,
         choice_text: "Lawyer Choice three",
+        next_choice: "Choice Three Followup",
       },
       choice_four: {
         option_id: optionID,
         choice_text: "Lawyer Choice four",
+        next_choice: "Choice Four Followup",
       },
     };
 
@@ -135,18 +139,22 @@ function Background() {
       choice_one: {
         option_id: optionID,
         choice_text: "Vagrant Choice one",
+        next_choice: "Choice One Followup",
       },
       choice_two: {
         option_id: optionID,
         choice_text: "Vagrant Choice two",
+        next_choice: "Choice Two Followup",
       },
       choice_three: {
         option_id: optionID,
         choice_text: "Vagrant Choice three",
+        next_choice: "Choice Three Followup",
       },
       choice_four: {
         option_id: optionID,
         choice_text: "Vagrant Choice four",
+        next_choice: "Choice Four Followup",
       },
     };
 
@@ -154,18 +162,22 @@ function Background() {
       choice_one: {
         option_id: optionID,
         choice_text: "Otaku Choice one",
+        next_choice: "Choice One Followup",
       },
       choice_two: {
         option_id: optionID,
         choice_text: "Otaku Choice two",
+        next_choice: "Choice Two Followup",
       },
       choice_three: {
         option_id: optionID,
         choice_text: "Otaku Choice three",
+        next_choice: "Choice Three Followup",
       },
       choice_four: {
         option_id: optionID,
         choice_text: "Otaku Choice four",
+        next_choice: "Choice Four Followup",
       },
     };
 
@@ -207,6 +219,7 @@ function Background() {
         "Content-Type": "application/json",
       },
     };
+
     const r = await fetch("/characters", config);
     if (r.ok) {
       const charRef = await r.json();

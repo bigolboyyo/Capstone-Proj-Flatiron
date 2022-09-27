@@ -28,7 +28,7 @@ class ChoicesController < ApplicationController
   private
 
   def choice_params
-    params.permit(:choice_text, :option_id)
+    params.permit(:choice_text, :option_id, :next_choice)
   end
 
   def find_choice
