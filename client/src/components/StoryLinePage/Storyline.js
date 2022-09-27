@@ -102,6 +102,7 @@ function Storyline() {
 
   //TODO: How do I add all the options and choices to the specific character's STORY instance and keep track of that associated data.
   // // The storylines themselves will all be hard coded and seeded in my database
+
   return (
     <div className="storyline-container">
       <div className="story-dialogue-container">

@@ -13,6 +13,8 @@ import {
   grabAllStories,
 } from "../../features/user/userSlice";
 
+// import initChoiceCreation from "./InitChoices";
+
 function Background() {
   const [lawyerDetails, setLawyerDetails] = useState(false);
   const [vagrantDetails, setVagrantDetails] = useState(false);
@@ -107,6 +109,89 @@ function Background() {
     console.log(postedChoices);
   };
 
+  async function initChoiceCreation(background) {
+    const optionID = JSON.parse(localStorage.getItem("init")).id;
+
+    const lawChoices = {
+      choice_one: {
+        option_id: optionID,
+        choice_text: "Lawyer Choice one",
+      },
+      choice_two: {
+        option_id: optionID,
+        choice_text: "Lawyer Choice two",
+      },
+      choice_three: {
+        option_id: optionID,
+        choice_text: "Lawyer Choice three",
+      },
+      choice_four: {
+        option_id: optionID,
+        choice_text: "Lawyer Choice four",
+      },
+    };
+
+    const vagrantChoices = {
+      choice_one: {
+        option_id: optionID,
+        choice_text: "Vagrant Choice one",
+      },
+      choice_two: {
+        option_id: optionID,
+        choice_text: "Vagrant Choice two",
+      },
+      choice_three: {
+        option_id: optionID,
+        choice_text: "Vagrant Choice three",
+      },
+      choice_four: {
+        option_id: optionID,
+        choice_text: "Vagrant Choice four",
+      },
+    };
+
+    const otakuChoices = {
+      choice_one: {
+        option_id: optionID,
+        choice_text: "Otaku Choice one",
+      },
+      choice_two: {
+        option_id: optionID,
+        choice_text: "Otaku Choice two",
+      },
+      choice_three: {
+        option_id: optionID,
+        choice_text: "Otaku Choice three",
+      },
+      choice_four: {
+        option_id: optionID,
+        choice_text: "Otaku Choice four",
+      },
+    };
+
+    //FIXME: LOADING SCREEN NEEDED HERE
+
+    const laws = Object.values(Object.values(lawChoices));
+    const crimes = Object.values(Object.values(vagrantChoices));
+    const animes = Object.values(Object.values(otakuChoices));
+
+    if (background === "lawyer") {
+      for (const choice of laws) {
+        await postInitChoices(choice);
+      }
+    }
+    if (background === "vagrant") {
+      for (const choice of crimes) {
+        await postInitChoices(choice);
+      }
+    }
+    if (background === "otaku") {
+      for (const choice of animes) {
+        await postInitChoices(choice);
+      }
+    }
+  }
+
   const submitCharacter = async () => {
     // Add background state?
     const character = {
@@ -137,7 +222,7 @@ function Background() {
 
       await postInitOption(optionCreation);
 
-      // How can I abstract this code to be resued a specific number of times?
+      // How can I abstract this code to be reused a specific number of times?
       // When I post the associated option for the char, I will obvi have multiple choices
 
       // rough pseudo code to follow...
@@ -148,13 +233,14 @@ function Background() {
       //   // // one of the param key/value pairs?
       // }
 
-      const choiceCreation = {
-        option_id: JSON.parse(localStorage.getItem("init")).id,
-        choice_text: "Your Local Storage!",
-      };
+      // const choiceCreation = {
+      //   option_id: JSON.parse(localStorage.getItem("init")).id,
+      //   choice_text: "Your Local Storage!",
+      // };
 
-      await postInitChoices(choiceCreation);
-      fetchStories();
+      // await postInitChoices(choiceCreation);
+      await initChoiceCreation(background);
+      await fetchStories();
 
       // SERIOUSLY STOP
       // REMEMBER THIS PAIN
