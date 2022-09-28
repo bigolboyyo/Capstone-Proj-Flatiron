@@ -172,6 +172,98 @@ function Storyline() {
       },
     };
 
+    const lawBatchSix = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "law18",
+        next_choice: "LawMan#18",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "law19",
+        next_choice: "LawMan#19",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "law20",
+        next_choice: "LawMan#20",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "law21",
+        next_choice: "LawMan#21",
+      },
+    };
+
+    const lawBatchSeven = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "law22",
+        next_choice: "LawMan#22",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "law23",
+        next_choice: "LawMan#23",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "law24",
+        next_choice: "LawMan#24",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "law25",
+        next_choice: "LawMan#25",
+      },
+    };
+
+    const lawBatchEight = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "law26",
+        next_choice: "LawMan#26",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "law27",
+        next_choice: "LawMan#27",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "law28",
+        next_choice: "LawMan#28",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "law29",
+        next_choice: "LawMan#29",
+      },
+    };
+
+    const lawBatchNine = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "law30",
+        next_choice: "LawMan#30",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "law31",
+        next_choice: "LawMan#31",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "law32",
+        next_choice: "LawMan#32",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "law33",
+        next_choice: "LawMan#33",
+      },
+    };
+
     const crimeBatchTwo = {
       choice_one: {
         option_id: optID,
@@ -261,6 +353,98 @@ function Storyline() {
         option_id: optID,
         choice_text: "CRIME17",
         next_choice: "Crime#17",
+      },
+    };
+
+    const crimeBatchSix = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "CRIME18",
+        next_choice: "Crime#18",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "CRIME19",
+        next_choice: "Crime#19",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "CRIME20",
+        next_choice: "Crime#20",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "CRIME21",
+        next_choice: "Crime#21",
+      },
+    };
+
+    const crimeBatchSeven = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "CRIME22",
+        next_choice: "Crime#22",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "CRIME23",
+        next_choice: "Crime#23",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "CRIME24",
+        next_choice: "Crime#24",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "CRIME25",
+        next_choice: "Crime#25",
+      },
+    };
+
+    const crimeBatchEight = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "CRIME26",
+        next_choice: "Crime#26",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "CRIME27",
+        next_choice: "Crime#27",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "CRIME28",
+        next_choice: "Crime#28",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "CRIME29",
+        next_choice: "Crime#29",
+      },
+    };
+
+    const crimeBatchNine = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "CRIME30",
+        next_choice: "Crime#30",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "CRIME31",
+        next_choice: "Crime#31",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "CRIME32",
+        next_choice: "Crime#32",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "CRIME33",
+        next_choice: "Crime#33",
       },
     };
 
@@ -356,6 +540,98 @@ function Storyline() {
       },
     };
 
+    const animeBatchSix = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Watch anime",
+        next_choice: "Anime#18",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "Cry",
+        next_choice: "Anime#19",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "Buy figurine",
+        next_choice: "Anime#20",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "Be lonely",
+        next_choice: "Anime#21",
+      },
+    };
+
+    const animeBatchSeven = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Watch anime",
+        next_choice: "Anime#22",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "Cry",
+        next_choice: "Anime#23",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "Buy figurine",
+        next_choice: "Anime#24",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "Be lonely",
+        next_choice: "Anime#25",
+      },
+    };
+
+    const animeBatchEight = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Watch anime",
+        next_choice: "Anime#26",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "Cry",
+        next_choice: "Anime#27",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "Buy figurine",
+        next_choice: "Anime#28",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "Be lonely",
+        next_choice: "Anime#29",
+      },
+    };
+
+    const animeBatchNine = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Watch anime",
+        next_choice: "Anime#30",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "Cry",
+        next_choice: "Anime#31",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "Buy figurine",
+        next_choice: "Anime#32",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "Be lonely",
+        next_choice: "Anime#33",
+      },
+    };
+
     const laws_two = Object.values(Object.values(lawBatchTwo));
     const crimes_two = Object.values(Object.values(crimeBatchTwo));
     const animes_two = Object.values(Object.values(animeBatchTwo));
@@ -371,6 +647,22 @@ function Storyline() {
     const laws_five = Object.values(Object.values(lawBatchFive));
     const crimes_five = Object.values(Object.values(crimeBatchFive));
     const animes_five = Object.values(Object.values(animeBatchFive));
+
+    const laws_six = Object.values(Object.values(lawBatchSix));
+    const crimes_six = Object.values(Object.values(crimeBatchSix));
+    const animes_six = Object.values(Object.values(animeBatchSix));
+
+    const laws_seven = Object.values(Object.values(lawBatchSeven));
+    const crimes_seven = Object.values(Object.values(crimeBatchSeven));
+    const animes_seven = Object.values(Object.values(animeBatchSeven));
+
+    const laws_eight = Object.values(Object.values(lawBatchEight));
+    const crimes_eight = Object.values(Object.values(crimeBatchEight));
+    const animes_eight = Object.values(Object.values(animeBatchEight));
+
+    const laws_nine = Object.values(Object.values(lawBatchNine));
+    const crimes_nine = Object.values(Object.values(crimeBatchNine));
+    const animes_nine = Object.values(Object.values(animeBatchNine));
 
     if (navID === 2) {
       for (const choice of laws_two) {
@@ -389,6 +681,26 @@ function Storyline() {
     }
     if (navID === 5) {
       for (const choice of laws_five) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 6) {
+      for (const choice of laws_six) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 7) {
+      for (const choice of laws_seven) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 8) {
+      for (const choice of laws_eight) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 9) {
+      for (const choice of laws_nine) {
         await postChoices(choice);
       }
     }
@@ -412,6 +724,26 @@ function Storyline() {
         await postChoices(choice);
       }
     }
+    if (navID === 16) {
+      for (const choice of crimes_six) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 17) {
+      for (const choice of crimes_seven) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 18) {
+      for (const choice of crimes_eight) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 19) {
+      for (const choice of crimes_nine) {
+        await postChoices(choice);
+      }
+    }
     if (navID === 22) {
       for (const choice of animes_two) {
         await postChoices(choice);
@@ -429,6 +761,26 @@ function Storyline() {
     }
     if (navID === 25) {
       for (const choice of animes_five) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 26) {
+      for (const choice of animes_six) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 27) {
+      for (const choice of animes_seven) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 28) {
+      for (const choice of animes_eight) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 29) {
+      for (const choice of animes_nine) {
         await postChoices(choice);
       }
     }
