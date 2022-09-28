@@ -1,6 +1,6 @@
 class Character < ApplicationRecord
   belongs_to :user
-  has_many :character_items
+  has_many :character_items, dependent: :destroy
   has_many :items, through: :character_items
   alias_attribute :inventory, :items
   has_many :stories, dependent: :destroy

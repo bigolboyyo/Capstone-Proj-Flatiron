@@ -48,6 +48,28 @@ function Storyline() {
 
   const storyLine = stories.find((s) => s.id === actStoryLine);
 
+  const takeItem = async (itemName) => {
+    const item = JSON.parse(localStorage.getItem("items")).find(
+      (i) => i.item_name === itemName
+    );
+    debugger;
+    const config = {
+      method: "POST",
+      body: JSON.stringify({
+        character_id: activeChar.id,
+        item_id: item.id,
+        item_name: item.item_name,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const r = await fetch("/character_items", config);
+    const charItems = await r.json();
+    console.log(charItems);
+  };
+
   const postOption = async (optionObj) => {
     const config = {
       method: "POST",
@@ -261,6 +283,14 @@ function Storyline() {
         option_id: optID,
         choice_text: "law33",
         next_choice: "LawMan#33",
+      },
+    };
+
+    const lawBatchTen = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Take the Item",
+        next_choice: "LawMan#Item",
       },
     };
 
@@ -664,6 +694,8 @@ function Storyline() {
     const crimes_nine = Object.values(Object.values(crimeBatchNine));
     const animes_nine = Object.values(Object.values(animeBatchNine));
 
+    const laws_ten = Object.values(Object.values(lawBatchTen));
+
     if (navID === 2) {
       for (const choice of laws_two) {
         await postChoices(choice);
@@ -701,6 +733,11 @@ function Storyline() {
     }
     if (navID === 9) {
       for (const choice of laws_nine) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 10) {
+      for (const choice of laws_ten) {
         await postChoices(choice);
       }
     }
@@ -874,6 +911,24 @@ function Storyline() {
       await doAllTheThings(nav);
     }
 
+    if (id === "LawMan#6" && activeChar.background === "lawyer") {
+      nav = 10;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+
+    if (id === "LawMan#Item" && activeChar.background === "lawyer") {
+      nav = 31;
+      option.story_line_id = nav;
+      await takeItem("Tablet");
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+
     if (id === "Choice One Followup" && activeChar.background === "vagrant") {
       nav = 12;
       option.story_line_id = nav;
@@ -1017,13 +1072,6 @@ function Storyline() {
   const trimmedChoices =
     mappedChoices().length > 4 ? mappedChoices().slice(0, 4) : mappedChoices();
 
-  //TODO: Take storyLine.id and send it on save button click
-  // Update localStorage
-  // Update Redux
-  // Update database
-
-  // Could probably either make a custom redux method,
-  // or even just call the setActiveStory and update with the new id?
   const saveData = async (id) => {
     const config = {
       method: "PATCH",
@@ -1044,29 +1092,11 @@ function Storyline() {
     navigate("/homepage");
   };
 
-  // I have my active character set in REDUX
-  // So here instead of grabbing all the story_lines I could do either one of two things
-
-  // 1. Grab the route from the backend that has a custom method organizing the storylines based on the active_chars background
-  // 2. Filter through all of the storylines and return only the ones that have a reference to the background (this will require another storyline attribute?)
-
-  // // Think about how to track the active_storyline as well, could be another attribute in the REDUX USER SLICE. SO we can use our continue button
-
-  // The BELOW function fetchStory could take a param of the active character perhaps? maybe an optional param of the ACTIVE STORYLINE
-
-  // MORE COMPONENTS
-  // OPTION CONTAINER
-  // OPTION COMPONENT
-
-  //TODO: How do I add all the options and choices to the specific character's STORY instance and keep track of that associated data.
-  // // The storylines themselves will all be hard coded and seeded in my database
-
   return (
     <div className="storyline-container">
       <div className="story-dialogue-container">
         <div className="game-nav">
           <button onClick={goHome}>HOME</button>
-          <button onClick={() => saveData(storyLine.id)}>SAVE</button>
         </div>
         <Dialogue storyLine={storyLine} />
       </div>

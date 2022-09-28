@@ -1,5 +1,8 @@
 puts "Seeding..."
 
+tablet = Item.create!(item_name: "Tablet")
+phone = Item.create!(item_name: "Phone")
+
 # Lawyer One ->
 lawyer_init = StoryLine.create!(dialogue: "This is the init for the LAWYER Story!", storyline_img: "INSERT IMAGE lawyer")
 
@@ -49,4 +52,5 @@ StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
+
 puts "Seeding completed!!!"

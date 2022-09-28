@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Adventure.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -56,6 +56,17 @@ function Adventure() {
       return <OtakuIntro char={activeChar} />;
     }
   };
+
+  const allItems = async () => {
+    const r = await fetch("/items");
+    const items = await r.json();
+
+    localStorage.setItem("items", JSON.stringify(items));
+  };
+
+  useEffect(() => {
+    allItems();
+  }, []);
 
   // Can set redux store to have the active characters current storyline they are
   // This way when you hit continue from userhomepage, you return back to that storyline

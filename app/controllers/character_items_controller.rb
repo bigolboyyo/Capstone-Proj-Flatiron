@@ -11,7 +11,7 @@ class CharacterItemsController < ApplicationController
   end
 
   def create
-    @character_item = character_item.create!(character_item_params)
+    @character_item = CharacterItem.create!(character_item_params)
     render json: @character_item, status: :created
   end
 
@@ -28,11 +28,11 @@ class CharacterItemsController < ApplicationController
   private
 
   def character_item_params
-    params.permit(:character_id, :item_id)
+    params.permit(:character_id, :item_id, :item_name)
   end
 
   def find_character_item
-    @character_item = character_item.find(params[:id])
+    @character_item = CharacterItem.find(params[:id])
     !@character_item ? record_not_found(@character_item) : @character_item
   end
 end
