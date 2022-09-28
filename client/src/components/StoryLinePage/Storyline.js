@@ -84,22 +84,91 @@ function Storyline() {
       choice_one: {
         option_id: optID,
         choice_text: "LAWMAN",
-        next_choice: "Storyline#2",
+        next_choice: "LawMan#2",
       },
       choice_two: {
         option_id: optID,
         choice_text: "LAWBRO",
-        next_choice: "Storyline#3",
+        next_choice: "LawMan#3",
       },
       choice_three: {
         option_id: optID,
         choice_text: "LAWDUDE",
-        next_choice: "Storyline#4",
+        next_choice: "LawMan#4",
       },
       choice_four: {
         option_id: optID,
         choice_text: "LAWGUY",
-        next_choice: "Storyline#5",
+        next_choice: "LawMan#5",
+      },
+    };
+
+    const lawBatchThree = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "law6",
+        next_choice: "LawMan#6",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "law7",
+        next_choice: "LawMan#7",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "law8",
+        next_choice: "LawMan#8",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "law9",
+        next_choice: "LawMan#9",
+      },
+    };
+
+    const lawBatchFour = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "law10",
+        next_choice: "LawMan#10",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "law11",
+        next_choice: "LawMan#11",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "law12",
+        next_choice: "LawMan#12",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "law13",
+        next_choice: "LawMan#13",
+      },
+    };
+
+    const lawBatchFive = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "law14",
+        next_choice: "LawMan#14",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "law15",
+        next_choice: "LawMan#15",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "law16",
+        next_choice: "LawMan#16",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "law17",
+        next_choice: "LawMan#17",
       },
     };
 
@@ -107,12 +176,12 @@ function Storyline() {
       choice_one: {
         option_id: optID,
         choice_text: "CRIME",
-        next_choice: "CRIME#2",
+        next_choice: "Crime#2",
       },
       choice_two: {
         option_id: optID,
         choice_text: "VAGRANT",
-        next_choice: "CRIME#3",
+        next_choice: "Crime#3",
       },
       choice_three: {
         option_id: optID,
@@ -123,6 +192,75 @@ function Storyline() {
         option_id: optID,
         choice_text: "LIE",
         next_choice: "Crime#5",
+      },
+    };
+
+    const crimeBatchThree = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "CRIME6",
+        next_choice: "Crime#6",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "CRIME7",
+        next_choice: "Crime#7",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "CRIME8",
+        next_choice: "Crime#8",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "CRIME9",
+        next_choice: "Crime#9",
+      },
+    };
+
+    const crimeBatchFour = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "CRIME10",
+        next_choice: "Crime#10",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "CRIME11",
+        next_choice: "Crime#11",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "CRIME12",
+        next_choice: "Crime#12",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "CRIME13",
+        next_choice: "Crime#13",
+      },
+    };
+
+    const crimeBatchFive = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "CRIME14",
+        next_choice: "Crime#14",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "CRIME15",
+        next_choice: "Crime#15",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "CRIME16",
+        next_choice: "Crime#16",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "CRIME17",
+        next_choice: "Crime#17",
       },
     };
 
@@ -149,22 +287,148 @@ function Storyline() {
       },
     };
 
-    const laws = Object.values(Object.values(lawBatchTwo));
-    const crimes = Object.values(Object.values(crimeBatchTwo));
-    const animes = Object.values(Object.values(animeBatchTwo));
+    const animeBatchThree = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Watch anime",
+        next_choice: "Anime#6",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "Cry",
+        next_choice: "Anime#7",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "Buy figurine",
+        next_choice: "Anime#8",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "Be lonely",
+        next_choice: "Anime#9",
+      },
+    };
+
+    const animeBatchFour = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Watch anime",
+        next_choice: "Anime#10",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "Cry",
+        next_choice: "Anime#11",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "Buy figurine",
+        next_choice: "Anime#12",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "Be lonely",
+        next_choice: "Anime#13",
+      },
+    };
+
+    const animeBatchFive = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Watch anime",
+        next_choice: "Anime#14",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "Cry",
+        next_choice: "Anime#15",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "Buy figurine",
+        next_choice: "Anime#16",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "Be lonely",
+        next_choice: "Anime#17",
+      },
+    };
+
+    const laws_two = Object.values(Object.values(lawBatchTwo));
+    const crimes_two = Object.values(Object.values(crimeBatchTwo));
+    const animes_two = Object.values(Object.values(animeBatchTwo));
+
+    const laws_three = Object.values(Object.values(lawBatchThree));
+    const crimes_three = Object.values(Object.values(crimeBatchThree));
+    const animes_three = Object.values(Object.values(animeBatchThree));
+
+    const laws_four = Object.values(Object.values(lawBatchFour));
+    const crimes_four = Object.values(Object.values(crimeBatchFour));
+    const animes_four = Object.values(Object.values(animeBatchFour));
+
+    const laws_five = Object.values(Object.values(lawBatchFive));
+    const crimes_five = Object.values(Object.values(crimeBatchFive));
+    const animes_five = Object.values(Object.values(animeBatchFive));
 
     if (navID === 2) {
-      for (const choice of laws) {
+      for (const choice of laws_two) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 3) {
+      for (const choice of laws_three) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 4) {
+      for (const choice of laws_four) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 5) {
+      for (const choice of laws_five) {
         await postChoices(choice);
       }
     }
     if (navID === 12) {
-      for (const choice of crimes) {
+      for (const choice of crimes_two) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 13) {
+      for (const choice of crimes_three) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 14) {
+      for (const choice of crimes_four) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 15) {
+      for (const choice of crimes_five) {
         await postChoices(choice);
       }
     }
     if (navID === 22) {
-      for (const choice of animes) {
+      for (const choice of animes_two) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 23) {
+      for (const choice of animes_three) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 24) {
+      for (const choice of animes_four) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 25) {
+      for (const choice of animes_five) {
         await postChoices(choice);
       }
     }
@@ -224,7 +488,7 @@ function Storyline() {
       await choiceCreation(activeChar.background, option);
       await doAllTheThings(nav);
     }
-    if (id === "Storyline#2" && activeChar.background === "lawyer") {
+    if (id === "LawMan#2" && activeChar.background === "lawyer") {
       nav = 6;
       option.story_line_id = nav;
 
@@ -232,7 +496,7 @@ function Storyline() {
       await choiceCreation(activeChar.background, option);
       await doAllTheThings(nav);
     }
-    if (id === "Storyline#3" && activeChar.background === "lawyer") {
+    if (id === "LawMan#3" && activeChar.background === "lawyer") {
       nav = 7;
       option.story_line_id = nav;
 
@@ -240,7 +504,7 @@ function Storyline() {
       await choiceCreation(activeChar.background, option);
       await doAllTheThings(nav);
     }
-    if (id === "Storyline#4" && activeChar.background === "lawyer") {
+    if (id === "LawMan#4" && activeChar.background === "lawyer") {
       nav = 8;
       option.story_line_id = nav;
 
@@ -249,7 +513,7 @@ function Storyline() {
       await doAllTheThings(nav);
     }
 
-    if (id === "Storyline#5" && activeChar.background === "lawyer") {
+    if (id === "LawMan#5" && activeChar.background === "lawyer") {
       nav = 9;
       option.story_line_id = nav;
 
@@ -291,6 +555,39 @@ function Storyline() {
       await doAllTheThings(nav);
     }
 
+    if (id === "Crime#2" && activeChar.background === "vagrant") {
+      nav = 16;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+    if (id === "Crime#3" && activeChar.background === "vagrant") {
+      nav = 17;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+    if (id === "Crime#4" && activeChar.background === "vagrant") {
+      nav = 18;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+    if (id === "Crime#5" && activeChar.background === "vagrant") {
+      nav = 19;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+
     if (id === "Choice One Followup" && activeChar.background === "otaku") {
       nav = 22;
       option.story_line_id = nav;
@@ -323,8 +620,38 @@ function Storyline() {
       await choiceCreation(activeChar.background, option);
       await doAllTheThings(nav);
     }
-    //Need a check to see if the story id exists
-    //If it doesn't do something!
+    if (id === "Anime#2" && activeChar.background === "otaku") {
+      nav = 26;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+    if (id === "Anime#3" && activeChar.background === "otaku") {
+      nav = 27;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+    if (id === "Anime#4" && activeChar.background === "otaku") {
+      nav = 28;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+    if (id === "Anime#5" && activeChar.background === "otaku") {
+      nav = 29;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
 
     dispatch(setActiveStoryLine(nav));
   };

@@ -45,3 +45,5 @@ otaku_twenty_three = StoryLine.create!(dialogue: "Otaku #3", storyline_img: "AN 
 otaku_twenty_four = StoryLine.create!(dialogue: "Otaku #4", storyline_img: "AN IMG")
 otaku_twenty_five = StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 puts "Seeding completed!!!"
+
+Choice.create!(option_id: 0, 
