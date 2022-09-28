@@ -75,9 +75,10 @@ function Storyline() {
     console.log(postedChoices);
   };
 
-  const choiceCreation = async (background) => {
+  const choiceCreation = async (background, option) => {
     const options = JSON.parse(localStorage.getItem("options"));
     const optID = options.id;
+    const navID = option.story_line_id;
 
     const lawBatchTwo = {
       choice_one: {
@@ -102,10 +103,68 @@ function Storyline() {
       },
     };
 
-    const laws = Object.values(Object.values(lawBatchTwo));
+    const crimeBatchTwo = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "CRIME",
+        next_choice: "CRIME#2",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "VAGRANT",
+        next_choice: "CRIME#3",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "STEAL",
+        next_choice: "Crime#4",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "LIE",
+        next_choice: "Crime#5",
+      },
+    };
 
-    if (background === "lawyer") {
+    const animeBatchTwo = {
+      choice_one: {
+        option_id: optID,
+        choice_text: "Watch anime",
+        next_choice: "Anime#2",
+      },
+      choice_two: {
+        option_id: optID,
+        choice_text: "Cry",
+        next_choice: "Anime#3",
+      },
+      choice_three: {
+        option_id: optID,
+        choice_text: "Buy figurine",
+        next_choice: "Anime#4",
+      },
+      choice_four: {
+        option_id: optID,
+        choice_text: "Be lonely",
+        next_choice: "Anime#5",
+      },
+    };
+
+    const laws = Object.values(Object.values(lawBatchTwo));
+    const crimes = Object.values(Object.values(crimeBatchTwo));
+    const animes = Object.values(Object.values(animeBatchTwo));
+
+    if (navID === 2) {
       for (const choice of laws) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 12) {
+      for (const choice of crimes) {
+        await postChoices(choice);
+      }
+    }
+    if (navID === 22) {
+      for (const choice of animes) {
         await postChoices(choice);
       }
     }
@@ -138,82 +197,131 @@ function Storyline() {
       option.story_line_id = nav;
 
       await postOption(option);
-      await choiceCreation(activeChar.background);
-      doAllTheThings(nav);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Two Followup" && activeChar.background === "lawyer") {
       nav = 3;
       option.story_line_id = nav;
 
       await postOption(option);
-      await choiceCreation(activeChar.background);
-      doAllTheThings(nav);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Three Followup" && activeChar.background === "lawyer") {
       nav = 4;
       option.story_line_id = nav;
 
       await postOption(option);
-      await choiceCreation(activeChar.background);
-      doAllTheThings(nav);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Four Followup" && activeChar.background === "lawyer") {
       nav = 5;
       option.story_line_id = nav;
 
       await postOption(option);
-      await choiceCreation(activeChar.background);
-      doAllTheThings(nav);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Storyline#2" && activeChar.background === "lawyer") {
       nav = 6;
       option.story_line_id = nav;
 
       await postOption(option);
-      await choiceCreation(activeChar.background);
-      doAllTheThings(nav);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Storyline#3" && activeChar.background === "lawyer") {
       nav = 7;
       option.story_line_id = nav;
 
       await postOption(option);
-      await choiceCreation(activeChar.background);
-      doAllTheThings(nav);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Storyline#4" && activeChar.background === "lawyer") {
       nav = 8;
       option.story_line_id = nav;
 
       await postOption(option);
-      await choiceCreation(activeChar.background);
-      doAllTheThings(nav);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+    }
+
+    if (id === "Storyline#5" && activeChar.background === "lawyer") {
+      nav = 9;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
 
     if (id === "Choice One Followup" && activeChar.background === "vagrant") {
       nav = 12;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Two Followup" && activeChar.background === "vagrant") {
       nav = 13;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Three Followup" && activeChar.background === "vagrant") {
       nav = 14;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Four Followup" && activeChar.background === "vagrant") {
       nav = 15;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
 
     if (id === "Choice One Followup" && activeChar.background === "otaku") {
       nav = 22;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Two Followup" && activeChar.background === "otaku") {
       nav = 23;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Three Followup" && activeChar.background === "otaku") {
       nav = 24;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     if (id === "Choice Four Followup" && activeChar.background === "otaku") {
       nav = 25;
+      option.story_line_id = nav;
+
+      await postOption(option);
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
     }
     //Need a check to see if the story id exists
     //If it doesn't do something!
@@ -227,9 +335,8 @@ function Storyline() {
     });
   };
 
-  // useEffect(() => {
-  //   mappedChoices();
-  // }, []);
+  const trimmedChoices =
+    mappedChoices().length > 4 ? mappedChoices().slice(0, 4) : mappedChoices();
 
   //TODO: Take storyLine.id and send it on save button click
   // Update localStorage
@@ -285,7 +392,7 @@ function Storyline() {
         <Dialogue storyLine={storyLine} />
       </div>
 
-      <div className="options-container">{mappedChoices()}</div>
+      <div className="options-container">{trimmedChoices}</div>
       <div className="inventory-container"></div>
     </div>
   );
