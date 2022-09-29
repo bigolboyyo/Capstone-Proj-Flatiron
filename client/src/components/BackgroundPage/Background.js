@@ -115,22 +115,22 @@ function Background() {
     const lawChoices = {
       choice_one: {
         option_id: optionID,
-        choice_text: "Lawyer Choice one",
+        choice_text: "Start walking towards the sun",
         next_choice: "Choice One Followup",
       },
       choice_two: {
         option_id: optionID,
-        choice_text: "Lawyer Choice two",
+        choice_text: "Start walking away from the sun",
         next_choice: "Choice Two Followup",
       },
       choice_three: {
         option_id: optionID,
-        choice_text: "Lawyer Choice three",
+        choice_text: "Examine the machinery around you",
         next_choice: "Choice Three Followup",
       },
       choice_four: {
         option_id: optionID,
-        choice_text: "Lawyer Choice four",
+        choice_text: "Examine yourself",
         next_choice: "Choice Four Followup",
       },
     };

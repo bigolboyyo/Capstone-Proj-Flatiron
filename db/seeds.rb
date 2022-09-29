@@ -2,12 +2,13 @@ puts "Seeding..."
 
 tablet = Item.create!(item_name: "Tablet")
 phone = Item.create!(item_name: "Phone")
+watch = Item.create!(item_name: "Watch")
 
 # Lawyer One ->
-lawyer_init = StoryLine.create!(dialogue: "This is the init for the LAWYER Story!", storyline_img: "INSERT IMAGE lawyer")
+lawyer_init = StoryLine.create!(dialogue: "You awaken to a bright light. Your vision blurried and a loud ringing in your ears. As you sit up you feel the sand beneath your body. The grittiness and vision blur, swallowing up all of your awareness. After a minute of calibration you look around to see yourself in a desert, surrounded by broken machinery and sandy hills as far as the eyes can see in all directions.", storyline_img: "INSERT IMAGE lawyer")
 
 # Choice two ->
-lawyer_two = StoryLine.create!(dialogue: "You have advanced to the 2nd lawyer storyline", storyline_img: "2nd lawyer image")
+lawyer_two = StoryLine.create!(dialogue: "What must be a few hours go by, as the sun starts setting, you notice a large scorpion, the size of baseball, scurrying in front of you. You can see the faint outline of the machinery far behind you. You wonder why you don't feel thirsty as you see a cactus a few feet past the scorpion.", storyline_img: "2nd lawyer image")
 # Choice three ->
 lawyer_three = StoryLine.create!(dialogue: "Wow you advanced based on an option picked!", storyline_img: "Another vacant img")
 # Choice four ->
@@ -52,5 +53,6 @@ StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
+StoryLine.create!(dialogue: "Otaku #ITEM", storyline_img: "AN IMG")
 
 puts "Seeding completed!!!"
