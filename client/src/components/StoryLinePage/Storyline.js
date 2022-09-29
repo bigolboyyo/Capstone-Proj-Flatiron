@@ -113,7 +113,7 @@ function Storyline() {
         choice_text: "Pick up the scorpion",
         next_choice: "LawMan#3",
       },
-      //ITEM NEEDED: KNIFE/BLADE
+      //ITEM
       choice_three: {
         option_id: optID,
         choice_text: "Slice open the cactus",
