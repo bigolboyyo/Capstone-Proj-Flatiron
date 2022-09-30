@@ -14,6 +14,7 @@ import { setOptionStoryLine } from "../../features/optionSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { advanceStory } from "../../lib/advanceStory";
+import Inventory from "../Inventory/Inventory";
 
 function Storyline() {
   const dispatch = useDispatch();
@@ -21,14 +22,17 @@ function Storyline() {
 
   const activeChar = useSelector((state) => state.user.active_character);
   const activeStory = useSelector((state) => state.user.active_story);
+
   const reduxStories = useSelector((state) => state.user.all_stories);
   const localStories = JSON.parse(localStorage.getItem("stories"));
   const stories = reduxStories ? reduxStories : localStories;
+
   const reduxStoryLine = useSelector((state) => state.user.current_storyline);
   const localStoryLine = JSON.parse(
     JSON.parse(localStorage.getItem("user_data")).current_storyline
   );
   const actStoryLine = reduxStoryLine ? reduxStoryLine : localStoryLine;
+
   const storyLine = stories.find((s) => s.id === actStoryLine);
 
   const choiceCreation = async (background, option) => {
@@ -96,7 +100,9 @@ function Storyline() {
       </div>
 
       <div className="options-container">{trimmedChoices}</div>
-      <div className="inventory-container"></div>
+      <div className="inventory-container">
+        <Inventory invChange={trimmedChoices} />
+      </div>
     </div>
   );
 }

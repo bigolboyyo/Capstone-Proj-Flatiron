@@ -160,6 +160,25 @@ const lawBatchTen = {
   },
 };
 
+const lawBatchItemTrue = {
+  choice_one: {
+    choice_text: "item",
+    next_choice: "LawMan#34",
+  },
+  choice_two: {
+    choice_text: "uhav",
+    next_choice: "LawMan#35",
+  },
+  choice_three: {
+    choice_text: "congrats",
+    next_choice: "LawMan#36",
+  },
+  choice_four: {
+    choice_text: "dookie",
+    next_choice: "LawMan#37",
+  },
+};
+
 const crimeBatchTwo = {
   choice_one: {
     choice_text: "CRIME",
@@ -514,4 +533,6 @@ export const choices = {
   laws_ten: Object.values(Object.values(lawBatchTen)),
   crimes_ten: Object.values(Object.values(crimeBatchTen)),
   animes_ten: Object.values(Object.values(animeBatchTen)),
+
+  laws_item_one: Object.values(Object.values(lawBatchItemTrue)),
 };

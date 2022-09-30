@@ -104,6 +104,7 @@ export const advanceStory = async (id, activeChar, nav) => {
     nav = 31;
     option.story_line_id = nav;
     await takeItem("Tablet");
+
     await postOption(option);
   }
 

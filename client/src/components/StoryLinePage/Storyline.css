@@ -38,4 +38,8 @@
   height: 12.5vh;
   outline: solid;
   padding: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

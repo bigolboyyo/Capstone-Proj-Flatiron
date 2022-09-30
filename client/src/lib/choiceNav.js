@@ -176,4 +176,10 @@ export const choiceNav = async (navID) => {
       await postChoices(choice);
     }
   }
+  if (navID === 31) {
+    for (const choice of choices.laws_item_one) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
 };

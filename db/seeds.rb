@@ -4,6 +4,8 @@ tablet = Item.create!(item_name: "Tablet")
 phone = Item.create!(item_name: "Phone")
 watch = Item.create!(item_name: "Watch")
 
+pocket_knife = Item.create!(item_name: "Rusty Pocket Knife")
+
 # Lawyer One ->
 lawyer_init = StoryLine.create!(dialogue: "You awaken to a bright light. Your vision blurried and a loud ringing in your ears. As you sit up you feel the sand beneath your body. The grittiness and vision blur, swallowing up all of your awareness. After a minute of calibration you look around to see yourself in a desert, surrounded by broken machinery and sandy hills as far as the eyes can see in all directions.", storyline_img: "INSERT IMAGE lawyer")
 
@@ -54,5 +56,7 @@ StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #5", storyline_img: "AN IMG")
 StoryLine.create!(dialogue: "Otaku #ITEM", storyline_img: "AN IMG")
+
+lawyer_item_one_grabbed = StoryLine.create!(dialogue: "You have an item!", storyline_img: "AN IMG")
 
 puts "Seeding completed!!!"
