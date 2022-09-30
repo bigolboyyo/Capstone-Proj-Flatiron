@@ -24,4 +24,5 @@ class ApplicationController < ActionController::API
   def record_not_found(invalid)
     render json: { error: "#{invalid.model} not found" }, status: 404
   end
+  
 end

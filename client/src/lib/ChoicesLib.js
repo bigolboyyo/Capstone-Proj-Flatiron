@@ -4,37 +4,42 @@ const lawBatchTwo = {
   choice_one: {
     choice_text: "Keep walking",
     next_choice: "LawMan#2",
+    //next nav: 6
   },
+
   choice_two: {
     choice_text: "Pick up the scorpion",
     next_choice: "LawMan#3",
+    //next nav: 7
   },
   //ITEM
   choice_three: {
     choice_text: "Slice open the cactus",
     next_choice: "LawMan#4",
+    //next nav: 8
   },
   choice_four: {
     choice_text: "Go back the way you came",
     next_choice: "LawMan#5",
+    //next nav: 9
   },
 };
 
 const lawBatchThree = {
   choice_one: {
-    choice_text: "law6",
+    choice_text: "Move closer to the shifting sands",
     next_choice: "LawMan#6",
   },
   choice_two: {
-    choice_text: "law7",
+    choice_text: "Move to the jagged rock",
     next_choice: "LawMan#7",
   },
   choice_three: {
-    choice_text: "law8",
+    choice_text: "Lay down, be quiet, and stay still",
     next_choice: "LawMan#8",
   },
   choice_four: {
-    choice_text: "law9",
+    choice_text: "Run back the way you came",
     next_choice: "LawMan#9",
   },
 };
@@ -153,10 +158,15 @@ const lawBatchNine = {
   },
 };
 
+//Tremor Death
 const lawBatchTen = {
   choice_one: {
-    choice_text: "Take the Item",
-    next_choice: "LawMan#Item",
+    choice_text: "Scream",
+    next_choice: "TremorDeath",
+  },
+  choice_two: {
+    choice_text: "Stay absolutely still",
+    next_choice: "TremorDeath",
   },
 };
 
