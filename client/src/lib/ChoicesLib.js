@@ -1,25 +1,20 @@
-const options = JSON.parse(localStorage.getItem("options"));
-const optID = options.id;
+// const optID = JSON.parse(localStorage.getItem("options")).id;
 
 const lawBatchTwo = {
   choice_one: {
-    option_id: optID,
     choice_text: "Keep walking",
     next_choice: "LawMan#2",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Pick up the scorpion",
     next_choice: "LawMan#3",
   },
   //ITEM
   choice_three: {
-    option_id: optID,
     choice_text: "Slice open the cactus",
     next_choice: "LawMan#4",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Go back the way you came",
     next_choice: "LawMan#5",
   },
@@ -27,22 +22,18 @@ const lawBatchTwo = {
 
 const lawBatchThree = {
   choice_one: {
-    option_id: optID,
     choice_text: "law6",
     next_choice: "LawMan#6",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "law7",
     next_choice: "LawMan#7",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "law8",
     next_choice: "LawMan#8",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "law9",
     next_choice: "LawMan#9",
   },
@@ -50,22 +41,18 @@ const lawBatchThree = {
 
 const lawBatchFour = {
   choice_one: {
-    option_id: optID,
     choice_text: "law10",
     next_choice: "LawMan#10",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "law11",
     next_choice: "LawMan#11",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "law12",
     next_choice: "LawMan#12",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "law13",
     next_choice: "LawMan#13",
   },
@@ -73,22 +60,18 @@ const lawBatchFour = {
 
 const lawBatchFive = {
   choice_one: {
-    option_id: optID,
     choice_text: "law14",
     next_choice: "LawMan#14",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "law15",
     next_choice: "LawMan#15",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "law16",
     next_choice: "LawMan#16",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "law17",
     next_choice: "LawMan#17",
   },
@@ -96,22 +79,18 @@ const lawBatchFive = {
 
 const lawBatchSix = {
   choice_one: {
-    option_id: optID,
     choice_text: "law18",
     next_choice: "LawMan#18",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "law19",
     next_choice: "LawMan#19",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "law20",
     next_choice: "LawMan#20",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "law21",
     next_choice: "LawMan#21",
   },
@@ -119,22 +98,18 @@ const lawBatchSix = {
 
 const lawBatchSeven = {
   choice_one: {
-    option_id: optID,
     choice_text: "law22",
     next_choice: "LawMan#22",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "law23",
     next_choice: "LawMan#23",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "law24",
     next_choice: "LawMan#24",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "law25",
     next_choice: "LawMan#25",
   },
@@ -142,22 +117,18 @@ const lawBatchSeven = {
 
 const lawBatchEight = {
   choice_one: {
-    option_id: optID,
     choice_text: "law26",
     next_choice: "LawMan#26",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "law27",
     next_choice: "LawMan#27",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "law28",
     next_choice: "LawMan#28",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "law29",
     next_choice: "LawMan#29",
   },
@@ -165,22 +136,18 @@ const lawBatchEight = {
 
 const lawBatchNine = {
   choice_one: {
-    option_id: optID,
     choice_text: "law30",
     next_choice: "LawMan#30",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "law31",
     next_choice: "LawMan#31",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "law32",
     next_choice: "LawMan#32",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "law33",
     next_choice: "LawMan#33",
   },
@@ -188,7 +155,6 @@ const lawBatchNine = {
 
 const lawBatchTen = {
   choice_one: {
-    option_id: optID,
     choice_text: "Take the Item",
     next_choice: "LawMan#Item",
   },
@@ -196,22 +162,18 @@ const lawBatchTen = {
 
 const crimeBatchTwo = {
   choice_one: {
-    option_id: optID,
     choice_text: "CRIME",
     next_choice: "Crime#2",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "VAGRANT",
     next_choice: "Crime#3",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "STEAL",
     next_choice: "Crime#4",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "LIE",
     next_choice: "Crime#5",
   },
@@ -219,22 +181,18 @@ const crimeBatchTwo = {
 
 const crimeBatchThree = {
   choice_one: {
-    option_id: optID,
     choice_text: "CRIME6",
     next_choice: "Crime#6",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "CRIME7",
     next_choice: "Crime#7",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "CRIME8",
     next_choice: "Crime#8",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "CRIME9",
     next_choice: "Crime#9",
   },
@@ -242,22 +200,18 @@ const crimeBatchThree = {
 
 const crimeBatchFour = {
   choice_one: {
-    option_id: optID,
     choice_text: "CRIME10",
     next_choice: "Crime#10",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "CRIME11",
     next_choice: "Crime#11",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "CRIME12",
     next_choice: "Crime#12",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "CRIME13",
     next_choice: "Crime#13",
   },
@@ -265,22 +219,18 @@ const crimeBatchFour = {
 
 const crimeBatchFive = {
   choice_one: {
-    option_id: optID,
     choice_text: "CRIME14",
     next_choice: "Crime#14",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "CRIME15",
     next_choice: "Crime#15",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "CRIME16",
     next_choice: "Crime#16",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "CRIME17",
     next_choice: "Crime#17",
   },
@@ -288,22 +238,18 @@ const crimeBatchFive = {
 
 const crimeBatchSix = {
   choice_one: {
-    option_id: optID,
     choice_text: "CRIME18",
     next_choice: "Crime#18",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "CRIME19",
     next_choice: "Crime#19",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "CRIME20",
     next_choice: "Crime#20",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "CRIME21",
     next_choice: "Crime#21",
   },
@@ -311,22 +257,18 @@ const crimeBatchSix = {
 
 const crimeBatchSeven = {
   choice_one: {
-    option_id: optID,
     choice_text: "CRIME22",
     next_choice: "Crime#22",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "CRIME23",
     next_choice: "Crime#23",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "CRIME24",
     next_choice: "Crime#24",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "CRIME25",
     next_choice: "Crime#25",
   },
@@ -334,22 +276,18 @@ const crimeBatchSeven = {
 
 const crimeBatchEight = {
   choice_one: {
-    option_id: optID,
     choice_text: "CRIME26",
     next_choice: "Crime#26",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "CRIME27",
     next_choice: "Crime#27",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "CRIME28",
     next_choice: "Crime#28",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "CRIME29",
     next_choice: "Crime#29",
   },
@@ -357,22 +295,18 @@ const crimeBatchEight = {
 
 const crimeBatchNine = {
   choice_one: {
-    option_id: optID,
     choice_text: "CRIME30",
     next_choice: "Crime#30",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "CRIME31",
     next_choice: "Crime#31",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "CRIME32",
     next_choice: "Crime#32",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "CRIME33",
     next_choice: "Crime#33",
   },
@@ -380,7 +314,6 @@ const crimeBatchNine = {
 
 const crimeBatchTen = {
   choice_one: {
-    option_id: optID,
     choice_text: "Take item",
     next_choice: "Crime#Item",
   },
@@ -388,22 +321,18 @@ const crimeBatchTen = {
 
 const animeBatchTwo = {
   choice_one: {
-    option_id: optID,
     choice_text: "Anime 2",
     next_choice: "Anime#2",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Anime 3",
     next_choice: "Anime#3",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "Anime 4",
     next_choice: "Anime#4",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Anime 5",
     next_choice: "Anime#5",
   },
@@ -411,22 +340,18 @@ const animeBatchTwo = {
 
 const animeBatchThree = {
   choice_one: {
-    option_id: optID,
     choice_text: "Move to item",
     next_choice: "Anime#6",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Anime 7",
     next_choice: "Anime#7",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "Anime 8",
     next_choice: "Anime#8",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Anime 9",
     next_choice: "Anime#9",
   },
@@ -434,22 +359,18 @@ const animeBatchThree = {
 
 const animeBatchFour = {
   choice_one: {
-    option_id: optID,
     choice_text: "Anime 10",
     next_choice: "Anime#10",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Anime 11",
     next_choice: "Anime#11",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "Anime 12",
     next_choice: "Anime#12",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Anime 13",
     next_choice: "Anime#13",
   },
@@ -457,22 +378,18 @@ const animeBatchFour = {
 
 const animeBatchFive = {
   choice_one: {
-    option_id: optID,
     choice_text: "Anime 14",
     next_choice: "Anime#14",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Anime 15",
     next_choice: "Anime#15",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "Anime 16",
     next_choice: "Anime#16",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Anime 17",
     next_choice: "Anime#17",
   },
@@ -480,22 +397,18 @@ const animeBatchFive = {
 
 const animeBatchSix = {
   choice_one: {
-    option_id: optID,
     choice_text: "Watch anime",
     next_choice: "Anime#18",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Cry",
     next_choice: "Anime#19",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "Buy figurine",
     next_choice: "Anime#20",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Be lonely",
     next_choice: "Anime#21",
   },
@@ -503,22 +416,18 @@ const animeBatchSix = {
 
 const animeBatchSeven = {
   choice_one: {
-    option_id: optID,
     choice_text: "Watch anime",
     next_choice: "Anime#22",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Cry",
     next_choice: "Anime#23",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "Buy figurine",
     next_choice: "Anime#24",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Be lonely",
     next_choice: "Anime#25",
   },
@@ -526,22 +435,18 @@ const animeBatchSeven = {
 
 const animeBatchEight = {
   choice_one: {
-    option_id: optID,
     choice_text: "Watch anime",
     next_choice: "Anime#26",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Cry",
     next_choice: "Anime#27",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "Buy figurine",
     next_choice: "Anime#28",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Be lonely",
     next_choice: "Anime#29",
   },
@@ -549,22 +454,18 @@ const animeBatchEight = {
 
 const animeBatchNine = {
   choice_one: {
-    option_id: optID,
     choice_text: "Watch anime",
     next_choice: "Anime#30",
   },
   choice_two: {
-    option_id: optID,
     choice_text: "Cry",
     next_choice: "Anime#31",
   },
   choice_three: {
-    option_id: optID,
     choice_text: "Buy figurine",
     next_choice: "Anime#32",
   },
   choice_four: {
-    option_id: optID,
     choice_text: "Be lonely",
     next_choice: "Anime#33",
   },
@@ -572,7 +473,6 @@ const animeBatchNine = {
 
 const animeBatchTen = {
   choice_one: {
-    option_id: optID,
     choice_text: "Take Item",
     next_choice: "Anime#Item",
   },
