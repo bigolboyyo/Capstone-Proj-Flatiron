@@ -38,8 +38,9 @@ export const choiceNav = async (navID) => {
       await postChoices(choice);
     }
   }
+  //worm death choices
   if (navID === 6) {
-    for (const choice of choices.laws_six) {
+    for (const choice of choices.laws_ten) {
       choice.option_id = JSON.parse(localStorage.getItem("options")).id;
       await postChoices(choice);
     }
@@ -63,6 +64,7 @@ export const choiceNav = async (navID) => {
     }
   }
   if (navID === 10) {
+    //alt tremor death
     for (const choice of choices.laws_ten) {
       choice.option_id = JSON.parse(localStorage.getItem("options")).id;
       await postChoices(choice);
@@ -177,7 +179,37 @@ export const choiceNav = async (navID) => {
     }
   }
   if (navID === 31) {
-    for (const choice of choices.laws_item_one) {
+    for (const choice of choices.laws_eleven) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 32) {
+    for (const choice of choices.laws_twelve) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 33) {
+    for (const choice of choices.laws_four) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 34) {
+    for (const choice of choices.laws_ten) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 35) {
+    for (const choice of choices.laws_five) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 36) {
+    for (const choice of choices.laws_five) {
       choice.option_id = JSON.parse(localStorage.getItem("options")).id;
       await postChoices(choice);
     }

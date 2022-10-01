@@ -9,7 +9,7 @@ const lawBatchTwo = {
 
   choice_two: {
     choice_text: "Pick up the scorpion",
-    next_choice: "LawMan#3",
+    next_choice: "ScorpionDeath",
     //next nav: 7
   },
   //ITEM
@@ -35,50 +35,50 @@ const lawBatchThree = {
     next_choice: "LawMan#7",
   },
   choice_three: {
-    choice_text: "Lay down, be quiet, and stay still",
-    next_choice: "LawMan#8",
+    choice_text: "Wait for whatever this is to approach",
+    next_choice: "LawMan#6",
   },
   choice_four: {
     choice_text: "Run back the way you came",
-    next_choice: "LawMan#9",
+    next_choice: "LawMan#8",
   },
 };
 
 const lawBatchFour = {
   choice_one: {
-    choice_text: "law10",
+    choice_text: "Examine the machinery",
     next_choice: "LawMan#10",
   },
   choice_two: {
-    choice_text: "law11",
+    choice_text: "Examine yourself",
     next_choice: "LawMan#11",
   },
   choice_three: {
-    choice_text: "law12",
-    next_choice: "LawMan#12",
+    choice_text: "This time I'm walking towards the sun",
+    next_choice: "Choice One Followup",
   },
   choice_four: {
-    choice_text: "law13",
-    next_choice: "LawMan#13",
+    choice_text: "You're tired, curl up and nap under a big piece of metal",
+    next_choice: "SleepyScorpionDeath",
   },
 };
 
 const lawBatchFive = {
   choice_one: {
-    choice_text: "law14",
-    next_choice: "LawMan#14",
+    choice_text: "Scratch the sting",
+    next_choice: "ScorpionDeath",
   },
   choice_two: {
-    choice_text: "law15",
-    next_choice: "LawMan#15",
+    choice_text: "Try to suck out the venom",
+    next_choice: "ScorpionDeath",
   },
   choice_three: {
-    choice_text: "law16",
-    next_choice: "LawMan#16",
+    choice_text: "Start slicing arm off",
+    next_choice: "ScorpionDeath",
   },
   choice_four: {
-    choice_text: "law17",
-    next_choice: "LawMan#17",
+    choice_text: "Accept death, you're tired anyways",
+    next_choice: "ScorpionDeath",
   },
 };
 
@@ -167,6 +167,55 @@ const lawBatchTen = {
   choice_two: {
     choice_text: "Stay absolutely still",
     next_choice: "TremorDeath",
+  },
+  choice_three: {
+    choice_text: "Attempt to flee",
+    next_choice: "TremorDeath",
+  },
+  choice_four: {
+    choice_text: "Pray to God",
+    next_choice: "TremorDeath",
+  },
+};
+
+//on the jagged rocks
+const lawBatchEleven = {
+  choice_one: {
+    choice_text: "Immediately sprint away towards where the worm came",
+    next_choice: "AltTremorDeath",
+  },
+  choice_two: {
+    choice_text: "Better wait til I know it's gone",
+    next_choice: "TremorPatience",
+  },
+  choice_three: {
+    choice_text: "Sprint back towards the place you woke",
+    next_choice: "AltTremorDeath",
+  },
+  choice_four: {
+    choice_text: "Have a manic meltdown",
+    next_choice: "ManicScorpionDeath",
+  },
+};
+
+const lawBatchTwelve = {
+  choice_one: {
+    choice_text: "Attempt to pick up the fox",
+    next_choice: "FoxBite",
+  },
+  choice_two: {
+    choice_text: "Keep sprinting forward",
+    next_choice: "PostWormReturn",
+    //fox dies you arrive back where you awoke
+  },
+  choice_three: {
+    choice_text: "Turn around to confront whatever is approaching",
+    next_choice: "LawMan#6",
+  },
+  choice_four: {
+    choice_text: "Change direction to jagged rocks",
+    next_choice: "LawMan#7",
+    //go atop the jagged rocks
   },
 };
 
@@ -543,6 +592,10 @@ export const choices = {
   laws_ten: Object.values(Object.values(lawBatchTen)),
   crimes_ten: Object.values(Object.values(crimeBatchTen)),
   animes_ten: Object.values(Object.values(animeBatchTen)),
+
+  laws_eleven: Object.values(Object.values(lawBatchEleven)),
+
+  laws_twelve: Object.values(Object.values(lawBatchTwelve)),
 
   laws_item_one: Object.values(Object.values(lawBatchItemTrue)),
 };

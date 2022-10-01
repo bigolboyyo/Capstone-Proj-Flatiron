@@ -43,67 +43,117 @@ export const advanceStory = async (id, activeChar, nav) => {
     story_line_id: false,
   };
 
+  //towards sun, no investigation
   if (id === "Choice One Followup" && activeChar.background === "lawyer") {
     nav = 2;
     option.story_line_id = nav;
 
     await postOption(option);
   }
+  //away from sun
   if (id === "Choice Two Followup" && activeChar.background === "lawyer") {
     nav = 3;
     option.story_line_id = nav;
 
     await postOption(option);
   }
+  //examine machinery
   if (id === "Choice Three Followup" && activeChar.background === "lawyer") {
     nav = 4;
     option.story_line_id = nav;
 
     await postOption(option);
   }
+  //examine self
   if (id === "Choice Four Followup" && activeChar.background === "lawyer") {
     nav = 5;
     option.story_line_id = nav;
 
     await postOption(option);
   }
+  //towards sun, keep walking
   if (id === "LawMan#2" && activeChar.background === "lawyer") {
     nav = 6;
     option.story_line_id = nav;
 
     await postOption(option);
   }
+  //pick up scorpion
   if (id === "LawMan#3" && activeChar.background === "lawyer") {
     nav = 7;
     option.story_line_id = nav;
 
     await postOption(option);
   }
+  //slice open cactus, needs to find rusty pocket knife
   if (id === "LawMan#4" && activeChar.background === "lawyer") {
     nav = 8;
     option.story_line_id = nav;
 
     await postOption(option);
   }
-
+  //turn back around (fox encounter?)
   if (id === "LawMan#5" && activeChar.background === "lawyer") {
     nav = 9;
     option.story_line_id = nav;
 
     await postOption(option);
   }
-
-  if (id === "LawMan#6" && activeChar.background === "lawyer") {
+  //running tremor death
+  if (id === "AltTremorDeath" && activeChar.background === "lawyer") {
     nav = 10;
     option.story_line_id = nav;
 
     await postOption(option);
   }
 
-  if (id === "LawMan#Item" && activeChar.background === "lawyer") {
+  //approach the worm
+  if (id === "LawMan#6" && activeChar.background === "lawyer") {
+    nav = 6;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  //worm encounter, jump on jagged rocks
+  if (id === "LawMan#7" && activeChar.background === "lawyer") {
     nav = 31;
     option.story_line_id = nav;
-    await takeItem("Tablet");
+
+    await postOption(option);
+  }
+
+  if (id === "LawMan#8" && activeChar.background === "lawyer") {
+    nav = 32;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "PostWormReturn" && activeChar.background === "lawyer") {
+    nav = 33;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "FoxBite" && activeChar.background === "lawyer") {
+    nav = 34;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "ManicScorpionDeath" && activeChar.background === "lawyer") {
+    nav = 35;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "SleepyScorpionDeath" && activeChar.background === "lawyer") {
+    nav = 36;
+    option.story_line_id = nav;
 
     await postOption(option);
   }

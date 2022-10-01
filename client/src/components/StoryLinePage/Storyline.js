@@ -68,13 +68,17 @@ function Storyline() {
   };
 
   const navStoryLine = async (id) => {
-    let nav = storyLine.id;
-    await advanceStory(id, activeChar, nav);
-    const option = JSON.parse(localStorage.getItem("options"));
-    nav = option.story_line_id;
-    await choiceCreation(activeChar.background, option);
-    await doAllTheThings(nav);
-    dispatch(setActiveStoryLine(nav));
+    if (id === "TremorDeath" || id === "ScorpionDeath") {
+      navigate("/death");
+    } else {
+      let nav = storyLine.id;
+      await advanceStory(id, activeChar, nav);
+      const option = JSON.parse(localStorage.getItem("options"));
+      nav = option.story_line_id;
+      await choiceCreation(activeChar.background, option);
+      await doAllTheThings(nav);
+      dispatch(setActiveStoryLine(nav));
+    }
   };
 
   const mappedChoices = () => {

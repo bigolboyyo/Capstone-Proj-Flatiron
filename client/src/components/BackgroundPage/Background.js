@@ -117,21 +117,25 @@ function Background() {
         option_id: optionID,
         choice_text: "Start walking towards the sun",
         next_choice: "Choice One Followup",
+        //next nav: 2
       },
       choice_two: {
         option_id: optionID,
         choice_text: "Start walking away from the sun",
         next_choice: "Choice Two Followup",
+        //next nav: 3
       },
       choice_three: {
         option_id: optionID,
         choice_text: "Examine the machinery around you",
         next_choice: "Choice Three Followup",
+        //next nav: 4
       },
       choice_four: {
         option_id: optionID,
         choice_text: "Examine yourself",
         next_choice: "Choice Four Followup",
+        //next nav:
       },
     };
 

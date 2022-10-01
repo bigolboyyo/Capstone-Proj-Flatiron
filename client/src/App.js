@@ -17,6 +17,7 @@ import Storyline from "./components/StoryLinePage/Storyline";
 import Adventure from "./components/AdventurePage/Adventure";
 import EndState from "./components/EndStatePage/EndState";
 import Root from "./components/Root/Root";
+import DeathScreen from "./components/DeathScreen/DeathScreen";
 
 import "./App.css";
 
@@ -139,6 +140,7 @@ function App() {
         <Route path="/background" element={<Background />} />
         <Route path="/adventure-start" element={<Adventure />} />
         <Route path="/storyline" element={<Storyline />} />
+        <Route path="/death" element={<DeathScreen />} />
         <Route path="/endstate" element={<EndState />} />
       </Routes>
     </div>
