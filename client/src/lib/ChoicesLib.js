@@ -84,20 +84,20 @@ const lawBatchFive = {
 
 const lawBatchSix = {
   choice_one: {
-    choice_text: "law18",
-    next_choice: "LawMan#18",
+    choice_text: "Head back the way you came",
+    next_choice: "PostRockReturn",
   },
   choice_two: {
-    choice_text: "law19",
-    next_choice: "LawMan#19",
+    choice_text: "Take a nap, you're exhausted",
+    next_choice: "SleepyScorpionDeathTwo",
   },
   choice_three: {
-    choice_text: "law20",
-    next_choice: "LawMan#20",
+    choice_text: "Wait longer for the sun to go down",
+    next_choice: "WormWasPatient",
   },
   choice_four: {
-    choice_text: "law21",
-    next_choice: "LawMan#21",
+    choice_text: "Follow after the worm",
+    next_choice: "WormImpatience",
   },
 };
 

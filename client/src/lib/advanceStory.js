@@ -158,6 +158,41 @@ export const advanceStory = async (id, activeChar, nav) => {
     await postOption(option);
   }
 
+  if (id === "TremorPatience" && activeChar.background === "lawyer") {
+    nav = 37;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "PostRockReturn" && activeChar.background === "lawyer") {
+    nav = 38;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "SleepyScorpionDeathTwo" && activeChar.background === "lawyer") {
+    nav = 39;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "WormWasPatient" && activeChar.background === "lawyer") {
+    nav = 40;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "WormImpatience" && activeChar.background === "lawyer") {
+    nav = 41;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
   if (id === "Choice One Followup" && activeChar.background === "vagrant") {
     nav = 12;
     option.story_line_id = nav;
@@ -214,12 +249,12 @@ export const advanceStory = async (id, activeChar, nav) => {
     await postOption(option);
   }
 
-  if (id === "Crime#Item" && activeChar.background === "vagrant") {
-    nav = 36;
-    option.story_line_id = nav;
-    await takeItem("Phone");
-    await postOption(option);
-  }
+  // if (id === "Crime#Item" && activeChar.background === "vagrant") {
+  //   nav = 36;
+  //   option.story_line_id = nav;
+  //   await takeItem("Phone");
+  //   await postOption(option);
+  // }
 
   if (id === "Choice One Followup" && activeChar.background === "otaku") {
     nav = 22;
@@ -275,10 +310,10 @@ export const advanceStory = async (id, activeChar, nav) => {
 
     await postOption(option);
   }
-  if (id === "Anime#Item" && activeChar.background === "otaku") {
-    nav = 41;
-    option.story_line_id = nav;
-    await takeItem("Watch");
-    await postOption(option);
-  }
+  // if (id === "Anime#Item" && activeChar.background === "otaku") {
+  //   nav = 41;
+  //   option.story_line_id = nav;
+  //   await takeItem("Watch");
+  //   await postOption(option);
+  // }
 };

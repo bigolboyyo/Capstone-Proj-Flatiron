@@ -214,4 +214,34 @@ export const choiceNav = async (navID) => {
       await postChoices(choice);
     }
   }
+  if (navID === 37) {
+    for (const choice of choices.laws_six) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 38) {
+    for (const choice of choices.laws_four) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 39) {
+    for (const choice of choices.laws_five) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 40) {
+    for (const choice of choices.laws_ten) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 41) {
+    for (const choice of choices.laws_ten) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
 };
