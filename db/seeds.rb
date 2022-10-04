@@ -13,9 +13,9 @@ lawyer_init = StoryLine.create!(dialogue: "You awaken to a bright light. Your vi
 lawyer_two = StoryLine.create!(dialogue: "What must be a few hours go by, as the sun starts setting, you notice a large scorpion, the size of baseball, scurrying in front of you. You can see the faint outline of the machinery far behind you. You realize how dehydrated you are as you notice a cactus a few feet past the scorpion.", storyline_img: "2nd lawyer image")
 # Choice three ->
 lawyer_three = StoryLine.create!(dialogue: "You decide to travel away from the setting sun. Leaving behind the machinery you begin moving. Not even 20 minutes go by, as you crest a hill you see a large jagged rock jutting from the ground. At this moment you start to feel faint vibrations beneath your feet. As the vibrations grow stronger, you notice shifting sands far ahead, seemingly approaching your position.", storyline_img: "Another vacant img")
-# Choice four ->
+# Choice four -> examine machinery
 lawyer_four = StoryLine.create!(dialogue: "SOOO COOOOL", storyline_img: "COOOLLLLL")
-# Choice five ->
+# Choice five -> examine yourself
 lawyer_five = StoryLine.create!(dialogue: "Have fun keeping track of all of this", storyline_img: "mah brain")
 
 law_six = StoryLine.create!(dialogue: "'Maybe it's a local!', you think to yourself. 'Finally some help. I don't know how I got here but when my firm hears about this we will rain hell down upon whoever put me here.' The vibrations grow stronger and the first thing you notice is the smell. The mustiness of an old damp basement mixed with the smell of a rotting corpse. The first thing you see, teeth. ", storyline_img: "mah brain")
@@ -68,4 +68,5 @@ law_eighteen = StoryLine.create!(dialogue: "Your patience paid off. You arrive b
 law_nineteen = StoryLine.create!(dialogue: "You decide to wait a little longer until the sun goes down. Might as well curl up on this rock where it's safe and take a nap. A slight crevice provides some shade and although you are thirsty, the fear of the worm keeps you stagnant. As you fall asleep you register a large scorpion scurrying across the sands far in front of you. You are tired though and pay it no mind. Next thing you know you jolt awake to an intense pain in your arm. The sun has gone down, but even with the lack of light you can tell your arm is 3 times its regular size and the pain is unbearable.", storyline_img: "img")
 law_twenty = StoryLine.create!(dialogue: "`God I'm so tired, but I can't sleep and no way I'm leaving just yet`, you murmur to yourself. You decide to stay vigilant until the sun goes down. Staring off into the distance you enter a trance of sorts. Everything goes blurry and as the sun sets you truly realize how dehydrated you are. In a panic you realize you need water and start to head back the way you had came. Unfortunately before cresting the hill you fall over due to heat exhaustion. The shifting sands, the smell of death, and large sharp teeth are the last images you see as you stare back behind you in a daze.", storyline_img: "img")
 law_twenty_one = StoryLine.create!(dialogue: "You decide to follow after the worm. 'Where the hell did that thing go, no way I'm turning back around' and you continue forth away from the sun. Without a warning as you crest the next dune the ground beneath you opens up. You step back in time but from below you see the beast rising from the ground. As the smell of blood and death overwhelms your senses you realize there is not much time to act.")
+
 puts "Seeding completed!!!"

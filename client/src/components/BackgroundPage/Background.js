@@ -307,9 +307,9 @@ function Background() {
           alt="vagrat"
           onMouseOver={() => setVagrantDetails(true)}
           onMouseLeave={() => setVagrantDetails(false)}
-          onClick={(e) => {
-            setBackground(e.target.name);
-          }}
+          // onClick={(e) => {
+          //   setBackground(e.target.name);
+          // }}
         ></img>
         <img
           name="otaku"
@@ -319,9 +319,10 @@ function Background() {
           alt="otaku"
           onMouseOver={() => setOtakuDetails(true)}
           onMouseLeave={() => setOtakuDetails(false)}
-          onClick={(e) => {
-            setBackground(e.target.name);
-          }}
+          //   onClick={(e) => {
+          //     setBackground(e.target.name);
+          //   }
+          // }
         ></img>
       </div>
       <button onClick={submitCharacter} className="start-adv-btn">
@@ -332,10 +333,16 @@ function Background() {
         <p className="bkg-info">Info about the lawyer background goes here!</p>
       ) : null}
       {vagrantDetails ? (
-        <p className="bkg-info">Info about the vagrant background goes here!</p>
+        <p className="bkg-info">
+          Stay tuned for future updates! Only Lawyer background currently
+          available.
+        </p>
       ) : null}
       {otakuDetails ? (
-        <p className="bkg-info">Info about the otaku background goes here!</p>
+        <p className="bkg-info">
+          Stay tuned for future updates! Only Lawyer background currently
+          available.
+        </p>
       ) : null}
     </div>
   );
