@@ -47,11 +47,11 @@ const lawBatchThree = {
 const lawBatchFour = {
   choice_one: {
     choice_text: "Examine the machinery",
-    next_choice: "LawMan#10",
+    next_choice: "Choice Three Followup",
   },
   choice_two: {
     choice_text: "Examine yourself",
-    next_choice: "LawMan#11",
+    next_choice: "Choice Four Followup",
   },
   choice_three: {
     choice_text: "This time I'm walking towards the sun",
@@ -277,6 +277,63 @@ const lawBatchFifteen = {
   choice_four: {
     choice_text: "Start walking away from the sun",
     next_choice: "Choice Two Followup",
+  },
+};
+
+const lawBatchSixteen = {
+  choice_one: {
+    choice_text: "Start Walking towards the sun",
+    next_choice: "Choice One Followup",
+  },
+  choice_two: {
+    choice_text: "Start walking away from the sun",
+    next_choice: "Choice Two Followup",
+  },
+  choice_three: {
+    choice_text: "This could be a decent weapon!",
+    next_choice: "GainRobotArmWeapon",
+  },
+  choice_four: {
+    choice_text: "Pick up bundle of exposed wires",
+    next_choice: "ElectricShockDeath",
+  },
+};
+
+const lawBatchSeventeen = {
+  choice_one: {
+    choice_text: "Start walking towards the sun",
+    next_choice: "Choice One Followup",
+  },
+  choice_two: {
+    choice_text: "Start walking away from the sun",
+    next_choice: "Choice Two Followup",
+  },
+  choice_three: {
+    choice_text: "Examine the machinery around you",
+    next_choice: "Choice Three Followup",
+  },
+  choice_four: {
+    choice_text: "You're tired, curl up and nap under a big piece of metal",
+    next_choice: "SleepyScorpionDeath",
+  },
+};
+
+const lawBatchEighteen = {
+  choice_one: {
+    choice_text: "Start walking towards the sun",
+    next_choice: "Choice One Followup",
+  },
+  choice_two: {
+    choice_text: "Start walking away from the sun",
+    next_choice: "Choice Two Followup",
+  },
+  choice_three: {
+    choice_text: "Pick up bundle of exposed wires",
+    next_choice: "ElectricShockDeath",
+  },
+  choice_four: {
+    choice_text: "You're tired, curl up and nap under a big piece of metal",
+    next_choice: "SleepyScorpionDeath",
   },
 };
 
@@ -644,4 +701,10 @@ export const choices = {
   laws_fourteen: Object.values(Object.values(lawBatchFourteen)),
 
   laws_fifteen: Object.values(Object.values(lawBatchFifteen)),
+
+  laws_sixteen: Object.values(Object.values(lawBatchSixteen)),
+
+  laws_seventeen: Object.values(Object.values(lawBatchSeventeen)),
+
+  laws_eighteen: Object.values(Object.values(lawBatchEighteen)),
 };

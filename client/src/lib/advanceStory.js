@@ -70,6 +70,7 @@ export const advanceStory = async (id, activeChar, nav) => {
     option.story_line_id = nav;
 
     await postOption(option);
+    await takeItem("Rusty Pocket Knife");
   }
   //towards sun, keep walking
   if (id === "LawMan#2" && activeChar.background === "lawyer") {
@@ -225,6 +226,26 @@ export const advanceStory = async (id, activeChar, nav) => {
     nav = 46;
     option.story_line_id = nav;
 
+    await postOption(option);
+  }
+
+  if (id === "FindSymbolOfCult" && activeChar.background === "lawyer") {
+    nav = 47;
+    option.story_line_id = nav;
+    await postOption(option);
+    await takeItem("Memory of Hourglass Symbol");
+  }
+
+  if (id === "GainRobotArmWeapon" && activeChar.background === "lawyer") {
+    nav = 48;
+    option.story_line_id = nav;
+    await postOption(option);
+    await takeItem("Robot Arm");
+  }
+
+  if (id === "FindFoxDen" && activeChar.background === "lawyer") {
+    nav = 49;
+    option.story_line_id = nav;
     await postOption(option);
   }
 

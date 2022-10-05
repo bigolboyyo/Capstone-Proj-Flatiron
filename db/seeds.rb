@@ -1,10 +1,8 @@
 puts "Seeding..."
 
-tablet = Item.create!(item_name: "Tablet")
-phone = Item.create!(item_name: "Phone")
-watch = Item.create!(item_name: "Watch")
-
 pocket_knife = Item.create!(item_name: "Rusty Pocket Knife")
+memory_of_occult_symbol = Item.create!(item_name: "Memory of Hourglass Symbol")
+robot_arm = Item.create!(item_name: "Robot Arm")
 
 # Lawyer One ->
 lawyer_init = StoryLine.create!(dialogue: "You awaken to a bright light. Your vision blurried and a loud ringing in your ears. As you sit up you feel the sand beneath your body. The grittiness and vision blur, swallowing up all of your awareness. After a minute of calibration you look around to see yourself in a desert, surrounded by broken machinery and sandy hills as far as the eyes can see in all directions.", storyline_img: "INSERT IMAGE lawyer")
@@ -16,7 +14,7 @@ lawyer_three = StoryLine.create!(dialogue: "You decide to travel away from the s
 # Choice four -> examine machinery
 lawyer_four = StoryLine.create!(dialogue: "Metal bits and pieces lay all around you. Cables and capacitors create an array of green, yellow, and red that stands out against the backdrop of sheet metal. You notice a couple erroded metal arms and legs amongst the scrap. Upon even closer inspection you notice what looks to be humanoid robot faces, worn down by the sands of time. 'Fucking robots, in the middle of the desert? Some terrorist operation huh, wait til the media hears about this.' you say out loud. ", storyline_img: "COOOLLLLL")
 # Choice five -> examine yourself
-lawyer_five = StoryLine.create!(dialogue: "Have fun keeping track of all of this", storyline_img: "mah brain")
+lawyer_five = StoryLine.create!(dialogue: "You look down at your hands. They are filthy. You're in your trusty black suit that has won many a court cases alongside you. It's tattered and ragged now. 'How long was I out?' you ponder. Checking your pockets you find your pocket knife that Jim gave you a few years back as a birthday gift, except now it's all rusted. Other than some lint and your confusion, you find nothing else on you.", storyline_img: "mah brain")
 
 law_six = StoryLine.create!(dialogue: "'Maybe it's a local!', you think to yourself. 'Finally some help. I don't know how I got here but when my firm hears about this we will rain hell down upon whoever put me here.' The vibrations grow stronger and the first thing you notice is the smell. The mustiness of an old damp basement mixed with the smell of a rotting corpse. The first thing you see, teeth. ", storyline_img: "mah brain")
 StoryLine.create!(dialogue: "Have fun keeping track of all of this", storyline_img: "mah brain")
@@ -73,4 +71,7 @@ law_twenty_three = StoryLine.create!(dialogue: "Suddenly as if some left leaning
 law_twenty_four = StoryLine.create!(dialogue: "You begin pulling the exposed arms, legs, and metal skulls from the sand. They seem to be highly advanced tech that you've never encountered in your life, all broken and rusted with no symbols or lettering to clue you in to their origin. You get to an arm that seems a bit shinier and less rusted than the other pieces you've seen. You tug and feel weight behind it.", storyline_img: "img")
 law_twenty_five = StoryLine.create!(dialogue: "Pulling with all of your might you hear a crack and the arms rips off, causing whatever was beneath the sand to sink further underground. You stand holding this robotic arm with wires sticking out the end of the socket on one end and if by instinct you are grasping the fingers with your own.", storyline_img: "img")
 law_twenty_six = StoryLine.create!(dialogue: "`Stupid junk` you scream as you throw the arm off into a nearby pile. Standing there feeling confused you look around you noticing the colorful wires, setting sun, and giant piles of scrap metal.", storyline_img: "img")
+law_twenty_seven = StoryLine.create!(dialogue: "Upon closer inspection on the palm of the hand you notice a strange symbol. It looks to be an hourglass with 3 compartments. Some strange language etched in the middle of each compartment. You take the time to etch this is into your brain, it may be useful for describing what you've found here.", storyline_img: "occult symbol")
+law_twenty_eight = StoryLine.create!(dialogue: "You realize you could use something to protect yourself. This arm is about the size of a baseball bat. You bet it'd get the job done in a pinch!", storyline_img: "robot arm")
+law_twenty_nine = StoryLine.create!(dialogue: "You start sifting through the large pile of scrap metal. You smell a musk that reminds you of going hunting with your grandfather as a child. As you continue sifting through you notice little bits of red fur, various small rodent bones, and the sand is dug up a foot into the ground. This must be the nest of a small mammal. If they can survive here, that must mean there is food and water somewhere nearby.", storyline_img: "foxden")
 puts "Seeding completed!!!"

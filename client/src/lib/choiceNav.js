@@ -10,7 +10,12 @@ const postChoices = async (choiceObj) => {
   };
   const r = await fetch("/choices", config);
   const postedChoices = await r.json();
-  console.log(postedChoices);
+  // localStorage.setItem(
+  //   "char_choices",
+  //   JSON.stringify([
+  //     ...JSON.parse(localStorage.getItem("char_choices"), postedChoices),
+  //   ])
+  // );
 };
 
 export const choiceNav = async (navID) => {
@@ -33,7 +38,7 @@ export const choiceNav = async (navID) => {
     }
   }
   if (navID === 5) {
-    for (const choice of choices.laws_five) {
+    for (const choice of choices.laws_seventeen) {
       choice.option_id = JSON.parse(localStorage.getItem("options")).id;
       await postChoices(choice);
     }
@@ -270,6 +275,24 @@ export const choiceNav = async (navID) => {
   }
   if (navID === 46) {
     for (const choice of choices.laws_fifteen) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 47) {
+    for (const choice of choices.laws_sixteen) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 48) {
+    for (const choice of choices.laws_eighteen) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 49) {
+    for (const choice of choices.laws_eighteen) {
       choice.option_id = JSON.parse(localStorage.getItem("options")).id;
       await postChoices(choice);
     }

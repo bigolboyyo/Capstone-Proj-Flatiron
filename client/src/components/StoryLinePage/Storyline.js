@@ -67,6 +67,14 @@ function Storyline() {
     await fetchStories();
   };
 
+  const permaDeath = async () => {
+    const config = {
+      method: "DELETE",
+    };
+    const r = await fetch(`/characters/${activeChar.id}`, config);
+    console.log(r);
+  };
+
   const navStoryLine = async (id) => {
     if (
       id === "TremorDeath" ||
@@ -74,6 +82,7 @@ function Storyline() {
       id === "ElectricDeath" ||
       id === "Bigoted"
     ) {
+      await permaDeath();
       navigate("/death");
     } else {
       let nav = storyLine.id;

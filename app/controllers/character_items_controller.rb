@@ -11,8 +11,14 @@ class CharacterItemsController < ApplicationController
   end
 
   def create
-    @character_item = CharacterItem.create!(character_item_params)
-    render json: @character_item, status: :created
+    @current_inventory = @current_user.characters.find { |char| params[:character_id] == char.id }.inventory
+    is_found = @current_inventory.any? { |item| item.item_name == params[:item_name] }
+    if is_found
+      render json: { duplicate_item: "Character already has item!" }, status: :forbidden
+    else
+      @character_item = CharacterItem.create!(character_item_params)
+      render json: @character_item, status: :created
+    end
   end
 
   def update
