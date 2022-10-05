@@ -27,7 +27,7 @@ export const choiceNav = async (navID) => {
     }
   }
   if (navID === 4) {
-    for (const choice of choices.laws_four) {
+    for (const choice of choices.laws_seven) {
       choice.option_id = JSON.parse(localStorage.getItem("options")).id;
       await postChoices(choice);
     }
@@ -240,6 +240,36 @@ export const choiceNav = async (navID) => {
   }
   if (navID === 41) {
     for (const choice of choices.laws_ten) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 42) {
+    for (const choice of choices.laws_eight) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 43) {
+    for (const choice of choices.laws_nine) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 44) {
+    for (const choice of choices.laws_thirteen) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 45) {
+    for (const choice of choices.laws_fourteen) {
+      choice.option_id = JSON.parse(localStorage.getItem("options")).id;
+      await postChoices(choice);
+    }
+  }
+  if (navID === 46) {
+    for (const choice of choices.laws_fifteen) {
       choice.option_id = JSON.parse(localStorage.getItem("options")).id;
       await postChoices(choice);
     }

@@ -68,7 +68,12 @@ function Storyline() {
   };
 
   const navStoryLine = async (id) => {
-    if (id === "TremorDeath" || id === "ScorpionDeath") {
+    if (
+      id === "TremorDeath" ||
+      id === "ScorpionDeath" ||
+      id === "ElectricDeath" ||
+      id === "Bigoted"
+    ) {
       navigate("/death");
     } else {
       let nav = storyLine.id;

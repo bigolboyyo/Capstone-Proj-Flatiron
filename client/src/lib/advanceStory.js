@@ -193,6 +193,41 @@ export const advanceStory = async (id, activeChar, nav) => {
     await postOption(option);
   }
 
+  if (id === "ElectricShockDeath" && activeChar.background === "lawyer") {
+    nav = 42;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "BigotDeath" && activeChar.background === "lawyer") {
+    nav = 43;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "RobotInspection" && activeChar.background === "lawyer") {
+    nav = 44;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "ArmRipsOff" && activeChar.background === "lawyer") {
+    nav = 45;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
+  if (id === "PostArmThrown" && activeChar.background === "lawyer") {
+    nav = 46;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+
   if (id === "Choice One Followup" && activeChar.background === "vagrant") {
     nav = 12;
     option.story_line_id = nav;

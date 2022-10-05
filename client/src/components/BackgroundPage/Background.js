@@ -239,23 +239,6 @@ function Background() {
 
       await postInitOption(optionCreation);
 
-      // How can I abstract this code to be reused a specific number of times?
-      // When I post the associated option for the char, I will obvi have multiple choices
-
-      // rough pseudo code to follow...
-
-      // function choiceCreation(times, choiceTextObj){
-      //   // For loop for the length of times?
-      //   // return a choice text object where each choice_text is ...
-      //   // // one of the param key/value pairs?
-      // }
-
-      // const choiceCreation = {
-      //   option_id: JSON.parse(localStorage.getItem("init")).id,
-      //   choice_text: "Your Local Storage!",
-      // };
-
-      // await postInitChoices(choiceCreation);
       await initChoiceCreation(background);
       await fetchStories();
 

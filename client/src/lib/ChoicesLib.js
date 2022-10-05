@@ -103,58 +103,61 @@ const lawBatchSix = {
 
 const lawBatchSeven = {
   choice_one: {
-    choice_text: "law22",
-    next_choice: "LawMan#22",
+    choice_text: "Pick up a bundle of exposed wires",
+    next_choice: "ElectricShockDeath",
   },
   choice_two: {
-    choice_text: "law23",
-    next_choice: "LawMan#23",
+    choice_text: "Inspect the humanoid body parts",
+    next_choice: "RobotInspection",
   },
   choice_three: {
-    choice_text: "law24",
-    next_choice: "LawMan#24",
+    choice_text: "Sort through largest pile of scrap metal",
+    next_choice: "FindFoxDen",
   },
   choice_four: {
-    choice_text: "law25",
-    next_choice: "LawMan#25",
+    choice_text:
+      "Complain out loud about how terrorist technology is advancing too fast",
+    next_choice: "BigotDeath",
   },
 };
 
+//ElectricShockDeath
 const lawBatchEight = {
   choice_one: {
-    choice_text: "law26",
-    next_choice: "LawMan#26",
+    choice_text: "God Save Me",
+    next_choice: "ElectricDeath",
   },
   choice_two: {
-    choice_text: "law27",
-    next_choice: "LawMan#27",
+    choice_text: "Jim Save Me",
+    next_choice: "ElectricDeath",
   },
   choice_three: {
-    choice_text: "law28",
-    next_choice: "LawMan#28",
+    choice_text: "Remember your mother",
+    next_choice: "ElectricDeath",
   },
   choice_four: {
-    choice_text: "law29",
-    next_choice: "LawMan#29",
+    choice_text: "Focus on the sun's warmth",
+    next_choice: "ElectricDeath",
   },
 };
 
+//Bigot Death
 const lawBatchNine = {
   choice_one: {
-    choice_text: "law30",
-    next_choice: "LawMan#30",
+    choice_text: "Scream for mercy",
+    next_choice: "Bigoted",
   },
   choice_two: {
-    choice_text: "law31",
-    next_choice: "LawMan#31",
+    choice_text: "Have faith in Capitalism",
+    next_choice: "Bigoted",
   },
   choice_three: {
-    choice_text: "law32",
-    next_choice: "LawMan#32",
+    choice_text: "Curse the irony",
+    next_choice: "Bigoted",
   },
   choice_four: {
-    choice_text: "law33",
-    next_choice: "LawMan#33",
+    choice_text: "Attempt to flee",
+    next_choice: "Bigoted",
   },
 };
 
@@ -219,22 +222,61 @@ const lawBatchTwelve = {
   },
 };
 
-const lawBatchItemTrue = {
+const lawBatchThirteen = {
   choice_one: {
-    choice_text: "item",
-    next_choice: "LawMan#34",
+    choice_text: "Pull with all of your strength",
+    next_choice: "ArmRipsOff",
   },
   choice_two: {
-    choice_text: "uhav",
-    next_choice: "LawMan#35",
+    choice_text: "Ignore it and look through largest pile of scrap metal",
+    next_choice: "FindFoxDen",
   },
   choice_three: {
-    choice_text: "congrats",
-    next_choice: "LawMan#36",
+    choice_text: "Ignore and start walking towards the sun",
+    next_choice: "Choice One Followup",
   },
   choice_four: {
-    choice_text: "dookie",
-    next_choice: "LawMan#37",
+    choice_text: "Ignore and start walking away from the sun",
+    next_choice: "Choice Two Followup",
+  },
+};
+
+const lawBatchFourteen = {
+  choice_one: {
+    choice_text: "Throw the arm into a pile of scrap",
+    next_choice: "PostArmThrown",
+  },
+  choice_two: {
+    choice_text: "Investigate the arm further",
+    next_choice: "FindSymbolOfCult",
+  },
+  choice_three: {
+    choice_text: "This could be a decent weapon!",
+    next_choice: "GainRobotArmWeapon",
+  },
+  choice_four: {
+    choice_text:
+      "Whoops... put the arm back in the sand as if you never touched it",
+    next_choice: "PostArmPlaced",
+  },
+};
+
+const lawBatchFifteen = {
+  choice_one: {
+    choice_text: "Pick up bundle of exposed wires",
+    next_choice: "ElectricShockDeath",
+  },
+  choice_two: {
+    choice_text: "Sort through largest pile of scrap metal",
+    next_choice: "FindFoxDen",
+  },
+  choice_three: {
+    choice_text: "Start walking towards the sun",
+    next_choice: "Choice One Followup",
+  },
+  choice_four: {
+    choice_text: "Start walking away from the sun",
+    next_choice: "Choice Two Followup",
   },
 };
 
@@ -597,5 +639,9 @@ export const choices = {
 
   laws_twelve: Object.values(Object.values(lawBatchTwelve)),
 
-  laws_item_one: Object.values(Object.values(lawBatchItemTrue)),
+  laws_thirteen: Object.values(Object.values(lawBatchThirteen)),
+
+  laws_fourteen: Object.values(Object.values(lawBatchFourteen)),
+
+  laws_fifteen: Object.values(Object.values(lawBatchFifteen)),
 };
