@@ -32,7 +32,7 @@ class OptionsController < ApplicationController
   end
 
   def find_option
-    @option = option.find(params[:id])
+    @option = Option.find(params[:id])
     !@option ? record_not_found(@option) : @option
   end
 end

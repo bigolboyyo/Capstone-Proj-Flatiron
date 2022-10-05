@@ -76,10 +76,7 @@ function Background() {
     // console.log(result);
   };
 
-  //TODO: Here I am creating instances of options and choices
-  // If this is the route I take I need to set the option/routes to match the storylines
-  // I have access to all the stories. Maybe grab all the storylines specifically?
-  // My choices also have a next_choice attr (could use this to determine the following navigation)
+  //GRAB THE SPECIFIC ACTIVE CHARACTER'S CHOICES
 
   const postInitOption = async (optionObj) => {
     const config = {

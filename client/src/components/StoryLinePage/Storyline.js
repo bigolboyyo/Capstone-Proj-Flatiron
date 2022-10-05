@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { choiceNav } from "../../lib/choiceNav";
 // , { useEffect, useState }
 import Dialogue from "../Dialogue/Dialogue";
@@ -10,7 +10,11 @@ import {
   setActiveStoryLine,
   grabAllStories,
 } from "../../features/user/userSlice";
-import { setOptionStoryLine } from "../../features/optionSlice";
+import {
+  setOptionStoryLine,
+  setCurrentChoices,
+  updateChoices,
+} from "../../features/optionSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { advanceStory } from "../../lib/advanceStory";
@@ -91,14 +95,35 @@ function Storyline() {
     }
   };
 
+  // const [mapped, setMapped] = useState([]);
+
+  // const updateReduxChoices = async (optID) => {
+  //   const r = await fetch(`/options/${optID}`);
+  //   const result = await r.json();
+  //   return result;
+  // };
+
+  const curChoices = useSelector((state) => state.option.current_choices);
+
+  const curOption = storyLine.options.find(
+    (option) => option.story_id === activeStory.id
+  );
+
   const mappedChoices = () => {
-    return storyLine.choices.map((c) => {
+    // dispatch(updateChoices(curOption.id));
+
+    return curChoices.map((c) => {
+      console.log(c);
       return <Option key={c.id} choice={c} navStoryLine={navStoryLine} />;
     });
   };
 
-  const trimmedChoices =
-    mappedChoices().length > 4 ? mappedChoices().slice(0, 4) : mappedChoices();
+  useEffect(() => {
+    dispatch(updateChoices(curOption.id));
+  }, [curOption]);
+
+  // const trimmedChoices =
+  //   mappedChoices().length > 4 ? mappedChoices().slice(0, 4) : mappedChoices();
 
   const goHome = () => {
     navigate("/homepage");
@@ -113,9 +138,9 @@ function Storyline() {
         <Dialogue storyLine={storyLine} />
       </div>
 
-      <div className="options-container">{trimmedChoices}</div>
+      <div className="options-container">{mappedChoices()}</div>
       <div className="inventory-container">
-        <Inventory invChange={trimmedChoices} />
+        <Inventory invChange={mappedChoices()} />
       </div>
     </div>
   );
