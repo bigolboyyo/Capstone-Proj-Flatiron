@@ -7,6 +7,7 @@ import { setUser } from "./features/user/userSlice";
 
 //Styling
 //import Nav from "react-bootstrap/Nav";
+// import space from "./Images/desert.jpg";
 
 //Components
 import Login from "./components/AuthPage/Login";
@@ -112,7 +113,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      // style={{
+      //   backgroundImage: `url(${space})`,
+      //   backgroundSize: `cover`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPosition: "center",
+      // }}
+    >
       <Routes>
         <Route path="/" element={<Root />} />
         <Route
