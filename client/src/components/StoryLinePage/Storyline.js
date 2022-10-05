@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { advanceStory } from "../../lib/advanceStory";
 import Inventory from "../Inventory/Inventory";
+import { scenario } from "../../lib/deathScenarios";
 
 function Storyline() {
   const dispatch = useDispatch();
@@ -76,12 +77,7 @@ function Storyline() {
   };
 
   const navStoryLine = async (id) => {
-    if (
-      id === "TremorDeath" ||
-      id === "ScorpionDeath" ||
-      id === "ElectricDeath" ||
-      id === "Bigoted"
-    ) {
+    if (scenario(id)) {
       await permaDeath();
       navigate("/death");
     } else {
