@@ -95,14 +95,6 @@ function Storyline() {
     }
   };
 
-  // const [mapped, setMapped] = useState([]);
-
-  // const updateReduxChoices = async (optID) => {
-  //   const r = await fetch(`/options/${optID}`);
-  //   const result = await r.json();
-  //   return result;
-  // };
-
   const curChoices = useSelector((state) => state.option.current_choices);
 
   const curOption = storyLine.options.find(
@@ -120,7 +112,7 @@ function Storyline() {
 
   useEffect(() => {
     dispatch(updateChoices(curOption.id));
-  }, [curOption]);
+  }, [storyLine.id]);
 
   // const trimmedChoices =
   //   mappedChoices().length > 4 ? mappedChoices().slice(0, 4) : mappedChoices();

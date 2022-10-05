@@ -50,7 +50,6 @@ export const advanceStory = async (id, activeChar, nav) => {
   //towards sun, no investigation
   //ID IS CHOICE_ID
   if (id === "Choice One Followup" && activeCharCheck) {
-    debugger;
     nav = 2;
     option.story_line_id = nav;
 
