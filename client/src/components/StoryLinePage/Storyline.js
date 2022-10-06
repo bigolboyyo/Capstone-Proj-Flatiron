@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { advanceStory } from "../../lib/advanceStory";
 import Inventory from "../Inventory/Inventory";
 import { scenario } from "../../lib/deathScenarios";
+import Typewriter from "typewriter-effect";
 
 function Storyline() {
   const dispatch = useDispatch();
@@ -80,6 +81,8 @@ function Storyline() {
     if (scenario(id)) {
       await permaDeath();
       navigate("/death");
+    } else if (id === "DemoEnd") {
+      navigate("/endstate");
     } else {
       let nav = storyLine.id;
       await advanceStory(id, activeChar, nav);
@@ -108,6 +111,8 @@ function Storyline() {
     });
     return mapped;
   };
+
+  // const typedDialogue = typeWriter(storyLine.dialogue);
 
   useEffect(() => {
     dispatch(updateChoices(activeOption));

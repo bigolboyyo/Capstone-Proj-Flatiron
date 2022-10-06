@@ -3,7 +3,7 @@
 const lawBatchTwo = {
   choice_one: {
     choice_text: "Keep walking",
-    next_choice: "LawMan#2",
+    next_choice: "DemoEnd",
     //next nav: 6
   },
 

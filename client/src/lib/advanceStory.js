@@ -253,6 +253,11 @@ export const advanceStory = async (id, activeChar, nav) => {
     option.story_line_id = nav;
     await postOption(option);
   }
+  if (id === "DemoEnd" && activeCharCheck) {
+    nav = 666;
+    option.story_line_id = nav;
+    await postOption(option);
+  }
 
   // if (id === "Choice One Followup" && activeCharCheck) {
   //   nav = 12;
