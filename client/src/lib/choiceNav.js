@@ -10,7 +10,7 @@ const postChoices = async (choiceObj) => {
   };
   const r = await fetch("/choices", config);
   const postedChoices = await r.json();
-  console.log(postedChoices);
+  localStorage.setItem("posted_choices", JSON.stringify(postedChoices));
 };
 
 export const choiceNav = async (navID) => {

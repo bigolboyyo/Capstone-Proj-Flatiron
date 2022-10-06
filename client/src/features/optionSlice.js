@@ -2,10 +2,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const updateChoices = createAsyncThunk(
   "option/setCurrentChoices",
-  async (optID) => {
-    const r = await fetch(`/options/${optID}`);
+  async (opt) => {
+    const r = await fetch(`/options/${opt.id}`);
     const result = await r.json();
-
+    localStorage.setItem("active_option", JSON.stringify(opt));
+    localStorage.setItem("active_choices", JSON.stringify(result));
     return result;
   }
 );

@@ -103,7 +103,7 @@ function Background() {
 
     const r = await fetch("/choices", config);
     const postedChoices = await r.json();
-    console.log(postedChoices);
+    localStorage.setItem("active_choices", JSON.stringify(postedChoices));
   };
 
   async function initChoiceCreation(background) {

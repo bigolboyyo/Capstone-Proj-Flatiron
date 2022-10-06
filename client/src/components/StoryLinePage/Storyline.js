@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { choiceNav } from "../../lib/choiceNav";
 // , { useEffect, useState }
 import Dialogue from "../Dialogue/Dialogue";
@@ -10,11 +10,7 @@ import {
   setActiveStoryLine,
   grabAllStories,
 } from "../../features/user/userSlice";
-import {
-  setOptionStoryLine,
-  setCurrentChoices,
-  updateChoices,
-} from "../../features/optionSlice";
+import { setOptionStoryLine, updateChoices } from "../../features/optionSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { advanceStory } from "../../lib/advanceStory";
@@ -101,21 +97,21 @@ function Storyline() {
     (option) => option.story_id === activeStory.id
   );
 
-  const mappedChoices = () => {
-    // dispatch(updateChoices(curOption.id));
+  const activeOption = curOption
+    ? curOption
+    : JSON.parse(localStorage.getItem("active_choice"));
 
-    return curChoices.map((c) => {
-      console.log(c);
+  const mappedChoices = () => {
+    const mapped = curChoices.map((c) => {
+      // console.log(c);
       return <Option key={c.id} choice={c} navStoryLine={navStoryLine} />;
     });
+    return mapped;
   };
 
   useEffect(() => {
-    dispatch(updateChoices(curOption.id));
-  }, [storyLine.id]);
-
-  // const trimmedChoices =
-  //   mappedChoices().length > 4 ? mappedChoices().slice(0, 4) : mappedChoices();
+    dispatch(updateChoices(activeOption));
+  }, [storyLine.id, activeOption, dispatch]);
 
   const goHome = () => {
     navigate("/homepage");

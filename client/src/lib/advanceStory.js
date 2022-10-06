@@ -32,7 +32,7 @@ export const advanceStory = async (id, activeChar, nav) => {
 
     const r = await fetch("/character_items", config);
     const charItems = await r.json();
-    console.log(charItems);
+    localStorage.setItem("char_inv", charItems);
   };
 
   const actStoryId = JSON.parse(localStorage.getItem("user_data")).active_story

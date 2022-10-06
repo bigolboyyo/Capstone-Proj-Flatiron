@@ -9,7 +9,7 @@ const lawBatchTwo = {
 
   choice_two: {
     choice_text: "Pick up the scorpion",
-    next_choice: "ScorpionDeath",
+    next_choice: "ManicScorpionDeath",
     //next nav: 7
   },
   //ITEM
