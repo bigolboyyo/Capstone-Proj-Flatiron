@@ -49,28 +49,28 @@ export const advanceStory = async (id, activeChar, nav) => {
 
   //towards sun, no investigation
   //ID IS CHOICE_ID
-  if (id === "Choice One Followup" && activeCharCheck) {
+  if (id === "SunStriver" && activeCharCheck) {
     nav = 2;
     option.story_line_id = nav;
 
     await postOption(option);
   }
   //away from sun
-  if (id === "Choice Two Followup" && activeCharCheck) {
+  if (id === "LikesWorms" && activeCharCheck) {
     nav = 3;
     option.story_line_id = nav;
 
     await postOption(option);
   }
   //examine machinery
-  if (id === "Choice Three Followup" && activeCharCheck) {
+  if (id === "MachineCheck" && activeCharCheck) {
     nav = 4;
     option.story_line_id = nav;
 
     await postOption(option);
   }
   //examine self
-  if (id === "Choice Four Followup" && activeCharCheck) {
+  if (id === "SelfExam" && activeCharCheck) {
     nav = 5;
     option.story_line_id = nav;
 
@@ -78,29 +78,29 @@ export const advanceStory = async (id, activeChar, nav) => {
     await takeItem("Rusty Pocket Knife");
   }
   //towards sun, keep walking
-  if (id === "LawMan#2" && activeCharCheck) {
-    nav = 6;
-    option.story_line_id = nav;
-
-    await postOption(option);
-  }
-  //pick up scorpion
-  if (id === "LawMan#3" && activeCharCheck) {
+  if (id === "CactusWater" && activeCharCheck) {
     nav = 7;
     option.story_line_id = nav;
 
     await postOption(option);
   }
-  //slice open cactus, needs to find rusty pocket knife
-  if (id === "LawMan#4" && activeCharCheck) {
+  //pick up scorpion
+  if (id === "PostSunReturn" && activeCharCheck) {
     nav = 8;
     option.story_line_id = nav;
 
     await postOption(option);
   }
-  //turn back around (fox encounter?)
-  if (id === "LawMan#5" && activeCharCheck) {
+  //slice open cactus, needs to find rusty pocket knife
+  if (id === "EasterEgg" && activeCharCheck) {
     nav = 9;
+    option.story_line_id = nav;
+
+    await postOption(option);
+  }
+  //turn back around (fox encounter?)
+  if (id === "PostArmPlaced" && activeCharCheck) {
+    nav = 50;
     option.story_line_id = nav;
 
     await postOption(option);
@@ -253,6 +253,7 @@ export const advanceStory = async (id, activeChar, nav) => {
     option.story_line_id = nav;
     await postOption(option);
   }
+
   if (id === "DemoEnd" && activeCharCheck) {
     nav = 666;
     option.story_line_id = nav;

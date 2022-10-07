@@ -22,3 +22,34 @@
 // const charFilled = characters.map((c, i) => {
 //   return <CharacterFilled char={c} idx={i} />;
 // });
+
+///////////////////////////////////////////
+
+const allTypeWriters = JSON.parse(localStorage.getItem("stories")).map(
+  (story) => {
+    return (
+      <Typewriter
+        options={{
+          delay: 10,
+        }}
+        onInit={(typewriter) => {
+          typewriter.typeString(story.dialogue).start();
+        }}
+      />
+    );
+  }
+);
+
+const storyLineId = JSON.parse(
+  localStorage.getItem("user_data")
+).current_storyline;
+
+const returnActive = () => {
+  const activeType = allTypeWriters.find(() => storyLineId);
+
+  return activeType;
+};
+
+// useEffect(() => {
+//   returnActive();
+// }, [storyLineId]);

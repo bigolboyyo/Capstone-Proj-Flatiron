@@ -88,16 +88,17 @@ function Storyline() {
       const option = JSON.parse(localStorage.getItem("options"));
       nav = option.story_line_id;
       await choiceCreation(activeChar.background, option);
-      await doAllTheThings(nav);
       dispatch(setActiveStoryLine(nav));
+      await doAllTheThings(nav);
+      // dispatch(updateChoices(curOption));
     }
   };
 
-  const curChoices = useSelector((state) => state.option.current_choices);
+  const curOption = storyLine.options.find((option) => {
+    return option.story_id === activeStory.id;
+  });
 
-  const curOption = storyLine.options.find(
-    (option) => option.story_id === activeStory.id
-  );
+  const curChoices = useSelector((state) => state.option.current_choices);
 
   const activeOption = curOption
     ? curOption
@@ -115,7 +116,7 @@ function Storyline() {
 
   useEffect(() => {
     dispatch(updateChoices(activeOption));
-  }, [storyLine.id, activeOption, dispatch]);
+  }, [activeOption]);
 
   const goHome = () => {
     navigate("/homepage");

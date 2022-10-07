@@ -28,10 +28,14 @@
   align-items: center;
   padding-top: 1rem;
   outline: solid;
-  background-color: seashell;
-}
-
-.home-title {
+  background: linear-gradient(
+    to right,
+    rgba(36, 31, 31, 1) 0%,
+    rgba(36, 31, 31, 1) 32%,
+    rgba(74, 71, 70, 1) 100%
+  );
+  color: #fff;
+  text-align: center;
 }
 
 .character-creation {

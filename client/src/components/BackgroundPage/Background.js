@@ -113,96 +113,96 @@ function Background() {
       choice_one: {
         option_id: optionID,
         choice_text: "Start walking towards the sun",
-        next_choice: "Choice One Followup",
+        next_choice: "SunStriver",
         //next nav: 2
       },
       choice_two: {
         option_id: optionID,
         choice_text: "Start walking away from the sun",
-        next_choice: "Choice Two Followup",
+        next_choice: "LikesWorms",
         //next nav: 3
       },
       choice_three: {
         option_id: optionID,
         choice_text: "Examine the machinery around you",
-        next_choice: "Choice Three Followup",
+        next_choice: "MachineCheck",
         //next nav: 4
       },
       choice_four: {
         option_id: optionID,
         choice_text: "Examine yourself",
-        next_choice: "Choice Four Followup",
+        next_choice: "SelfExam",
         //next nav:
       },
     };
 
-    const vagrantChoices = {
-      choice_one: {
-        option_id: optionID,
-        choice_text: "Vagrant Choice one",
-        next_choice: "Choice One Followup",
-      },
-      choice_two: {
-        option_id: optionID,
-        choice_text: "Vagrant Choice two",
-        next_choice: "Choice Two Followup",
-      },
-      choice_three: {
-        option_id: optionID,
-        choice_text: "Vagrant Choice three",
-        next_choice: "Choice Three Followup",
-      },
-      choice_four: {
-        option_id: optionID,
-        choice_text: "Vagrant Choice four",
-        next_choice: "Choice Four Followup",
-      },
-    };
+    // const vagrantChoices = {
+    //   choice_one: {
+    //     option_id: optionID,
+    //     choice_text: "Vagrant Choice one",
+    //     next_choice: "Choice One Followup",
+    //   },
+    //   choice_two: {
+    //     option_id: optionID,
+    //     choice_text: "Vagrant Choice two",
+    //     next_choice: "Choice Two Followup",
+    //   },
+    //   choice_three: {
+    //     option_id: optionID,
+    //     choice_text: "Vagrant Choice three",
+    //     next_choice: "Choice Three Followup",
+    //   },
+    //   choice_four: {
+    //     option_id: optionID,
+    //     choice_text: "Vagrant Choice four",
+    //     next_choice: "Choice Four Followup",
+    //   },
+    // };
 
-    const otakuChoices = {
-      choice_one: {
-        option_id: optionID,
-        choice_text: "Otaku Choice one",
-        next_choice: "Choice One Followup",
-      },
-      choice_two: {
-        option_id: optionID,
-        choice_text: "Otaku Choice two",
-        next_choice: "Choice Two Followup",
-      },
-      choice_three: {
-        option_id: optionID,
-        choice_text: "Otaku Choice three",
-        next_choice: "Choice Three Followup",
-      },
-      choice_four: {
-        option_id: optionID,
-        choice_text: "Otaku Choice four",
-        next_choice: "Choice Four Followup",
-      },
-    };
+    // const otakuChoices = {
+    //   choice_one: {
+    //     option_id: optionID,
+    //     choice_text: "Otaku Choice one",
+    //     next_choice: "Choice One Followup",
+    //   },
+    //   choice_two: {
+    //     option_id: optionID,
+    //     choice_text: "Otaku Choice two",
+    //     next_choice: "Choice Two Followup",
+    //   },
+    //   choice_three: {
+    //     option_id: optionID,
+    //     choice_text: "Otaku Choice three",
+    //     next_choice: "Choice Three Followup",
+    //   },
+    //   choice_four: {
+    //     option_id: optionID,
+    //     choice_text: "Otaku Choice four",
+    //     next_choice: "Choice Four Followup",
+    //   },
+    // };
 
     //FIXME: LOADING SCREEN NEEDED HERE
 
     const laws = Object.values(Object.values(lawChoices));
-    const crimes = Object.values(Object.values(vagrantChoices));
-    const animes = Object.values(Object.values(otakuChoices));
+    // const crimes = Object.values(Object.values(vagrantChoices));
+    // const animes = Object.values(Object.values(otakuChoices));
 
     if (background === "lawyer") {
       for (const choice of laws) {
         await postInitChoices(choice);
       }
     }
-    if (background === "vagrant") {
-      for (const choice of crimes) {
-        await postInitChoices(choice);
-      }
-    }
-    if (background === "otaku") {
-      for (const choice of animes) {
-        await postInitChoices(choice);
-      }
-    }
+    // if (background === "vagrant") {
+    //   for (const choice of crimes) {
+    //     await postInitChoices(choice);
+    //   }
+    // }
+    // if (background === "otaku") {
+    //   for (const choice of animes) {
+    //     await postInitChoices(choice);
+    //   }
+    // }
   }
 
   const submitCharacter = async () => {
