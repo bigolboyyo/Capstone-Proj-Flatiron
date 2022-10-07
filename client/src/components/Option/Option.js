@@ -3,7 +3,7 @@ import "../Option/Option.css";
 
 function Option({ choice, navStoryLine }) {
   return (
-    <div
+    <button
       id={choice.choice_text}
       onClick={() => {
         const id = choice.next_choice;
@@ -12,7 +12,7 @@ function Option({ choice, navStoryLine }) {
       className="options"
     >
       {choice.choice_text}
-    </div>
+    </button>
   );
 }
 

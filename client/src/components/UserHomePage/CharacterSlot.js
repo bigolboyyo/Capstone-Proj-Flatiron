@@ -8,10 +8,10 @@ function CharacterSlot({ idx }) {
     navigate("/background");
   };
   return (
-    <h1 key={idx}>
+    <div className="character-slot" key={idx}>
       [Empty Character Slot] ------{" "}
       <button onClick={navigateToCreation}>Create Character</button>
-    </h1>
+    </div>
   );
 }
 

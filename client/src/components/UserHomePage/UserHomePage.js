@@ -73,11 +73,11 @@ function UserHomePage({ logout }) {
     <>
       <div className="home-div">
         <div className="user-home-interface-container">
-          <Button className="logout-btn" onClick={logout}>
+          <button className="logout-btn" onClick={logout}>
             Logout
-          </Button>
+          </button>
           <div className="home-title">
-            <h1>{user.username}</h1>
+            <h2 className="username">{user.username}</h2>
             {/* <p>{user.active_character.character_name}</p> */}
             {/* <p>{user.current_storyline}</p> */}
           </div>

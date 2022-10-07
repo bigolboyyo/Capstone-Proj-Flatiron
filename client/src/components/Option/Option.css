@@ -1,5 +1,4 @@
 .options {
-  outline: dotted gray;
   width: 35vw;
   height: 10vh;
   justify-self: center;
@@ -12,6 +11,4 @@
 
 .options:hover {
   opacity: 1;
-  outline: solid black;
-  font-size: xx-large;
 }

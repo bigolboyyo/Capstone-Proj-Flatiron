@@ -70,11 +70,11 @@ function CharacterFilled({ char, idx }) {
   };
 
   return (
-    <h1 key={idx}>
+    <div className="character-slot" key={idx}>
       {char.character_name} ---- {char.background}{" "}
       <button onClick={returnToStory}>Continue</button>{" "}
       <button onClick={handleCharDeletion}>Delete</button>
-    </h1>
+    </div>
   );
 }
 

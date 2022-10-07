@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2.5vh;
 }
 
 .lawyer-intro {
@@ -21,7 +22,7 @@
   width: 75vw;
   align-items: center;
   padding: 1rem 1rem 1rem 1rem;
-  font-size: larger;
+  font-size: clamp(1.5rem, 0.5rem, 3rem);
   font-weight: 700;
   font-family: monospace;
   overflow-y: auto;
@@ -34,3 +35,5 @@
   height: 75vh;
   padding: 1rem;
 }
+
+/* CSS */
