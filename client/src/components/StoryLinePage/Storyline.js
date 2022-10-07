@@ -88,6 +88,9 @@ function Storyline() {
       const option = JSON.parse(localStorage.getItem("options"));
       nav = option.story_line_id;
       await choiceCreation(activeChar.background, option);
+      // DISPATCHING TO SET ACTIVE STORY LINE BEFORE
+      // // DOING ALL THE THINGS SEEMS TO HELP WITH FETCH/RENDER SPEED and prevents
+      /// // the MachineCheck double choice render for whatever reason... must examine further
       dispatch(setActiveStoryLine(nav));
       await doAllTheThings(nav);
       // dispatch(updateChoices(curOption));
