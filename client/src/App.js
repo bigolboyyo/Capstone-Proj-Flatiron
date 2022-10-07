@@ -27,6 +27,12 @@ function App() {
   const [errors, setErrors] = useState([]);
   const [authSwitch, setAuthSwitch] = useState(true);
 
+  // const [cursorPosition, setCursorPosition] = useState({ top: 0, left: 0 });
+  // const onMouseMove = (e) => {
+  //   console.log(cursorPosition);
+  //   setCursorPosition({ top: e.screenY, left: e.screenX });
+  // };
+
   const navigate = useNavigate();
 
   const handleLoginSubmit = async (creds) => {
@@ -113,15 +119,7 @@ function App() {
   }, []);
 
   return (
-    <div
-      className="App"
-      // style={{
-      //   backgroundImage: `url(${space})`,
-      //   backgroundSize: `cover`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundPosition: "center",
-      // }}
-    >
+    <div className="App">
       <Routes>
         <Route path="/" element={<Root />} />
         <Route

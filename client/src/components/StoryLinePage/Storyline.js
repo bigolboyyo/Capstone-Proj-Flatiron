@@ -16,7 +16,6 @@ import { useNavigate } from "react-router-dom";
 import { advanceStory } from "../../lib/advanceStory";
 import Inventory from "../Inventory/Inventory";
 import { scenario } from "../../lib/deathScenarios";
-import Typewriter from "typewriter-effect";
 
 function Storyline() {
   const dispatch = useDispatch();
