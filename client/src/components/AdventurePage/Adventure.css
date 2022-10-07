@@ -25,6 +25,7 @@
   font-weight: 700;
   font-family: monospace;
   overflow-y: auto;
+  overflow-x: hidden;
   height: 75vh;
 }
 
