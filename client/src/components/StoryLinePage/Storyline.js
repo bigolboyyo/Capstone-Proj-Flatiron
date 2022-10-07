@@ -129,7 +129,9 @@ function Storyline() {
     <div className="storyline-container">
       <div className="story-dialogue-container">
         <div className="game-nav">
-          <button onClick={goHome}>HOME</button>
+          <button className="home-btn" onClick={goHome}>
+            HOME
+          </button>
         </div>
         <Dialogue storyLine={storyLine} />
       </div>
