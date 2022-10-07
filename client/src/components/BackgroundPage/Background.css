@@ -1,5 +1,5 @@
 .background-page {
-  width: 100vw;
+  width: 75vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,11 +16,14 @@
   padding-bottom: 5rem;
   position: relative;
   align-self: center;
+  width: inherit;
+  justify-content: center;
 }
 
 .imported-image {
   width: 20rem;
   position: relative;
+  overflow: auto;
 }
 
 .imported-image:hover {
