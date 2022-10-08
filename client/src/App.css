@@ -13,6 +13,7 @@
   background: linear-gradient(-45deg, #617897, #3bb9b2, #144e6a, #39556c);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  font-family: monospace;
 }
 
 @keyframes gradient {
