@@ -51,4 +51,4 @@ gem "active_model_serializers", "~> 0.10.13"
 
 gem 'imagekitio'
 
-gem 'down', '~> 1.1'
+gem 'dotenv-rails', groups: [:development, :test]
