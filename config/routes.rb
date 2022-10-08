@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   resources :options
   resources :story_lines
 
+  post "img-url", to: "story_lines#img_url"
+
   # Looking to create a custom method to grab the specific storylines for the char background
   post "char-story", to: "story_lines#associated_story_lines"
 

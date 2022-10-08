@@ -1,4 +1,5 @@
 class StoryLinesController < ApplicationController
+  skip_before_action :authorize, only: [:create]
   before_action :find_story_line, only: [:show, :destroy, :update]
 
   def index
@@ -7,18 +8,20 @@ class StoryLinesController < ApplicationController
   end
 
   def show
+    @story_line.storyline_img.url
     render json: @story_line, status: :ok
   end
 
-  # A custom method here to only show the storylines associated with the character's background?
+  def img_url
+    # debugger
+    cur = StoryLine.all.find { |s| s.id == params[:_json] }
+    url = cur.storyline_img.url
+    render json: url, status: :ok
+  end
 
-  # def associated_story_lines(activeChar)
-  #   # A before_action that finds the relative character???
-  #   # can use the @current_user from authorize?
-  #   # Route HAS been created!!!
-
-  #   # @active_character = @current_user.characters.find{????}
-  #   debugger
+  # def auth_param
+  #   @imagekitio = ImageKitIo.client
+  #   @auth_params = @imagekitio.get_authentication_parameters()
   # end
 
   def create
