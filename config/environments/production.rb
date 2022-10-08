@@ -87,9 +87,9 @@ Rails.application.configure do
   # Add this configuration to config/environments/development.rb
   # and config/environments/production.rb
 
-  config.imagekit = {
-    private_key: "private_jNGY5wl0zDAHJ6xsybNFtpPrFtI=",
-    public_key: "public_bQ/QeNEojdJkfBgdHhFJiqVcygM=",
-    url_endpoint: "https://ik.imagekit.io/bigboyyo",
-  }
+  # config.imagekit = {
+  #   private_key: "private_=",
+  #   public_key: "public_bQ/=",
+  #   url_endpoint: "https://ik.imagekit.io/bigboyyo",
+  # }
 end
