@@ -1,8 +1,8 @@
 ImageKitIo.configure do |config|
   if Rails.env.development?
-    config.public_key = "public_bQ/QeNEojdJkfBgdHhFJiqVcygM="
-    config.private_key = "private_jNGY5wl0zDAHJ6xsybNFtpPrFtI="
-    config.url_endpoint = "https://ik.imagekit.io/bigboyyo" # https://ik.imagekit.io/your_imagekit_id
+    config.public_key = process.env.IK_PUBLIC_KEY
+    config.private_key = process.env.IK_PRIVATE_KEY
+    config.url_endpoint = process.env.IK_HOST # https://ik.imagekit.io/your_imagekit_id
   end
 
   if Rails.env.production?
