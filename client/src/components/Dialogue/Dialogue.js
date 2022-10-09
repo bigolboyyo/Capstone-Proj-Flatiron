@@ -30,8 +30,10 @@ function Dialogue({ storyLine }) {
 
   return (
     <div className="dialogue-container">
+      {image !== "null" ? (
+        <img className="dialogue-img" src={image} alt="broken-machines" />
+      ) : null}
       <p>{storyLine.dialogue}</p>
-      <img className="dialogue-img" src={image} alt="broken-machines" />
     </div>
   );
 }

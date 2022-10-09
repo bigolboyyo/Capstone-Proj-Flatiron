@@ -73,7 +73,7 @@ function Storyline() {
       method: "DELETE",
     };
     const r = await fetch(`/characters/${activeChar.id}`, config);
-    console.log(r);
+    return r;
   };
 
   const navStoryLine = async (id) => {

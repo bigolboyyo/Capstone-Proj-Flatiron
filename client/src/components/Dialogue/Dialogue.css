@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   font-weight: 700;
+  gap: 3vh;
 }
 
 .dialogue {
@@ -12,5 +13,5 @@
 }
 
 .dialogue-img {
-  width: 20rem;
+  width: clamp(5vw, 25vh, 30vw);
 }

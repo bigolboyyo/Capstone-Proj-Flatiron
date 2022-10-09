@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import "../BackgroundPage/Background.css";
-import lawyerImg from "../../Images/lawyer.png";
-import vagrantImg from "../../Images/vagrant.png";
-import otakuImg from "../../Images/otaku.png";
+import lawyerImg from "../../BackgroundImages/lawyer.png";
+import vagrantImg from "../../BackgroundImages/vagrant.png";
+import otakuImg from "../../BackgroundImages/otaku.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
