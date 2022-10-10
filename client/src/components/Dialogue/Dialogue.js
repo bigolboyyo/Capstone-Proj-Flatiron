@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Dialogue/Dialogue.css";
-// import { useEffect, useCallback } from "react";
-// import Typewriter from "typewriter-effect";
-// import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 
 function Dialogue({ storyLine }) {
-  // const [localWriter, setLocalWriter] = useState({});
-
   const [image, setImage] = useState("");
 
   const grabStoryLineImg = async (storyLineId) => {
@@ -33,7 +27,7 @@ function Dialogue({ storyLine }) {
       {image !== "null" ? (
         <img className="dialogue-img" src={image} alt="broken-machines" />
       ) : null}
-      <p>{storyLine.dialogue}</p>
+      <p className="active-dialogue">{storyLine.dialogue}</p>
     </div>
   );
 }

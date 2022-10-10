@@ -5,13 +5,15 @@
   align-items: center;
   font-weight: 700;
   gap: 3vh;
-}
-
-.dialogue {
-  font-family: monospace;
-  font-size: xx-large;
+  height: inherit;
 }
 
 .dialogue-img {
-  width: clamp(5vw, 25vh, 30vw);
+  width: clamp(1vw, 15vw, 30vw);
+  height: clamp(1vh, 35vh, 40vh);
+  padding-top: 1rem;
+}
+
+.active-dialogue {
+  font-size: clamp(1vh, 2vh, 2vw);
 }

@@ -3,13 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "./features/user/userSlice";
-// import { useSelector } from "react-redux";
 
-//Styling
-//import Nav from "react-bootstrap/Nav";
-// import space from "./Images/desert.jpg";
-
-//Components
 import Login from "./components/AuthPage/Login";
 import SignUp from "./components/AuthPage/SignUp";
 import UserHomePage from "./components/UserHomePage/UserHomePage";
@@ -26,12 +20,6 @@ function App() {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
   const [authSwitch, setAuthSwitch] = useState(true);
-
-  // const [cursorPosition, setCursorPosition] = useState({ top: 0, left: 0 });
-  // const onMouseMove = (e) => {
-  //   console.log(cursorPosition);
-  //   setCursorPosition({ top: e.screenY, left: e.screenX });
-  // };
 
   const navigate = useNavigate();
 
@@ -106,9 +94,6 @@ function App() {
     }
   };
 
-  // Issue with navigation
-  // Always return to homepage after refresh, not current page
-  // No dependency is needed
   useEffect(() => {
     if (!localStorage.getItem("user_data")) {
       navigate("/auth");

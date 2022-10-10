@@ -56,9 +56,6 @@ export const userSlice = createSlice({
         })
       );
     },
-    // setAllActive: (state, active) => {
-
-    // }
   },
 });
 

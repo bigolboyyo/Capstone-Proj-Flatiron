@@ -11,12 +11,6 @@ function CharacterFilled({ char, idx }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // const grabStorage = () => {
-  //   return JSON.parse(localStorage.getItem("user_data"));
-  // };
-
-  // const storage = grabStorage();
-
   const fetchUsrChars = async () => {
     const r = await fetch("/usr-chars");
     const chars = await r.json();

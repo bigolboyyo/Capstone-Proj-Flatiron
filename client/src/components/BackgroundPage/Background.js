@@ -13,8 +13,6 @@ import {
   grabAllStories,
 } from "../../features/user/userSlice";
 
-// import initChoiceCreation from "./InitChoices";
-
 function Background() {
   const [lawyerDetails, setLawyerDetails] = useState(false);
   const [vagrantDetails, setVagrantDetails] = useState(false);
@@ -29,8 +27,6 @@ function Background() {
     setCharName(e.target.value);
   };
 
-  //FIXME: THIS fetchStories function can be abstracted out. Will need to either call this a bunch
-  // // Or figure out how to auto call/update the stories with associated choices
   const fetchStories = async () => {
     const r = await fetch("/story_lines");
     const stories = await r.json();
@@ -53,7 +49,6 @@ function Background() {
     };
 
     const start = startingStoryLine();
-    // result.push(start);
 
     const story = {
       starting_point: `${background} story line`,
@@ -70,13 +65,10 @@ function Background() {
     };
     const r = await fetch("/stories", config);
     const activeStory = await r.json();
-    // result.push(activeStory);
+
     dispatch(setActiveStory(activeStory));
     dispatch(setActiveStoryLine(start));
-    // console.log(result);
   };
-
-  //GRAB THE SPECIFIC ACTIVE CHARACTER'S CHOICES
 
   const postInitOption = async (optionObj) => {
     const config = {
@@ -239,8 +231,6 @@ function Background() {
       await initChoiceCreation(background);
       await fetchStories();
 
-      // SERIOUSLY STOP
-      // REMEMBER THIS PAIN
       navigate("/adventure-start");
     } else {
       const errors = await r.json();
@@ -250,9 +240,9 @@ function Background() {
 
   return (
     <div className="background-page">
-      <h1 style={{ alignSelf: "center" }}>
+      <h3 className="choose-your-background" style={{ alignSelf: "center" }}>
         Choose your character's name and background!
-      </h1>
+      </h3>
       <div className="char-name-container">
         <label>Character Name: </label>{" "}
         <input
@@ -310,7 +300,10 @@ function Background() {
       </button>
 
       {lawyerDetails ? (
-        <p className="bkg-info">Info about the lawyer background goes here!</p>
+        <p className="bkg-info">
+          A sleazeball and capitalist bootlicker. You will do whatever it takes
+          to achieve power and money for yourself!
+        </p>
       ) : null}
       {vagrantDetails ? (
         <p className="bkg-info">

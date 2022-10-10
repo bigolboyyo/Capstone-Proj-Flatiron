@@ -93,7 +93,6 @@ function UserHomePage({ logout }) {
             )}
           </div>
         </div>
-        {/* <button onClick={() => grabStoryLineImg(1)}></button> */}
       </div>
     </>
   );
