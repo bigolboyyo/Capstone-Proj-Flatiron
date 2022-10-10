@@ -36,13 +36,22 @@
   transform: translateY(2vh);
 }
 
+.bkg-details-container {
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  /* bottom: 0; */
+  /* position: static; */
+  justify-content: flex-end;
+}
+
 .bkg-info {
   width: 20rem;
   border: solid;
   padding: 1rem;
   position: absolute;
   align-self: center;
-  transform: translateY(535%);
+  /* transform: translateY(435%); */
 }
 
 .char-name-container {
@@ -66,8 +75,9 @@
 .bkg-choice {
   text-align-last: center;
   padding-top: 1rem;
-  font-family: fantasy;
-  font-size: larger;
+  font-family: monospace;
+  font-size: 2vh;
+  width: max-content;
 }
 
 .choose-your-background {

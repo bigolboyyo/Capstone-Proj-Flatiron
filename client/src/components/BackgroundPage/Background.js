@@ -256,6 +256,7 @@ function Background() {
           You have chosen the {background.toUpperCase()} background!
         </p>
       </div>
+
       <div className="bkg-img-container">
         <img
           name="lawyer"
@@ -298,25 +299,26 @@ function Background() {
       <button onClick={submitCharacter} className="start-adv-btn">
         Start Adventure!
       </button>
-
-      {lawyerDetails ? (
-        <p className="bkg-info">
-          A sleazeball and capitalist bootlicker. You will do whatever it takes
-          to achieve power and money for yourself!
-        </p>
-      ) : null}
-      {vagrantDetails ? (
-        <p className="bkg-info">
-          Stay tuned for future updates! Only Lawyer background currently
-          available.
-        </p>
-      ) : null}
-      {otakuDetails ? (
-        <p className="bkg-info">
-          Stay tuned for future updates! Only Lawyer background currently
-          available.
-        </p>
-      ) : null}
+      <div className="bkg-details-container">
+        {lawyerDetails ? (
+          <p className="bkg-info">
+            A sleazeball and capitalist bootlicker. You will do whatever it
+            takes to achieve power and money for yourself!
+          </p>
+        ) : null}
+        {vagrantDetails ? (
+          <p className="bkg-info">
+            Stay tuned for future updates! Only Lawyer background currently
+            available.
+          </p>
+        ) : null}
+        {otakuDetails ? (
+          <p className="bkg-info">
+            Stay tuned for future updates! Only Lawyer background currently
+            available.
+          </p>
+        ) : null}
+      </div>
     </div>
   );
 }
