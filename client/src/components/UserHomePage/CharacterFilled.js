@@ -94,21 +94,28 @@ function CharacterFilled({ char, idx }) {
   return (
     <div className="character-slot" key={idx}>
       {char.character_name !== nameChange ? nameChange : char.character_name}{" "}
-      ---- {char.background} <button onClick={returnToStory}>Continue</button>{" "}
+      ---- {char.background}{" "}
+      <button className="char-button" onClick={returnToStory}>
+        <p className="btn-text">Continue</p>
+      </button>{" "}
       {editSwitch ? (
         <>
           <input
             onChange={(e) => setCharName(e.target.value)}
             value={charName}
           ></input>
-          <button type="submit" onClick={(e) => edit(e)}>
-            Change Name
+          <button className="char-button" onClick={(e) => edit(e)}>
+            <p className="btn-text">Change</p>
           </button>
         </>
       ) : (
-        <button onClick={() => setEditSwitch(true)}>Edit</button>
+        <button className="char-button" onClick={() => setEditSwitch(true)}>
+          <p className="btn-text">Edit</p>
+        </button>
       )}
-      <button onClick={handleCharDeletion}>Delete</button>
+      <button className="char-button" onClick={handleCharDeletion}>
+        <p className="btn-text">Delete</p>
+      </button>
     </div>
   );
 }
