@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   setActiveCharacter,
@@ -10,6 +10,9 @@ import { useDispatch } from "react-redux";
 function CharacterFilled({ char, idx }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [editSwitch, setEditSwitch] = useState(false);
+  const [nameChange, setNameChange] = useState(char.character_name);
+  const [charName, setCharName] = useState("");
 
   const fetchUsrChars = async () => {
     const r = await fetch("/usr-chars");
@@ -20,7 +23,6 @@ function CharacterFilled({ char, idx }) {
 
   const returnToStory = async () => {
     const char = await fetchUsrChars();
-    console.log(char);
     const config = {
       method: "POST",
       body: JSON.stringify({ character_id: char.id }),
@@ -36,6 +38,27 @@ function CharacterFilled({ char, idx }) {
     dispatch(setActiveStoryLine(storyData.active_story_line));
     navigate("/storyline");
   };
+
+  const editCharName = async (charId) => {
+    const config = {
+      method: "PATCH",
+      body: JSON.stringify({ character_name: charName }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    if (charName.length > 0) {
+      const r = await fetch(`/characters/${char.id}`, config);
+      const changedCharName = await r.json();
+      setNameChange(changedCharName.character_name);
+    } else {
+      setEditSwitch(false);
+    }
+  };
+
+  useEffect(() => {
+    setEditSwitch(false);
+  }, [nameChange]);
 
   const handleCharDeletion = async () => {
     const config = {
@@ -63,10 +86,28 @@ function CharacterFilled({ char, idx }) {
       });
   };
 
+  const edit = (e) => {
+    e.preventDefault();
+    editCharName(char.id);
+  };
+
   return (
     <div className="character-slot" key={idx}>
-      {char.character_name} ---- {char.background}{" "}
-      <button onClick={returnToStory}>Continue</button>{" "}
+      {char.character_name !== nameChange ? nameChange : char.character_name}{" "}
+      ---- {char.background} <button onClick={returnToStory}>Continue</button>{" "}
+      {editSwitch ? (
+        <>
+          <input
+            onChange={(e) => setCharName(e.target.value)}
+            value={charName}
+          ></input>
+          <button type="submit" onClick={(e) => edit(e)}>
+            Change Name
+          </button>
+        </>
+      ) : (
+        <button onClick={() => setEditSwitch(true)}>Edit</button>
+      )}
       <button onClick={handleCharDeletion}>Delete</button>
     </div>
   );
