@@ -1,24 +1,35 @@
-# README
+# Robot Text Adventure (FlatIron School Capstone Project)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the very first iteration of my very first text adventure game! (First Working Demo)
+This fullstack project is the culmination of my 8 months spent at FlatIron school and the knowledge I gained while there.
 
-Things you may want to cover:
+<https://robot-text-adventure.herokuapp.com/>
 
-* Ruby version
+---
 
-* System dependencies
+## Current Features
 
-* Configuration
+- Login/Signup functionality
+- Full CRUD with character creation (up to 3 concurrent characters)
+- One background available currently (Lawyer)
+- Storyline continuance (Save upon choice picked)
+- Character Inventory
+- StoryLine navigation with associated images (Stored with active record variant: ImageKitIo)
+- Character Death
+- Redux and localStorage persistance
 
-* Database creation
+---
 
-* Database initialization
+### Future Updates
 
-* How to run the test suite
+- Completion of Lawyer Storyline
+- 2 additional storylines to be added (Vagrant and Otaku)
+- Conditional storylines based on inventory
+- Multiple story end states and character replayability
+- User achievements
+- Additional styling/animations
+- and possibly even more! (Ideas and critiques are welcomed!)
 
-* Services (job queues, cache servers, search engines, etc.)
+_Feel free to send questions, comments, concerns and general admiration to wesley.grant94@gmail.com_
 
-* Deployment instructions
-
-* ...
+Thanks for stopping by, stay tuned for future updates!
