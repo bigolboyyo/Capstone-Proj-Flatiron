@@ -1,6 +1,9 @@
 .form-div {
   display: flex;
   /* width: 30%; */
+
+  /* top: 20vh; */
+  margin: 20vh;
   padding: 1.5em 1.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -15,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   /* transform: translateY(20rem); */
-  transform: translateY(35vh);
+  /* transform: translateY(35vh); */
   background: seashell;
   font-weight: 600;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
@@ -31,15 +34,21 @@
 }
 
 .navbar {
-  height: 10rem;
+  height: 10vh;
+  width: 100vw;
   background-color: #2a2d3c;
 }
 
 .nav-title {
   color: #ccdde2;
+  font-size: clamp(2vw, 4vh, 5vh);
 }
 
 .container-fluid {
   display: flex;
   flex-direction: column;
+}
+
+.form-container {
+  margin: 10vh;
 }
