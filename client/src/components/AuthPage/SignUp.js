@@ -29,89 +29,88 @@ function SignUp({ onSignUp, errorMessage, setAuth }) {
           <h1 className="nav-title">Robot Text Adventure</h1>
         </Container>
       </Navbar>
-      <Container>
-        <div className="form-div">
-          SignUp
-          <Form
-            onSubmit={(e) => {
-              e.preventDefault();
-              onSignUp(signUpCreds);
-              setSignUpCreds({
-                username: "",
-                password: "",
-                password_confirmation: "",
-              });
-            }}
+
+      <div className="form-div">
+        SignUp
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSignUp(signUpCreds);
+            setSignUpCreds({
+              username: "",
+              password: "",
+              password_confirmation: "",
+            });
+          }}
+        >
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formHorizontalUserName"
           >
-            <Form.Group
-              as={Row}
-              className="mb-3"
-              controlId="formHorizontalUserName"
-            >
-              <Form.Label>Username:</Form.Label>
-              <Col sm={{ span: 20 }}>
-                <Form.Control
-                  name="username"
-                  type="text"
-                  placeholder="Enter username"
-                  value={signUpCreds.username}
-                  onChange={handleChange}
-                  required={true}
-                />
-              </Col>
-              {/* <Form.Text className="text-muted">Username must be unique</Form.Text> */}
-            </Form.Group>
-
-            <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
-              <Form.Label column sm={{ span: 20 }}>
-                Password:
-              </Form.Label>
-              <Col sm={{ span: 20 }}>
-                <Form.Control
-                  name="password"
-                  type="password"
-                  placeholder="Enter Password"
-                  value={signUpCreds.password}
-                  onChange={handleChange}
-                  required={true}
-                />
-              </Col>
-            </Form.Group>
-
-            <Form.Group
-              as={Row}
-              className="mb-3"
-              controlId="formBasicPasswordConfirmation"
-            >
-              <Form.Label column sm={{ span: 20 }}>
-                Password Confirmation:
-              </Form.Label>
-              <Col sm={{ span: 20 }}>
-                <Form.Control
-                  name="password_confirmation"
-                  type="password"
-                  placeholder="Password Confirmation"
-                  value={signUpCreds.password_confirmation}
-                  onChange={handleChange}
-                  required={true}
-                />
-              </Col>
-            </Form.Group>
-            <Col sm={{ span: 10, offset: 5 }}>
-              <button type="submit">Submit</button>
+            <Form.Label>Username:</Form.Label>
+            <Col sm={{ span: 20 }}>
+              <Form.Control
+                name="username"
+                type="text"
+                placeholder="Enter username"
+                value={signUpCreds.username}
+                onChange={handleChange}
+                required={true}
+              />
             </Col>
-          </Form>
-          <Nav>
-            <Nav.Item className="auth-item">
-              Have an account already?
-              <Nav.Link className="auth-link" onClick={() => setAuth(true)}>
-                Login
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </div>
-        {errorMessage()}
-      </Container>
+            {/* <Form.Text className="text-muted">Username must be unique</Form.Text> */}
+          </Form.Group>
+
+          <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
+            <Form.Label column sm={{ span: 20 }}>
+              Password:
+            </Form.Label>
+            <Col sm={{ span: 20 }}>
+              <Form.Control
+                name="password"
+                type="password"
+                placeholder="Enter Password"
+                value={signUpCreds.password}
+                onChange={handleChange}
+                required={true}
+              />
+            </Col>
+          </Form.Group>
+
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formBasicPasswordConfirmation"
+          >
+            <Form.Label column sm={{ span: 20 }}>
+              Password Confirmation:
+            </Form.Label>
+            <Col sm={{ span: 20 }}>
+              <Form.Control
+                name="password_confirmation"
+                type="password"
+                placeholder="Password Confirmation"
+                value={signUpCreds.password_confirmation}
+                onChange={handleChange}
+                required={true}
+              />
+            </Col>
+          </Form.Group>
+          <Col sm={{ span: 10, offset: 4 }}>
+            <button type="submit">Submit</button>
+          </Col>
+        </Form>
+        <Nav>
+          <Nav.Item className="auth-item">
+            Have an account already?
+            <Nav.Link className="auth-link" onClick={() => setAuth(true)}>
+              Login
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </div>
+      {errorMessage()}
     </>
   );
 }

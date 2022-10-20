@@ -1,9 +1,9 @@
 .form-div {
   display: flex;
   /* width: 30%; */
-
+  gap: 2vh;
   /* top: 20vh; */
-  margin: 20vh;
+  margin: 30vh;
   padding: 1.5em 1.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -23,6 +23,17 @@
   font-weight: 600;
   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
     rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  /* font-size: max(2vh); */
+  /* font-size: clamp(1rem, 2vh, 5vh); */
+}
+
+.boot-form {
+}
+
+.auth-submit {
+}
+
+.boot-form-div {
 }
 
 .auth-link {
@@ -31,6 +42,13 @@
 
 .auth-item {
   padding: 1rem;
+}
+
+.nav {
+  justify-content: center;
+}
+
+.form-control {
 }
 
 .navbar {

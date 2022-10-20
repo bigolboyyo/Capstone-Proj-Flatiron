@@ -29,26 +29,31 @@ function Login({ onLogin, errorMessage, setAuth }) {
         </Container>
       </Navbar>
 
-      <Container className="form-container">
-        <div className="form-div">
-          Login
+      {errorMessage()}
+      {/* <div className="auth-page"> */}
+      <Container className="form-div">
+        <div className="form-wrapper">
+          <p style={{ textAlignLast: "center" }}>Login</p>
           <Form
+            className="boot-form"
             onSubmit={(e) => {
               e.preventDefault();
               onLogin(userCreds);
               setUserCreds({ username: "", password: "" });
             }}
           >
+            {/* <Container> */}
             <Form.Group
               as={Row}
               className="mb-3"
               controlId="formHorizontalUserName"
             >
-              <Form.Label column sm={{ span: 20 }}>
+              <Form.Label column sm="auto">
                 Username:
               </Form.Label>
-              <Col sm={{ span: 20 }}>
+              <Col sm="auto">
                 <Form.Control
+                  className="form-control"
                   name="username"
                   type="text"
                   placeholder="Enter username"
@@ -61,10 +66,10 @@ function Login({ onLogin, errorMessage, setAuth }) {
             </Form.Group>
 
             <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
-              <Form.Label column sm={{ span: 20 }}>
+              <Form.Label column sm="auto">
                 Password:
               </Form.Label>
-              <Col sm={{ span: 20 }}>
+              <Col sm="auto">
                 <Form.Control
                   name="password"
                   type="password"
@@ -75,13 +80,16 @@ function Login({ onLogin, errorMessage, setAuth }) {
                 />
               </Col>
             </Form.Group>
-            <Col sm={{ span: 10, offset: 5 }}>
-              <button type="submit">Submit</button>
+            {/* </Container> */}
+            <Col sm={{ span: 10, offset: 4 }}>
+              <button className="auth-submit" type="submit">
+                Submit
+              </button>
             </Col>
           </Form>
           <Nav>
             <Row>
-              <Col sm={{ span: 20, offset: 1 }}>
+              <Col sm="auto">
                 <Nav.Item className="auth-item">
                   Need an account?
                   <Nav.Link
@@ -94,9 +102,10 @@ function Login({ onLogin, errorMessage, setAuth }) {
               </Col>
             </Row>
           </Nav>
-          {errorMessage()}
         </div>
       </Container>
+      {/* </div> */}
+      {/* {errorMessage()} */}
     </>
   );
 }

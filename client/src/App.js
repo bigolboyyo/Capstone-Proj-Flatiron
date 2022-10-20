@@ -15,6 +15,7 @@ import Root from "./components/Root/Root";
 import DeathScreen from "./components/DeathScreen/DeathScreen";
 
 import "./App.css";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
 
 function App() {
   const dispatch = useDispatch();
@@ -104,38 +105,43 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Root />} />
-        <Route
-          path="/auth"
-          element={
-            authSwitch ? (
-              <Login
-                onLogin={handleLoginSubmit}
-                errorMessage={errorMessage}
-                setAuth={setAuthSwitch}
-              />
-            ) : (
-              <SignUp
-                onSignUp={handleSignUpSubmit}
-                errorMessage={errorMessage}
-                setAuth={setAuthSwitch}
-              />
-            )
-          }
-        />
-        <Route
-          path="/homepage"
-          element={<UserHomePage logout={handleLogout} />}
-        />
-        <Route path="/background" element={<Background />} />
-        <Route path="/adventure-start" element={<Adventure />} />
-        <Route path="/storyline" element={<Storyline />} />
-        <Route path="/death" element={<DeathScreen />} />
-        <Route path="/endstate" element={<EndState />} />
-      </Routes>
-    </div>
+    <ThemeProvider
+      breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
+      minBreakpoint="xxs"
+    >
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Root />} />
+          <Route
+            path="/auth"
+            element={
+              authSwitch ? (
+                <Login
+                  onLogin={handleLoginSubmit}
+                  errorMessage={errorMessage}
+                  setAuth={setAuthSwitch}
+                />
+              ) : (
+                <SignUp
+                  onSignUp={handleSignUpSubmit}
+                  errorMessage={errorMessage}
+                  setAuth={setAuthSwitch}
+                />
+              )
+            }
+          />
+          <Route
+            path="/homepage"
+            element={<UserHomePage logout={handleLogout} />}
+          />
+          <Route path="/background" element={<Background />} />
+          <Route path="/adventure-start" element={<Adventure />} />
+          <Route path="/storyline" element={<Storyline />} />
+          <Route path="/death" element={<DeathScreen />} />
+          <Route path="/endstate" element={<EndState />} />
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 

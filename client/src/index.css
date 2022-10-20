@@ -1,9 +1,19 @@
-body {
+/* body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100vw;
   width: 100vh;
+} */
+
+html,
+body,
+#root {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* html {
