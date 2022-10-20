@@ -6,6 +6,15 @@
   justify-content: center;
   gap: 1rem;
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: max(20rem);
+}
+
+.background-page::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
 
 .bkg-img-container {
@@ -77,9 +86,17 @@
   padding-top: 1rem;
   font-family: monospace;
   font-size: 2vh;
-  width: max-content;
+  /* width: max-content; */
+  font-size: clamp(1rem, 2rem, 5vh);
+  width: 100%;
+  white-space: nowrap;
+  transform: translateX(-4vw);
 }
 
 .choose-your-background {
-  font-size: clamp(1vw, 3vw, 5vh);
+  font-size: clamp(1vh, 2rem, 5vw);
+  /* margin-top: max(10rem); */
+  width: inherit;
+  text-align-last: center;
+  padding-top: 1rem;
 }

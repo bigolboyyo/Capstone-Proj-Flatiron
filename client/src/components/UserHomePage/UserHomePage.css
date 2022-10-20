@@ -11,7 +11,7 @@
 
 .logout-btn {
   transform: translateX(-20px);
-
+  font-size: 1.5vh;
   align-self: self-end;
 }
 

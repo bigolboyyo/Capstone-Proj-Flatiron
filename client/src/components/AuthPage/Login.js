@@ -29,81 +29,89 @@ function Login({ onLogin, errorMessage, setAuth }) {
         </Container>
       </Navbar>
 
-      {errorMessage()}
       {/* <div className="auth-page"> */}
-      <Container className="form-div">
-        <div className="form-wrapper">
-          <p style={{ textAlignLast: "center" }}>Login</p>
-          <Form
-            className="boot-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              onLogin(userCreds);
-              setUserCreds({ username: "", password: "" });
-            }}
-          >
-            {/* <Container> */}
-            <Form.Group
-              as={Row}
-              className="mb-3"
-              controlId="formHorizontalUserName"
+      <div className="auth-page-wrapper">
+        <div className="form-div">
+          <div className="form-wrapper">
+            <p style={{ textAlignLast: "center" }}>Login</p>
+            <Form
+              className="boot-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                onLogin(userCreds);
+                setUserCreds({ username: "", password: "" });
+              }}
             >
-              <Form.Label column sm="auto">
-                Username:
-              </Form.Label>
-              <Col sm="auto">
-                <Form.Control
-                  className="form-control"
-                  name="username"
-                  type="text"
-                  placeholder="Enter username"
-                  value={userCreds.username}
-                  onChange={handleChange}
-                  required={true}
-                />
-              </Col>
-              {/* <Form.Text className="text-muted">Username must be unique</Form.Text> */}
-            </Form.Group>
+              {/* <div> */}
+              <Form.Group
+                as={Row}
+                className="mb-3"
+                controlId="formHorizontalUserName"
+              >
+                <Form.Label column sm="auto">
+                  Username:
+                </Form.Label>
+                <Col sm={20}>
+                  <Form.Control
+                    className="form-control"
+                    name="username"
+                    type="text"
+                    placeholder="Enter username"
+                    value={userCreds.username}
+                    onChange={handleChange}
+                    required={true}
+                    size="lg"
+                  />
+                </Col>
+                {/* <Form.Text className="text-muted">Username must be unique</Form.Text> */}
+              </Form.Group>
 
-            <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
-              <Form.Label column sm="auto">
-                Password:
-              </Form.Label>
-              <Col sm="auto">
-                <Form.Control
-                  name="password"
-                  type="password"
-                  placeholder="Enter Password"
-                  value={userCreds.password}
-                  onChange={handleChange}
-                  required={true}
-                />
-              </Col>
-            </Form.Group>
-            {/* </Container> */}
-            <Col sm={{ span: 10, offset: 4 }}>
-              <button className="auth-submit" type="submit">
-                Submit
-              </button>
-            </Col>
-          </Form>
-          <Nav>
-            <Row>
-              <Col sm="auto">
-                <Nav.Item className="auth-item">
-                  Need an account?
-                  <Nav.Link
-                    className="auth-link"
-                    onClick={() => setAuth(false)}
-                  >
-                    SignUp
-                  </Nav.Link>
-                </Nav.Item>
-              </Col>
-            </Row>
-          </Nav>
+              <Form.Group
+                as={Row}
+                className="mb-3"
+                controlId="formBasicPassword"
+              >
+                <Form.Label column sm="auto">
+                  Password:
+                </Form.Label>
+                <Col sm={20}>
+                  <Form.Control
+                    name="password"
+                    type="password"
+                    placeholder="Enter Password"
+                    value={userCreds.password}
+                    onChange={handleChange}
+                    required={true}
+                    size="lg"
+                  />
+                </Col>
+                <Col sm={{ span: 10, offset: 4 }}>
+                  <button className="auth-submit" type="submit">
+                    Submit
+                  </button>
+                </Col>
+              </Form.Group>
+              {/* </div> */}
+              <Nav>
+                <Row>
+                  <Col sm="auto">
+                    <Nav.Item className="auth-item">
+                      Need an account?
+                      <Nav.Link
+                        className="auth-link"
+                        onClick={() => setAuth(false)}
+                      >
+                        SignUp
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Col>
+                </Row>
+              </Nav>
+            </Form>
+          </div>
+          {errorMessage()}
         </div>
-      </Container>
+      </div>
       {/* </div> */}
       {/* {errorMessage()} */}
     </>

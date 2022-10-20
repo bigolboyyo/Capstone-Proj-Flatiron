@@ -2,8 +2,9 @@
   display: flex;
   /* width: 30%; */
   gap: 2vh;
+  top: 0;
   /* top: 20vh; */
-  margin: 30vh;
+  margin-top: 30vh;
   padding: 1.5em 1.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -21,16 +22,38 @@
   /* transform: translateY(35vh); */
   background: seashell;
   font-weight: 600;
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
-    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px,
+    rgb(255 255 255 / 80%) -6px -2px 16px 0px;
   /* font-size: max(2vh); */
-  /* font-size: clamp(1rem, 2vh, 5vh); */
+  font-size: clamp(1rem, 2vh, 5vh);
+  /* position: absolute; */
+  width: clamp(30vw, 30rem, 100vw);
+  /* height: auto; */
+
+  /* margin-bottom: -30vh; */
+  /* height: 35vh; */
+  position: relative;
+  margin-bottom: 20vh;
+}
+
+.auth-page-wrapper {
+  height: inherit;
+  /* width: inherit; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.auth-page-wrapper::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
 }
 
 .boot-form {
 }
 
 .auth-submit {
+  margin-top: 2vh;
 }
 
 .boot-form-div {
