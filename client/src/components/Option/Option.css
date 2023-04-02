@@ -1,0 +1,14 @@
+.options {
+  width: 35vw;
+  height: 10vh;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.options:hover {
+  opacity: 1;
+}

@@ -20,6 +20,12 @@ Bundler.require(*Rails.groups)
 
 module RobotAdventure
   class Application < Rails::Application
+    if ["development", "test"].include? ENV["RAILS_ENV"]
+      Dotenv::Railtie.load
+    end
+
+    HOSTNAME = ENV["HOSTNAME"]
+
     config.load_defaults 6.1
 
     # This is set in apps generated with the --api flag, and removes session/cookie middleware

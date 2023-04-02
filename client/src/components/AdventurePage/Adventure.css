@@ -1,0 +1,39 @@
+.adv-start-page {
+  width: 75vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5vh;
+}
+
+.lawyer-intro {
+  background: linear-gradient(
+    to right,
+    rgba(36, 31, 31, 1) 0%,
+    rgba(36, 31, 31, 1) 32%,
+    rgba(74, 71, 70, 1) 100%
+  );
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+  align-items: center;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: clamp(1.5rem, 0.5rem, 3rem);
+  font-weight: 700;
+  font-family: monospace;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 75vh;
+}
+
+.lawyer-intro-text {
+  width: 75vw;
+  height: 75vh;
+  padding: 1rem;
+}
+
+/* CSS */

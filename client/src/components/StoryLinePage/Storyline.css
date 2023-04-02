@@ -1,0 +1,78 @@
+.storyline-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(1vh, 2vh, 2.5vh);
+}
+
+.story-dialogue-container {
+  width: 75vw;
+  outline: solid;
+  height: 60vh;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(36, 31, 31, 1) 0%,
+    rgba(36, 31, 31, 1) 32%,
+    rgba(74, 71, 70, 1) 100%
+  );
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(1fr 1fr);
+  outline: solid;
+  height: 25vh;
+  width: 75vw;
+  /* gap: 1rem; */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2%;
+  padding: 1%;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    rgba(36, 31, 31, 1) 0%,
+    rgba(36, 31, 31, 1) 32%,
+    rgba(74, 71, 70, 1) 100%
+  );
+  color: #fff;
+  text-align: center;
+}
+
+.inventory-container {
+  width: 75vw;
+  height: 12.5vh;
+  outline: solid;
+  padding: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    rgba(36, 31, 31, 1) 0%,
+    rgba(36, 31, 31, 1) 32%,
+    rgba(74, 71, 70, 1) 100%
+  );
+  color: #fff;
+  text-align: center;
+}
+
+.home-btn {
+  position: absolute;
+  top: 0.5vh;
+  left: 0.5vh;
+  transform: scale(0.65);
+}
